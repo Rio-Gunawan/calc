@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*全体の設定*/
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+/*ヘッダーの設定*/
+
+header {
+	padding: 10px 0;
+	padding-left: 30px;
+	background-color: #ade800;
+}
+
+/*タイトル画像の設定*/
+
+.title {
+	text-align: center;
+	width: 200px;
+}
+
+#title_image {
+	width: 200px;
+}
+
+h3 {
+	display: inline;
+	margin: 0px;
+}
+
+/*ナビゲーションバーの設定*/
+
+.header_nav {
+	margin-top: 11.335px;
+	list-style-type: none;
+	display: inline;
+	float: right;
+}
+
+.header_list {
+	line-height: 70px;
+	padding: 0 25px;
+	display: block;
+	float: left;
+	font-size: 30px;
+	background-color: #ade800;
+	transition-property: background-color;
+	transition-duration: 500ms;
+	transition-delay: 0s;
+}
+
+/*リンクの上にカーソルが乗ったとき*/
+
+.header_list:hover {
+	background-color: #98cc00;
+}
+
+.header_link {
+	text-decoration: none;
+	color: black;
+}
