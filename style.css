@@ -9,42 +9,44 @@ body {
 /*ヘッダーの設定*/
 
 header {
-	padding: 10px 0;
+	padding: 5px 0;
 	padding-left: 30px;
 	background-color: #ade800;
 }
 
 /*タイトル画像の設定*/
 
-.title {
-	text-align: center;
-	width: 200px;
+#title {
+	text-align: left;
+	width: max-content;
 }
 
 #title_image {
-	width: 200px;
+	width: 130px;
 }
 
-h3 {
-	display: inline;
-	margin: 0px;
+strong {
+	display: inline-block;
+	margin: 11.39px 0;
+	margin-left: 10px;
+	vertical-align: top;
 }
 
 /*ナビゲーションバーの設定*/
 
 .header_nav {
-	margin-top: 11.335px;
+	margin-top: 2px;
 	list-style-type: none;
 	display: inline;
 	float: right;
 }
 
 .header_list {
-	line-height: 70px;
+	line-height: 38px;
 	padding: 0 25px;
 	display: block;
 	float: left;
-	font-size: 30px;
+	font-size: 25px;
 	background-color: #ade800;
 	transition-property: background-color;
 	transition-duration: 500ms;
