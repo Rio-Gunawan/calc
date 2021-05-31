@@ -9,7 +9,6 @@ body {
 /*ヘッダーの設定*/
 
 header {
-	padding: 5px 0;
 	padding-left: 30px;
 	background-color: #ade800;
 }
@@ -19,6 +18,7 @@ header {
 #title {
 	text-align: left;
 	width: max-content;
+	padding: 5px 0;
 }
 
 #title_image {
@@ -35,14 +35,14 @@ strong {
 /*ナビゲーションバーの設定*/
 
 .header_nav {
-	margin-top: 2px;
 	list-style-type: none;
 	display: inline;
 	float: right;
+	margin: 0;
 }
 
 .header_list {
-	line-height: 38px;
+	line-height: 56.17px;
 	padding: 0 25px;
 	display: block;
 	float: left;
