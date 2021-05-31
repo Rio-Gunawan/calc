@@ -17,8 +17,9 @@ header {
 
 #title {
 	text-align: left;
-	width: max-content;
-	padding: 5px 0;
+	height: 38.75px;
+	padding-top: 5px;
+	padding-bottom: 6px;
 }
 
 #title_image {
@@ -27,7 +28,7 @@ header {
 
 strong {
 	display: inline-block;
-	margin: 11.39px 0;
+	margin-top: 9px;
 	margin-left: 10px;
 	vertical-align: top;
 }
@@ -42,7 +43,7 @@ strong {
 }
 
 .header_list {
-	line-height: 56.17px;
+	line-height: 49.75px;
 	padding: 0 25px;
 	display: block;
 	float: left;
