@@ -26,7 +26,7 @@ header {
 	width: 130px;
 }
 
-strong {
+.header_strong {
 	display: inline-block;
 	margin-top: 10px;
 	margin-left: 10px;
@@ -63,4 +63,54 @@ strong {
 .header_link {
 	text-decoration: none;
 	color: black;
+}
+
+/*見出し*/
+
+h1 {
+	margin: 10px 0;
+	font-size: 45px;
+	text-align: center;
+}
+
+.center_p {
+	margin: 5px 0;
+	text-align: center;
+}
+
+/*フッター*/
+
+footer {
+	background-color: #2b3a61;
+	padding: 30px;
+	line-height: 25px;
+	color: white;
+	margin-top: 50px;
+}
+
+.footer_1 {
+	margin-bottom: 0;
+	text-align: left;
+}
+
+.footer_span {
+	font-size: 30px;
+}
+
+.footer_a {
+	display: inline-block;
+	margin-left: 30px;
+	color: white;
+}
+
+.footer_p {
+	color: #80a4ff;
+	margin-top: 0;
+	text-align: right;
+	margin-left: 10px;
+}
+
+.margin-left_div {
+	margin-left: 30px;
+	display: inline-block;
 }
