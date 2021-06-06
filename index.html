@@ -25,13 +25,37 @@
 			<strong class="header_strong">分数などを扱える電卓</strong>
 		</div>
 	</header>
+	<noscript>このサイトではJavaScriptを利用しております。</noscript>
 	<h1>さあ、高機能な電卓を使ってみよう。</h1>
 	<p class="center_p">ボタンを押すと計算できます。いろいろな計算をしてみましょう。</p>
-	<main>
-
+	<main id="main">
+		<div id="answer"><div id="cursor"></div></div>
+		<div class="settings">
+			<h2>設定</h2>
+			<input type="checkbox" name="checkbox1" id="on1">
+			<label for="on1">テスト</label>
+		</div>
+		<div id="buttons">
+			<button onclick="clickNum(1)" class="blueButton">1</button>
+			<button onclick="clickNum(2)" class="blueButton">2</button>
+			<button onclick="clickNum(3)" class="blueButton">3</button>
+			<button onclick="calcMode('+')" class="greenButton">+</button>
+			<button onclick="clearText()" class="pinkButton">AC</button><br>
+			<button onclick="clickNum(4)" class="blueButton">4</button>
+			<button onclick="clickNum(5)" class="blueButton">5</button>
+			<button onclick="clickNum(6)" class="blueButton">6</button>
+			<button onclick="calcMode('-')" class="greenButton">-</button><br>
+			<button onclick="clickNum(7)" class="blueButton">7</button>
+			<button onclick="clickNum(8)" class="blueButton">8</button>
+			<button onclick="clickNum(9)" class="blueButton">9</button>
+			<button onclick="calcMode('*')" class="greenButton">&times;</button><br>
+			<button onclick="clickNum(0)" class="blueButton">0</button>
+			<button onclick="clickNum('.')" class="blueButton">.</button>
+			<button onclick="clickNum(3.14)" class="blueButton">π</button>
+			<button onclick="calcMode('/')" class="greenButton">&divide;</button>
+			<button onclick="showAnswer()" class="pinkButton">=</button><br>
+		</div>
 	</main>
-
-
 	<footer>
 		<p class="footer_1">
 			<span class="footer_span">Web電卓</span>
@@ -40,7 +64,7 @@
 			<a href="#" class="footer_a">お問い合わせ</a>
 		</p>
 		<p class="footer_p">
-			Version: 0.0
+			Version: 0.0&alpha; (Alpha version)
 			<span class="margin-left_div">最終更新日: 2021/6/2</span>
 			<span class="margin-left_div copy">&copy; Copyright 2021 rio</span>
 		</p>
