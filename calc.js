@@ -12,7 +12,6 @@ $(function () {
 	setInterval(function () {
 		$('#cursor').css('visibility',
 			$('#cursor').css('visibility') == 'hidden' ? 'visible' : 'hidden');
-			console.log($output.text());
 	}, cursorTiming);
 });
 
@@ -63,7 +62,6 @@ function showAnswer() {
 		answer[answerNum] = parseFloat(answer[answerNum]);
 		floatBool = false;
 	}
-	console.log(answer[0]);
 	let localAnswer = answer.shift();
 	let forNum = 0;
 	answer.forEach(num => {
