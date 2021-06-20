@@ -3,20 +3,42 @@ let answerNum = 0;
 let inputStrings = "";
 let buttonHtml = "";
 let mode = [];
+let floatBool = false;
 $(function () {
 	const $output = $('#answer');
+	$output.prepend('<div id="cursor"></div>');
 	$output.prepend(0);
 	const cursorTiming = 500;
 	setInterval(function () {
 		$('#cursor').css('visibility',
 			$('#cursor').css('visibility') == 'hidden' ? 'visible' : 'hidden');
+			console.log($output.text());
 	}, cursorTiming);
 });
 
 function clickNum(num) {
-	answer[answerNum] = answer[answerNum] * 10 + num
-	inputStrings += String(num);
-	showInputStrings();
+	if (num == '.') {
+		let inputStringVersion = String(answer[answerNum]);
+		if (answer[answerNum] == 0) {
+			inputStringVersion = '0.';
+		} else {
+			inputStringVersion += '.';
+		}
+		floatBool = true;
+		inputStrings += String(num);
+		answer[answerNum] = inputStringVersion;
+		showInputStrings();
+	} else {
+		if (floatBool) {
+			answer[answerNum] += String(num);
+			inputStrings += String(num);
+			showInputStrings();
+		} else {
+			answer[answerNum] = answer[answerNum] * 10 + num;
+			inputStrings += String(num);
+			showInputStrings();
+		}
+	}
 }
 
 function showInputStrings() {
@@ -37,8 +59,12 @@ function clearText() {
 }
 
 function showAnswer() {
+	if (floatBool) {
+		answer[answerNum] = parseFloat(answer[answerNum]);
+		floatBool = false;
+	}
+	console.log(answer[0]);
 	let localAnswer = answer.shift();
-	console.log(answer)
 	let forNum = 0;
 	answer.forEach(num => {
 		if (mode[forNum] == '+') {
@@ -63,6 +89,10 @@ function reset() {
 }
 
 function calcMode(modeLocal) {
+	if (floatBool) {
+		answer[answerNum] = parseFloat(answer[answerNum]);
+		floatBool = false;
+	}
 	mode[answerNum] = modeLocal;
 	answerNum++;
 	answer[answerNum] = 0;

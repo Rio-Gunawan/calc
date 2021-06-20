@@ -74,7 +74,19 @@ h1 {
 }
 
 h2 {
-	margin: 0;
+	margin: 20px;
+	background-color: #eee;
+	font-size: 30px;
+	padding: 10px 30px;
+	margin-left: 0px;
+	border-left: solid 20px #ade800;
+}
+
+h3 {
+	font-size: 20px;
+	border-left: solid 20px #ade800;
+	margin: 20px;
+	padding: 5px 30px;
 }
 
 .center_p {
@@ -93,6 +105,14 @@ main {
 	width: 20%;
 	height: 100px;
 	padding: 0 1%;
+}
+
+#setting_h2 {
+	margin: 0;
+	background-color: #fff;
+	font-size: 25px;
+	padding: 0;
+	border: none;
 }
 
 #buttons {
@@ -177,6 +197,21 @@ button {
 	background-color: #76ba1e;
 }
 
+/*説明欄*/
+
+section {
+	margin-bottom: 20px;
+	padding: 50px;
+}
+
+section p {
+	margin-left: 10px;
+}
+
+h3 p {
+	margin-left: 30px;
+}
+
 /*フッター*/
 
 footer {
@@ -184,11 +219,11 @@ footer {
 	padding: 30px;
 	line-height: 25px;
 	color: white;
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 .footer_1 {
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	text-align: left;
 }
 
@@ -212,4 +247,13 @@ footer {
 .margin-left_div {
 	margin-left: 30px;
 	display: inline-block;
+}
+
+.footer_3 {
+	color: #83b2de;
+	text-align: left;
+}
+
+.footer_3 a {
+	color: #3cd5ff;
 }
