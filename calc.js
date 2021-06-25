@@ -20,6 +20,7 @@ function clickNum(num) {
 		let inputStringVersion = String(answer[answerNum]);
 		if (answer[answerNum] == 0) {
 			inputStringVersion = '0.';
+			num = '0.'
 		} else {
 			inputStringVersion += '.';
 		}
