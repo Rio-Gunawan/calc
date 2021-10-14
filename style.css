@@ -1,7 +1,12 @@
 @charset "UTF-8";
 /*全体の設定*/
 
+html {
+	width: 100%;
+}
+
 body {
+	width: 100%;
 	margin: 0;
 	font-family: sans-serif;
 }
@@ -10,6 +15,7 @@ body {
 
 header {
 	padding-left: 30px;
+	height: 50.75px;
 	background-color: #ade800;
 }
 
@@ -24,6 +30,11 @@ header {
 
 #title_image {
 	width: 130px;
+}
+
+#title_icon {
+	display: none;
+	width: 30px;
 }
 
 .header_strong {

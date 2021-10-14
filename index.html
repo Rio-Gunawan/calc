@@ -2,96 +2,109 @@
 <html lang="ja">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Web電卓</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
-	<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
-	<script src="jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web電卓</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-	<header>
-		<nav class="header_nav">
-			<ul class="header_nav">
-				<li class="header_list"><a href="#howUse" class="header_link">使い方</a></li>
-				<li class="header_list"><a href="#5w1h" class="header_link">お問い合わせ</a></li>
-			</ul>
-		</nav>
-		<div id="title">
-			<img src="images/title.png" id="title_image" alt="Web電卓 タイトル画像">
-			<strong class="header_strong">分数などを扱える電卓</strong>
-		</div>
-	</header>
-	<noscript id="alert">このサイトではJavaScriptを利用しております。</noscript>
-	<h1>さあ、高機能な電卓を使ってみよう。</h1>
-	<p class="center_p">ボタンを押すと計算できます。いろいろな計算をしてみましょう。</p>
-	<main id="main">
-		<div id="answer">
-			<noscript>JavaScriptを有効にしてください。</noscript>
-		</div>
-		<div class="settings">
-			<h2 id="setting_h2">設定</h2>
-			<input type="checkbox" name="checkbox1" id="on1">
-			<label for="on1">テスト</label>
-		</div>
-		<div id="buttons">
-			<button onclick="clickNum(1)" class="blueButton">1</button>
-			<button onclick="clickNum(2)" class="blueButton">2</button>
-			<button onclick="clickNum(3)" class="blueButton">3</button>
-			<button onclick="calcMode('+')" class="greenButton">+</button>
-			<button onclick="clearText()" class="pinkButton">AC</button><br>
-			<button onclick="clickNum(4)" class="blueButton">4</button>
-			<button onclick="clickNum(5)" class="blueButton">5</button>
-			<button onclick="clickNum(6)" class="blueButton">6</button>
-			<button onclick="calcMode('-')" class="greenButton">-</button><br>
-			<button onclick="clickNum(7)" class="blueButton">7</button>
-			<button onclick="clickNum(8)" class="blueButton">8</button>
-			<button onclick="clickNum(9)" class="blueButton">9</button>
-			<button onclick="calcMode('*')" class="greenButton">&times;</button><br>
-			<button onclick="clickNum(0)" class="blueButton">0</button>
-			<button onclick="clickNum('.')" class="blueButton">.</button>
-			<button onclick="clickNum(3.14)" class="blueButton">&pi;</button>
-			<button onclick="calcMode('/')" class="greenButton">&divide;</button>
-			<button onclick="showAnswer()" class="pinkButton">=</button><br>
-		</div>
-	</main>
-	<section id="howUse">
-		<h2>使い方</h2>
-	</section>
-	<section id="5w1h">
-		<h2>お問い合わせ</h2>
-		<p>問い合わせる前に...</p>
-		<h3>よくありそうな質問</h3>
-		<p>それでもわからない場合は</p>
-		<iframe
-		src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true"
-		width="100%" height="980px" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-	</section>
-	<footer>
-		<p class="footer_1">
-			<span class="footer_span">Web電卓</span>
-			<a href="#" class="footer_a">トップ</a>
-			<a href="#howUse" class="footer_a">使い方</a>
-			<a href="#5w1h" class="footer_a">お問い合わせ</a>
-			<a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
-				rel="noopener noreferrer">Web電卓のソースコード</a>
-		</p>
-		<p class="footer_p">
-			Version: 0.2&alpha; (Alpha version)
-			<span class="margin-left_div">最終更新日: 2021/6/25</span>
-			<span class="margin-left_div copy">&copy; Copyright 2021 rio</span>
-		</p>
-		<p class="footer_3">
-			このサイトは、<a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github
-				pages</a>を利用して作成しています。
-			Githubが作成、もしくは承認されたWebサイトではありません。
-		</p>
-	</footer>
-	<script src="main.js"></script>
-	<script src="calc.js"></script>
+    <header>
+        <nav class="header_nav" id="header_nav">
+            <ul class="header_nav" id="header_list">
+                <li class="header_list"><a href="#howUse" class="header_link">使い方</a></li>
+                <li class="header_list"><a href="#5w1h" class="header_link">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <img src="images/favicon.png" id="title_icon" alt="Web電卓 アイコン">
+        <div id="title">
+            <img src="images/title.png" id="title_image" alt="Web電卓 タイトル画像">
+            <strong class="header_strong">分数などを扱える電卓</strong>
+        <!-- </div>
+        スマホ用のハンバーガーメニュー
+        <div id="hamburger">
+
+            1番上の線 
+            <span class="inner_line" id="line1"></span>
+
+            <真ん中の線
+            <span class="inner_line" id="line2"></span>
+
+            1番下の線
+            <span class="inner_line" id="line3"></span>
+        </div> -->
+    </header>
+    <noscript id="alert">このサイトではJavaScriptを利用しております。</noscript>
+    <h1>さあ、高機能な電卓を使ってみよう。</h1>
+    <p class="center_p">ボタンを押すと計算できます。いろいろな計算をしてみましょう。</p>
+    <main id="main">
+        <div id="answer">
+            <noscript>JavaScriptを有効にしてください。</noscript>
+        </div>
+        <div class="settings">
+            <h2 id="setting_h2">設定</h2>
+            <input type="checkbox" name="checkbox1" id="on1">
+            <label for="on1">テスト</label>
+        </div>
+        <div id="buttons">
+            <button onclick="clickNum(1)" class="blueButton">1</button>
+            <button onclick="clickNum(2)" class="blueButton">2</button>
+            <button onclick="clickNum(3)" class="blueButton">3</button>
+            <button onclick="calcMode('+')" class="greenButton">+</button>
+            <button onclick="clearText()" class="pinkButton">AC</button><br>
+            <button onclick="clickNum(4)" class="blueButton">4</button>
+            <button onclick="clickNum(5)" class="blueButton">5</button>
+            <button onclick="clickNum(6)" class="blueButton">6</button>
+            <button onclick="calcMode('-')" class="greenButton">-</button><br>
+            <button onclick="clickNum(7)" class="blueButton">7</button>
+            <button onclick="clickNum(8)" class="blueButton">8</button>
+            <button onclick="clickNum(9)" class="blueButton">9</button>
+            <button onclick="calcMode('*')" class="greenButton">&times;</button><br>
+            <button onclick="clickNum(0)" class="blueButton">0</button>
+            <button onclick="clickNum('.')" class="blueButton">.</button>
+            <button onclick="clickNum(3.14)" class="blueButton">&pi;</button>
+            <button onclick="calcMode('/')" class="greenButton">&divide;</button>
+            <button onclick="showAnswer()" class="pinkButton">=</button><br>
+        </div>
+    </main>
+    <section id="howUse">
+        <h2>使い方</h2>
+    </section>
+    <section id="5w1h">
+        <h2>お問い合わせ</h2>
+        <p>問い合わせる前に...</p>
+        <h3>よくありそうな質問</h3>
+        <p>それでもわからない場合は</p>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true"
+            width="100%" height="980px" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    </section>
+    <footer>
+        <p class="footer_1">
+            <span class="footer_span">Web電卓</span>
+            <a href="#" class="footer_a">トップ</a>
+            <a href="#howUse" class="footer_a">使い方</a>
+            <a href="#5w1h" class="footer_a">お問い合わせ</a>
+            <a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
+                rel="noopener noreferrer">Web電卓のソースコード</a>
+        </p>
+        <p class="footer_p">
+            Version: 0.2&alpha; (Alpha version)
+            <span class="margin-left_div">最終更新日: 2021/10/13</span>
+            <span class="margin-left_div copy">&copy; Copyright 2021 rio</span>
+        </p>
+        <p class="footer_3">
+            このサイトは、<a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github
+                pages</a>を利用して作成しています。
+            Githubが作成、もしくは承認されたWebサイトではありません。
+        </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="calc.js"></script>
 </body>
 
 </html>
