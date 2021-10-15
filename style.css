@@ -2,271 +2,285 @@
 /*全体の設定*/
 
 html {
-	width: 100%;
+    width: 100%;
 }
 
 body {
-	width: 100%;
-	margin: 0;
-	font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    margin: 0;
+    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
 }
 
 /*ヘッダーの設定*/
 
 header {
-	padding-left: 30px;
-	height: 50.75px;
-	background-color: #ade800;
+    padding-left: 30px;
+    height: 50.75px;
+    background-color: #ade800;
 }
 
 /*タイトル画像の設定*/
 
 #title {
-	text-align: left;
-	height: 38.75px;
-	padding-top: 5px;
-	padding-bottom: 7px;
+    text-align: left;
+    height: 38.75px;
+    padding-top: 5px;
+    padding-bottom: 7px;
 }
 
 #title_image {
-	width: 130px;
+    width: 130px;
 }
 
 #title_icon {
-	display: none;
-	width: 30px;
+    display: none;
+    width: 30px;
 }
 
 .header_strong {
-	display: inline-block;
-	margin-top: 10px;
-	margin-left: 10px;
-	vertical-align: top;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
 }
 
 /*ナビゲーションバーの設定*/
 
 .header_nav {
-	list-style-type: none;
-	display: inline;
-	float: right;
-	margin: 0;
+    list-style-type: none;
+    display: inline;
+    float: right;
+    margin: 0;
 }
 
 .header_list {
-	line-height: 51px;
-	padding: 0 25px;
-	display: block;
-	float: left;
-	font-size: 25px;
-	background-color: #ade800;
-	transition-property: background-color;
-	transition-duration: 500ms;
-	transition-delay: 0s;
+    line-height: 51px;
+    padding: 0 25px;
+    display: block;
+    float: left;
+    font-size: 25px;
+    background-color: #ade800;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-delay: 0s;
 }
 
 /*リンクの上にカーソルが乗ったとき*/
 
 .header_list:hover {
-	background-color: #98cc00;
+    background-color: #98cc00;
 }
 
 .header_link {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
+}
+
+/*javascriptが無効のとき*/
+
+#alert {
+    display: block;
+    width: 550px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #ff831d;
+    text-align: center;
 }
 
 /*見出し*/
 
 h1 {
-	margin: 10px 0;
-	font-size: 45px;
-	text-align: center;
+    margin: 10px 0;
+    font-size: 45px;
+    text-align: center;
 }
 
 h2 {
-	margin: 20px;
-	background-color: #eee;
-	font-size: 30px;
-	padding: 10px 30px;
-	margin-left: 0px;
-	border-left: solid 20px #ade800;
+    margin: 20px;
+    background-color: #eee;
+    font-size: 30px;
+    padding: 10px 30px;
+    margin-left: 0px;
+    border-left: solid 20px #ade800;
 }
 
 h3 {
-	font-size: 20px;
-	border-left: solid 20px #ade800;
-	margin: 20px;
-	padding: 5px 30px;
+    font-size: 20px;
+    border-left: solid 20px #ade800;
+    margin: 20px;
+    padding: 5px 30px;
 }
 
 .center_p {
-	margin: 5px 0;
-	text-align: center;
+    margin: 5px 0;
+    text-align: center;
 }
 
 /*電卓*/
 
 main {
-	margin: 30px 0;
+    margin: 30px 0;
 }
 
 .settings {
-	display: inline-block;
-	width: 20%;
-	height: 100px;
-	padding: 0 1%;
+    display: inline-block;
+    width: 20%;
+    height: 100px;
+    padding: 0 1%;
 }
 
 #setting_h2 {
-	margin: 0;
-	background-color: #fff;
-	font-size: 25px;
-	padding: 0;
-	border: none;
+    margin: 0;
+    background-color: #fff;
+    font-size: 25px;
+    padding: 0;
+    border: none;
 }
 
 #buttons {
-	display: inline-block;
-	width: 80%;
-	position: relative;
-	top: -100px;
-	left: 20%;
+    display: inline-block;
+    width: 80%;
+    position: relative;
+    top: -100px;
+    left: 20%;
 }
 
 /*答えのところ*/
 
 #answer {
-	padding: 20px;
-	max-width: 80%;
-	height: 40px;
-	overflow: auto;
-	background-color: #ffe935;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	border-radius: 20px;
-	text-align: right;
-	font-size: 26px;
+    padding: 20px;
+    max-width: 80%;
+    height: 40px;
+    overflow: auto;
+    background-color: #ffe935;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    text-align: right;
+    font-size: 26px;
 }
 
 #cursor {
-	display: inline-block;
-	background-color: #000;
-	width: 2px;
-	height: 30px;
-	margin-left: 5px;
-	position: absolute;
-	top: 215px;
+    display: inline-block;
+    background-color: #000;
+    width: 2px;
+    height: 30px;
+    margin-left: 5px;
+    position: absolute;
+    top: 211px;
 }
 
 /*ボタン*/
 
 button {
-	width: 12.5%;
-	height: 50px;
-	border: none;
-	border-radius: 10px;
-	font-size: 20px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	transition-property: background-color;
-	transition-duration: 500ms;
-	transition-delay: 0s;
+    width: 12.5%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-delay: 0s;
+    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
 }
 
 .blueButton {
-	background-color: #3cd5ff;
+    background-color: #3cd5ff;
 }
 
 .pinkButton {
-	background-color: #ffadd2;
+    background-color: #ffadd2;
 }
 
 .greenButton {
-	background-color: #96e034;
+    background-color: #96e034;
 }
 
 .blueButton:hover {
-	background-color: #3cbfff;
+    background-color: #3cbfff;
 }
 
 .pinkButton:hover {
-	background-color: #ff8cc0;
+    background-color: #ff8cc0;
 }
 
 .greenButton:hover {
-	background-color: #8cd62b;
+    background-color: #8cd62b;
 }
 
 .blueButton:active {
-	background-color: #3c8ff0;
+    background-color: #3c8ff0;
 }
 
 .pinkButton:active {
-	background-color: #ff638a;
+    background-color: #ff638a;
 }
 
 .greenButton:active {
-	background-color: #76ba1e;
+    background-color: #76ba1e;
 }
 
 /*説明欄*/
 
 section {
-	margin-bottom: 20px;
-	padding: 50px;
+    margin-bottom: 20px;
+    padding: 50px;
 }
 
 section p {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 h3 p {
-	margin-left: 30px;
+    margin-left: 30px;
 }
 
 /*フッター*/
 
 footer {
-	background-color: #2b3a61;
-	padding: 30px;
-	line-height: 25px;
-	color: white;
-	margin-top: 30px;
+    background-color: #2b3a61;
+    padding: 30px;
+    line-height: 25px;
+    color: white;
+    margin-top: 30px;
 }
 
 .footer_1 {
-	margin-bottom: 10px;
-	text-align: left;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .footer_span {
-	font-size: 30px;
+    font-size: 30px;
 }
 
 .footer_a {
-	display: inline-block;
-	margin-left: 30px;
-	color: white;
+    display: inline-block;
+    margin-left: 30px;
+    color: white;
 }
 
 .footer_p {
-	color: #afc4f8;
-	margin-top: 0;
-	text-align: right;
-	margin-left: 10px;
+    color: #afc4f8;
+    margin-top: 0;
+    text-align: right;
+    margin-left: 10px;
 }
 
 .margin-left_div {
-	margin-left: 30px;
-	display: inline-block;
+    margin-left: 30px;
+    display: inline-block;
 }
 
 .footer_3 {
-	color: #83b2de;
-	text-align: left;
+    color: #83b2de;
+    text-align: left;
 }
 
 .footer_3 a {
-	color: #3cd5ff;
+    color: #3cd5ff;
 }
