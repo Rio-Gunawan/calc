@@ -15,3 +15,15 @@ $(function () {
         return false;
     });
 });
+
+$(".openBtn").click(function () {//ボタンがクリックされたら
+    $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#header_nav").toggleClass('panelActive');//ナビゲーションにpanelActiveクラスを付与
+    $("#title").toggleClass('titleActive');//これもtitleActiveクラスを付与
+});
+
+$("#header_nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openBtn").removeClass('active');//ボタンの activeクラスを除去し
+    $("#header_nav").removeClass('panelActive');//ナビゲーションのpanelActiveクラスも除去
+    $("#title").removeClass('titleActive');//これもtitleActiveクラスを除去
+});
