@@ -207,6 +207,10 @@ header {
         font-size: 0.6rem;
         text-transform: uppercase;
     }
+    /*activeクラスが付与されているとき、ボタンを動かさない.*/
+    .openBtn.active {
+        position: fixed;
+    }
     /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
     .openBtn.active span:nth-of-type(1) {
         top: 10px;
