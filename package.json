@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Rio-Gunawan/calc-web#readme",
   "devDependencies": {
     "eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.1"
   }
 }
