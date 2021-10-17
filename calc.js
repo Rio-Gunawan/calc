@@ -1,5 +1,3 @@
-const { default: BigNumber } = require("bignumber.js");
-
 let answer = [0];
 let answerNum = 0;
 let inputStrings = "";
