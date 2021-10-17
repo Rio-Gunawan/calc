@@ -33,6 +33,7 @@
             <img src="images/title.png" id="title_image" alt="Web電卓 タイトル画像">
             <strong class="header_strong">分数などを扱える電卓</strong>
     </header>
+    <div id="margin_div"></div>
     <noscript id="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
         ブラウザによって設定方法が異なります。</noscript>
@@ -44,8 +45,7 @@
         </div>
         <div class="settings">
             <h2 id="setting_h2">設定</h2>
-            <input type="checkbox" name="checkbox1" id="on1">
-            <label for="on1">テスト</label>
+            <label for="on1" class="on_off"><input type="checkbox" name="checkbox1" id="on1">テスト</label>
         </div>
         <div id="buttons">
             <button onclick="clickNum(1)" class="blueButton">1</button>
@@ -78,7 +78,7 @@
         <p>それでもわからない場合は</p>
         <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true"
-            width="100%" height="980px" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            width="100%" height=850px" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
     </section>
     <footer>
         <p class="footer_1">
@@ -90,8 +90,8 @@
                 rel="noopener noreferrer">Web電卓のソースコード</a>
         </p>
         <p class="footer_p">
-            Version: 0.4&alpha; (Alpha version)
-            <span class="margin-left_div">最終更新日: 2021/10/16 (土)</span>
+            Version: 0.5&alpha; (Alpha version)
+            <span class="margin-left_div">最終更新日: 2021/10/17 (日)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">

@@ -1,12 +1,7 @@
 @charset "UTF-8";
 /*全体の設定*/
 
-html {
-    width: 100%;
-}
-
 body {
-    width: 100%;
     margin: 0;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
 }
@@ -14,14 +9,18 @@ body {
 /*ヘッダーの設定*/
 
 header {
-    padding-left: 30px;
+    position: fixed;
+    width: 100%;
     height: 50.75px;
     background-color: #ade800;
+    z-index: 99;
+    top: 0px;
 }
 
 /*タイトル画像の設定*/
 
 #title {
+    margin-left: 30px;
     text-align: left;
     height: 38.75px;
     padding-top: 5px;
@@ -91,7 +90,7 @@ header {
         width: 50%;
         height: 100vh;
         /*ナビの高さ*/
-        background: #ade800;
+        background: #70df27;
         /*動き*/
         transition: all 0.6s;
     }
@@ -118,6 +117,7 @@ header {
         padding: 0;
         width: 100%;
         margin-top: 150px;
+        border-top: solid 2px #22c414;
     }
     /*リストのレイアウト設定*/
     .header_list {
@@ -125,12 +125,16 @@ header {
         line-height: 150%;
         display: block;
         font-size: 1.5em;
-        background-color: #ade800;
+        background-color: #70df27;
         transition-property: background-color;
         transition-duration: 500ms;
         transition-delay: 0s;
         list-style: none;
         text-align: center;
+        border-bottom: solid 2px #22c414;
+    }
+    .header_list:hover {
+        background-color: #48b117;
     }
     .header_link {
         color: #333;
@@ -143,6 +147,7 @@ header {
         display: inline-block;
         margin-top: 4px;
         width: 30px;
+        margin-left: 30px;
     }
     #title {
         text-align: center;
@@ -153,6 +158,7 @@ header {
         right: -120%;
         width: 50%;
         margin-top: 50px;
+        margin-left: 0;
         /*動き*/
         transition: all 0.6s;
     }
@@ -168,8 +174,8 @@ header {
         position: absolute;
         /*ボタン内側の基点となるためrelativeを指定*/
         z-index: 9999;
-        background: #26cfd4;
-        right: 10px;
+        background: #2696e0;
+        right: 20px;
         cursor: pointer;
         width: 40px;
         height: 40px;
@@ -236,6 +242,12 @@ header {
     }
 }
 
+/*重ならないように*/
+
+#margin_div {
+    height: 60px;
+}
+
 /*javascriptが無効のとき*/
 
 #alert {
@@ -297,6 +309,15 @@ main {
     font-size: 25px;
     padding: 0;
     border: none;
+}
+
+.on_off {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 15px;
+    cursor: pointer;
 }
 
 #buttons {
