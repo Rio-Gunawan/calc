@@ -4,6 +4,7 @@
 body {
     margin: 0;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
+    font-weight: 400;
 }
 
 /*ヘッダーの設定*/
@@ -266,6 +267,7 @@ header {
 h1 {
     margin: 10px 0;
     font-size: 45px;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -275,6 +277,7 @@ h2 {
     font-size: 30px;
     padding: 10px 30px;
     margin-left: 0px;
+    font-weight: 500;
     border-left: solid 20px #ade800;
 }
 
@@ -282,6 +285,7 @@ h3 {
     font-size: 20px;
     border-left: solid 20px #ade800;
     margin: 20px;
+    font-weight: 500;
     padding: 5px 30px;
 }
 
