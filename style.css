@@ -39,6 +39,7 @@ header {
 
 .header_strong {
     display: inline-block;
+    font-weight: 500;
     margin-top: 8px;
     margin-left: 10px;
     vertical-align: top;
