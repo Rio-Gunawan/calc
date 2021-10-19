@@ -1,4 +1,4 @@
-let answer = [0];
+let answer = [];
 let answerNum = 0;
 let inputStrings = "";
 let buttonHtml = "";
@@ -19,7 +19,7 @@ $(function () {
 function clickNum(num) {
     if (num == '.') {
         let inputStringVersion = String(answer[answerNum]);
-        if (answer[answerNum] == 0) {
+        if (inputStringVersion == "undefined") {
             inputStringVersion = '0.';
             num = '0.';
         } else {
@@ -32,13 +32,15 @@ function clickNum(num) {
     } else {
         if (floatBool) {
             answer[answerNum] += String(num);
-            inputStrings += String(num);
-            showInputStrings();
         } else {
-            answer[answerNum] = answer[answerNum] * 10 + num;
-            inputStrings += String(num);
-            showInputStrings();
+            if (String(answer[answerNum]) == "undefined") {
+                answer[answerNum] = num;
+            } else {
+                answer[answerNum] = answer[answerNum] * 10 + num;
+            }
         }
+        inputStrings += String(num);
+        showInputStrings();
     }
 }
 
@@ -52,9 +54,11 @@ function showInputStrings() {
 
 // eslint-disable-next-line no-unused-vars
 function clearText() {
-    answer = [0];
+    answer = [];
+    mode = [];
     inputStrings = "";
     answerNum = 0;
+    floatBool = false;
     const $output = $('#answer');
     $output.text(0);
     $output.append('<div id="cursor"></div>');
@@ -86,12 +90,6 @@ function showAnswer() {
 }
 
 // eslint-disable-next-line no-unused-vars
-function reset() {
-    answer = [0];
-    inputStrings = "";
-}
-
-// eslint-disable-next-line no-unused-vars
 function calcMode(modeLocal) {
     if (floatBool) {
         answer[answerNum] = parseFloat(answer[answerNum]);
@@ -99,7 +97,7 @@ function calcMode(modeLocal) {
     }
     mode[answerNum] = modeLocal;
     answerNum++;
-    answer[answerNum] = 0;
+    answer[answerNum] = undefined;
     inputStrings += modeLocal;
     showInputStrings();
 }
