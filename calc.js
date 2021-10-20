@@ -60,6 +60,7 @@ function clearText() {
     answerNum = 0;
     floatBool = false;
     const $output = $('#answer');
+    $output.html('');
     $output.text(0);
     $output.append('<div id="cursor"></div>');
 }
@@ -70,9 +71,10 @@ function showAnswer() {
         answer[answerNum] = parseFloat(answer[answerNum]);
         floatBool = false;
     }
-    let localAnswer = answer.shift();
+    let answerCopy = answer.slice(0, answer.length);
+    let localAnswer = answerCopy.shift();
     let forNum = 0;
-    answer.forEach(num => {
+    answerCopy.forEach(num => {
         if (mode[forNum] == '+') {
             localAnswer += num;
         } else if (mode[forNum] == '-') {
