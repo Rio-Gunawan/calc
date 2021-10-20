@@ -87,6 +87,7 @@ function showAnswer() {
         forNum++;
     });
     const $output = $('#answer');
+    $output.html('');
     $output.text(localAnswer);
     $output.append('<div id="cursor"></div>');
 }
