@@ -87,7 +87,11 @@ function showAnswer() {
         forNum++;
     });
     const $output = $('#answer');
-    $output.html('');
+    if (answerCopy.length == 0) {
+        $output.html('0');
+    } else {
+        $output.html('');
+    }
     $output.text(localAnswer);
     $output.append('<div id="cursor"></div>');
 }
