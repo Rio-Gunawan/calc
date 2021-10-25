@@ -365,6 +365,7 @@ button {
     height: 50px;
     border: none;
     border-radius: 10px;
+    padding: 0;
     font-size: 20px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -473,4 +474,25 @@ footer {
 
 .noLivvic {
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+@media screen and (max-width: 720px) {
+    .footer_1 {
+        text-align: center;
+    }
+    .footer_1 a {
+        display: block;
+        margin: 10px 0;
+    }
+    .footer_p>span {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .footer_p {
+        margin-top: 50px;
+    }
+    .footer_3 {
+        margin-top: 50px;
+    }
 }
