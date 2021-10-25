@@ -3,7 +3,8 @@ let answerNum = 0;
 let inputStrings = "";
 let buttonHtml = "";
 let mode = [];
-let floatBool = false;
+let isFloat = false;
+let haveFloat = false;
 $(function () {
     const $output = $('#answer');
     $output.prepend('<div id="cursor"></div>');
@@ -25,12 +26,13 @@ function clickNum(num) {
         } else {
             inputStringVersion += '.';
         }
-        floatBool = true;
+        isFloat = true;
+        haveFloat = true;
         inputStrings += String(num);
         answer[answerNum] = inputStringVersion;
         showInputStrings();
     } else {
-        if (floatBool) {
+        if (isFloat) {
             answer[answerNum] += String(num);
         } else {
             if (String(answer[answerNum]) == "undefined") {
@@ -58,7 +60,8 @@ function clearText() {
     mode = [];
     inputStrings = "";
     answerNum = 0;
-    floatBool = false;
+    isFloat = false;
+    haveFloat = false;
     const $output = $('#answer');
     $output.html('');
     $output.text(0);
@@ -67,25 +70,44 @@ function clearText() {
 
 // eslint-disable-next-line no-unused-vars
 function showAnswer() {
-    if (floatBool) {
-        answer[answerNum] = parseFloat(answer[answerNum]);
-        floatBool = false;
+    if (isFloat) {
+        isFloat = false;
     }
     let answerCopy = answer.slice(0, answer.length);
     let localAnswer = answerCopy.shift();
     let forNum = 0;
-    answerCopy.forEach(num => {
-        if (mode[forNum] == '+') {
-            localAnswer += num;
-        } else if (mode[forNum] == '-') {
-            localAnswer -= num;
-        } else if (mode[forNum] == '*') {
-            localAnswer *= num;
-        } else if (mode[forNum] == '/') {
-            localAnswer /= num;
-        }
-        forNum++;
-    });
+    if (haveFloat) {
+        localAnswer = BigNumber(localAnswer);
+        answerCopy.forEach(num => {
+            const bigNum = BigNumber(num);
+            if (mode[forNum] == '+') {
+                localAnswer = localAnswer.plus(bigNum);
+            } else if (mode[forNum] == '-') {
+                localAnswer = localAnswer.minus(bigNum);
+            } else if (mode[forNum] == '*') {
+                localAnswer = localAnswer.times(bigNum);
+            } else if (mode[forNum] == '/') {
+                localAnswer = localAnswer.div(bigNum);
+            }
+            forNum++;
+        });
+    } else {
+        answerCopy.forEach(num => {
+            if (mode[forNum] == '+') {
+                localAnswer += num;
+            } else if (mode[forNum] == '-') {
+                localAnswer -= num;
+            } else if (mode[forNum] == '*') {
+                localAnswer *= num;
+            } else if (mode[forNum] == '/') {
+                localAnswer /= num;
+            }
+            forNum++;
+        });
+    }
+    if (haveFloat) {
+        localAnswer = localAnswer.toNumber();
+    }
     const $output = $('#answer');
     if (answerCopy.length == 0) {
         $output.html('0');
@@ -98,9 +120,8 @@ function showAnswer() {
 
 // eslint-disable-next-line no-unused-vars
 function calcMode(modeLocal) {
-    if (floatBool) {
-        answer[answerNum] = parseFloat(answer[answerNum]);
-        floatBool = false;
+    if (isFloat) {
+        isFloat = false;
     }
     mode[answerNum] = modeLocal;
     answerNum++;
