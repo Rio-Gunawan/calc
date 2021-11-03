@@ -30,11 +30,14 @@ header {
 
 #title_image {
     width: 130px;
+    image-rendering: -webkit-optimize-contrast;
+    ;
 }
 
 #title_icon {
     display: none;
     width: 30px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .header_strong {
