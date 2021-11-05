@@ -1,6 +1,64 @@
 @charset "UTF-8";
 /*全体の設定*/
 
+/*フォント*/
+
+/*Livvic*/
+
+/* IE */
+
+@font-face {
+    font-family: Livvic;
+    src: url(./fonts/Livvic-Regular.ttf);
+    font-weight: 400;
+}
+
+/* Firefox, Opera, Safari */
+
+@font-face {
+    font-family: Livvic;
+    src: url(./fonts/Livvic-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+
+/*Noto Sans Japanese*/
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Regular.otf) format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Medium.otf) format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(./fonts/NotoSansJP-Bold.otf) format('opentype');
+    font-weight: 700;
+}
+
 body {
     margin: 0;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
