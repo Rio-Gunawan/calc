@@ -248,7 +248,7 @@ header {
     /*ボタン内側*/
     .openBtn span {
         display: inline-block;
-        transition: all .4s;
+        transition: all 0.4s;
         /*アニメーションの設定*/
         position: absolute;
         left: 11px;
