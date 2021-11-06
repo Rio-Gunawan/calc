@@ -43,8 +43,6 @@ $("#header_nav a").click(function () {//ナビゲーションのリンクがク�
 
 document.addEventListener('keydown', (event) => {
     let keyName = event.key;
-    //eslint-disable-next-line no-console
-    console.log(keyName);
     if (isFinite(keyName) && keyName != ' ') {
         // eslint-disable-next-line no-undef
         clickNum(Number(keyName));
