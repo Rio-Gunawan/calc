@@ -5,16 +5,6 @@ let buttonHtml = "";
 let mode = [];
 let isFloat = false;
 let haveFloat = false;
-$(function () {
-    const $output = $('#answer');
-    $output.prepend('<div id="cursor"></div>');
-    $output.prepend(0);
-    const cursorTiming = 500;
-    setInterval(function () {
-        $('#cursor').css('visibility',
-            $('#cursor').css('visibility') == 'hidden' ? 'visible' : 'hidden');
-    }, cursorTiming);
-});
 
 // eslint-disable-next-line no-unused-vars
 function clickNum(num) {

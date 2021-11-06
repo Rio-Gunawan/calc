@@ -11,13 +11,16 @@
         "ecmaVersion": 12
     },
     "globals": {
-        "BigNumber":true
+        "BigNumber": true
     },
     "rules": {
         "no-unused-vars": "warn",
         "indent": [
             "warn",
-            4
+            4,
+            {
+                "SwitchCase": 1
+            }
         ],
         "linebreak-style": [
             "warn",
