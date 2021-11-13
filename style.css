@@ -438,7 +438,6 @@ main {
     z-index: 77;
     cursor: pointer;
     padding: 5px 15px 3px 5px;
-    left: 2%;
     top: -175px;
     display: inline;
 }
@@ -480,7 +479,6 @@ input[type="checkbox"] {
 #buttons {
     display: inline-block;
     width: 90%;
-    margin-left: 3%;
     position: relative;
 }
 
@@ -560,6 +558,41 @@ button {
 
 .greenButton:active {
     background-color: #76ba1e;
+}
+
+@media screen and (max-width: 700px) {
+    .downCalc {
+        left: 5%;
+        width: 95%;
+    }
+    #white {
+        width: 5%;
+    }
+    #setNav {
+        width: 90%;
+        left: -90%
+    }
+    #setNav.setPanelActive {
+        left: 5%;
+    }
+    button {
+        width: 15%;
+    }
+    #buttons {
+        width: 80%;
+    }
+    .humbugger {
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .material-icons-round.md-36 {
+        font-size: 24px;
+    }
+    button {
+        width: 13%;
+    }
 }
 
 /*説明欄*/
