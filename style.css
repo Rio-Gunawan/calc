@@ -74,6 +74,7 @@ header {
     background-color: #ade800;
     z-index: 99;
     top: 0px;
+    z-index: 99;
 }
 
 /*タイトル画像の設定*/
@@ -248,7 +249,7 @@ header {
     /*ボタン内側*/
     .openBtn span {
         display: inline-block;
-        transition: all 0.4s;
+        transition: all 0.6s;
         /*アニメーションの設定*/
         position: absolute;
         left: 11px;
@@ -362,16 +363,106 @@ main {
     margin: 30px 0;
 }
 
+#white {
+    display: inline-block;
+    width: 12%;
+    height: 290px;
+    z-index: 66;
+    background-color: white;
+    position: relative;
+}
+
+#setNav {
+    position: relative;
+    z-index: 9;
+    /*ナビのスタート位置と形状*/
+    left: -75%;
+    top: -290px;
+    width: 75%;
+    height: 250px;
+    /*ナビの高さ*/
+    background: #ddd;
+    /*動き*/
+    transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+
+#setNav.setPanelActive {
+    left: 12%;
+}
+
+/*ナビゲーションの縦スクロール*/
+
+#setNav.setPanelActive #setNav-list {
+    z-index: 9;
+    width: 30%;
+    /*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+
+#setNav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+}
+
+/*リストのレイアウト設定*/
+
+#setNav li {
+    display: block;
+    list-style: none;
+    text-align: center;
+}
+
+#setNav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+
+.humbugger {
+    position: relative;
+    z-index: 77;
+    cursor: pointer;
+    padding: 5px 15px 3px 5px;
+    left: 2%;
+    top: -175px;
+    display: inline;
+}
+
+.material-icons-round.md-36 {
+    font-size: 36px;
+}
+
+.downCalc {
+    width: 88%;
+    position: relative;
+    left: 12%;
+    top: -530px
+}
+
 .settings {
     display: inline-block;
-    width: 20%;
     height: 100px;
     padding: 0 1%;
 }
 
 #setting_h2 {
     margin: 0;
-    background-color: #fff;
+    background-color: #ddd;
     font-size: 25px;
     padding: 0;
     border: none;
@@ -388,10 +479,9 @@ input[type="checkbox"] {
 
 #buttons {
     display: inline-block;
-    width: 80%;
+    width: 90%;
+    margin-left: 3%;
     position: relative;
-    top: -100px;
-    left: 20%;
 }
 
 /*答えのところ*/
@@ -422,7 +512,7 @@ input[type="checkbox"] {
 /*ボタン*/
 
 button {
-    width: 12.5%;
+    width: 14%;
     height: 50px;
     border: none;
     border-radius: 10px;

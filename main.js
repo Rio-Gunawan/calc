@@ -41,6 +41,16 @@ $("#header_nav a").click(function () {//ナビゲーションのリンクがク�
     $("#title").removeClass('titleActive');//これもtitleActiveクラスを除去
 });
 
+$(".humbugger").click(function () {//ボタンがクリックされたら
+    $(this).toggleClass('activeSet');//ボタン自身に activeSetクラスを付与し
+    $("#setNav").toggleClass('setPanelActive');//ナビゲーションにsetPanelActiveクラスを付与
+});
+
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".humbugger").removeClass('activeSet');//ボタンの activeSetクラスを除去し
+    $("#setNav").removeClass('setPanelActive');//ナビゲーションのsetPanelActiveクラスも除去
+});
+
 document.addEventListener('keydown', (event) => {
     let keyName = event.key;
     if (isFinite(keyName) && keyName != ' ') {
