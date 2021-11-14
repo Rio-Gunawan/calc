@@ -365,7 +365,7 @@ main {
 
 #white {
     display: inline-block;
-    width: 12%;
+    width: calc(12% + 56px);
     height: 290px;
     z-index: 66;
     background-color: white;
@@ -376,9 +376,9 @@ main {
     position: relative;
     z-index: 9;
     /*ナビのスタート位置と形状*/
-    left: -75%;
+    left: -58%;
     top: -290px;
-    width: 75%;
+    width: 70%;
     height: 250px;
     /*ナビの高さ*/
     background: #ddd;
@@ -389,7 +389,7 @@ main {
 /*アクティブクラスがついたら位置を0に*/
 
 #setNav.setPanelActive {
-    left: 12%;
+    left: calc(12% + 56px);
 }
 
 /*ナビゲーションの縦スクロール*/
@@ -566,11 +566,11 @@ button {
         width: 95%;
     }
     #white {
-        width: 5%;
+        width: calc(5% + 46px);
     }
     #setNav {
         width: 90%;
-        left: -90%
+        left: -85%
     }
     #setNav.setPanelActive {
         left: 5%;
@@ -592,6 +592,9 @@ button {
     }
     button {
         width: 13%;
+    }
+    #white {
+        width: calc(5% + 34px);
     }
 }
 
