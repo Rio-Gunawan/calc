@@ -169,9 +169,6 @@ header {
         z-index: 999;
         width: 50%;
         height: 100vh;
-        /*表示する高さ*/
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
     }
     /*ナビゲーション*/
     #header_list {
@@ -365,8 +362,8 @@ main {
 
 #white {
     display: inline-block;
-    width: calc(12% + 56px);
-    height: 290px;
+    width: calc(14% + 56px);
+    height: 310px;
     z-index: 66;
     background-color: white;
     position: relative;
@@ -377,11 +374,11 @@ main {
     z-index: 9;
     /*ナビのスタート位置と形状*/
     left: -58%;
-    top: -290px;
+    top: -310px;
     width: 70%;
-    height: 250px;
+    height: 300px;
     /*ナビの高さ*/
-    background: #ddd;
+    background: #eee;
     /*動き*/
     transition: all 0.6s;
 }
@@ -389,7 +386,7 @@ main {
 /*アクティブクラスがついたら位置を0に*/
 
 #setNav.setPanelActive {
-    left: calc(12% + 56px);
+    left: calc(14% + 56px);
 }
 
 /*ナビゲーションの縦スクロール*/
@@ -399,7 +396,6 @@ main {
     width: 30%;
     /*表示する高さ*/
     overflow: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 /*ナビゲーション*/
@@ -412,6 +408,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
+    width: 100%;
 }
 
 /*リストのレイアウト設定*/
@@ -422,15 +419,6 @@ main {
     text-align: center;
 }
 
-#setNav li a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    letter-spacing: 0.1em;
-    font-weight: bold;
-}
-
 /*========= ボタンのためのCSS ===============*/
 
 .humbugger {
@@ -438,7 +426,7 @@ main {
     z-index: 77;
     cursor: pointer;
     padding: 5px 15px 3px 5px;
-    top: -175px;
+    top: -235px;
     display: inline;
 }
 
@@ -447,21 +435,20 @@ main {
 }
 
 .downCalc {
-    width: 88%;
+    width: 86%;
     position: relative;
-    left: 12%;
-    top: -530px
+    left: 14%;
+    top: -600px
 }
 
 .settings {
     display: inline-block;
     height: 100px;
-    padding: 0 1%;
 }
 
 #setting_h2 {
     margin: 0;
-    background-color: #ddd;
+    background-color: #eee;
     font-size: 25px;
     padding: 0;
     border: none;
@@ -510,7 +497,7 @@ input[type="checkbox"] {
 /*ボタン*/
 
 button {
-    width: 14%;
+    width: 20%;
     height: 50px;
     border: none;
     border-radius: 10px;
@@ -560,23 +547,23 @@ button {
     background-color: #76ba1e;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 710px) {
     .downCalc {
-        left: 5%;
-        width: 95%;
+        left: 13%;
+        width: 85%;
     }
     #white {
-        width: calc(5% + 46px);
+        width: calc(13% + 46px);
     }
     #setNav {
-        width: 90%;
-        left: -85%
+        width: 80%;
+        left: -95%
     }
     #setNav.setPanelActive {
-        left: 5%;
+        left: 13%;
     }
     button {
-        width: 15%;
+        width: 18%;
     }
     #buttons {
         width: 80%;
@@ -588,13 +575,17 @@ button {
 
 @media screen and (max-width: 350px) {
     .material-icons-round.md-36 {
-        font-size: 24px;
+        font-size: 30px;
     }
     button {
-        width: 13%;
+        width: 16%;
     }
     #white {
-        width: calc(5% + 34px);
+        width: calc(8% + 34px);
+    }
+    .downCalc {
+        left: 8%;
+        width: 92%;
     }
 }
 

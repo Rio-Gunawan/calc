@@ -81,7 +81,7 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'Backspace':
             // eslint-disable-next-line no-undef
-            clearText();
+            clearText(1);
             break;
         case '.':
             // eslint-disable-next-line no-undef

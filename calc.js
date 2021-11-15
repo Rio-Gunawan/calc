@@ -2,9 +2,11 @@ let answer = [];
 let answerNum = 0;
 let inputStrings = "";
 let buttonHtml = "";
+let inputtedText = "";
 let mode = [];
 let isFloat = false;
 let haveFloat = false;
+let codeNow = 1;
 
 // eslint-disable-next-line no-unused-vars
 function clickNum(num) {
@@ -28,7 +30,11 @@ function clickNum(num) {
             if (String(answer[answerNum]) == "undefined") {
                 answer[answerNum] = num;
             } else {
-                answer[answerNum] = answer[answerNum] * 10 + num;
+                if (codeNow == -1) {
+                    answer[answerNum] = answer[answerNum] * 10 - num;
+                } else {
+                    answer[answerNum] = answer[answerNum] * 10 + num;
+                }
             }
         }
         inputStrings += String(num);
@@ -45,17 +51,31 @@ function showInputStrings() {
 }
 
 // eslint-disable-next-line no-unused-vars
-function clearText() {
-    answer = [];
-    mode = [];
-    inputStrings = "";
-    answerNum = 0;
-    isFloat = false;
-    haveFloat = false;
-    const $output = $('#answer');
-    $output.html('');
-    $output.text(0);
-    $output.append('<div id="cursor"></div>');
+function clearText(howClear) {
+    if (howClear == 1) {
+        answer = [];
+        mode = [];
+        inputStrings = "";
+        inputtedText = "";
+        answerNum = 0;
+        codeNow = 1;
+        isFloat = false;
+        haveFloat = false;
+        const $output = $('#answer');
+        $output.html('');
+        $output.text(0);
+        $output.append('<div id="cursor"></div>');
+    } else {
+        answer[answerNum] = undefined;
+        inputStrings = inputtedText;
+        isFloat = false;
+        const $output = $('#answer');
+        $output.html(inputStrings);
+        if (answerNum == 0) {
+            $output.text(0);
+        }
+        $output.append('<div id="cursor"></div>');
+    }
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -110,12 +130,26 @@ function showAnswer() {
 
 // eslint-disable-next-line no-unused-vars
 function calcMode(modeLocal) {
-    if (isFloat) {
-        isFloat = false;
-    }
+    isFloat = false;
     mode[answerNum] = modeLocal;
     answerNum++;
     answer[answerNum] = undefined;
     inputStrings += modeLocal;
+    inputtedText = inputStrings;
+    showInputStrings();
+}
+
+// eslint-disable-next-line no-unused-vars
+function changeCode() {
+    answer[answerNum] *= -1;
+    inputStrings = inputtedText + answer[answerNum];
+    showInputStrings();
+    codeNow = Math.sign(answer[answerNum]);
+}
+
+//eslint-disable-next-line no-unused-vars
+function divHundred() {
+    answer[answerNum] /= 100;
+    inputStrings = inputtedText + answer[answerNum];
     showInputStrings();
 }

@@ -45,14 +45,16 @@
             <div id="setNav-list">
                 <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
                 <ul>
-                    <li><a href="#">Top</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Contact</a></li>
                     <li>
+                        <div class="functions">
+                            <h2 id="setting_h2">関数類</h2>
+                            <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
+                        </div>
                         <div class="settings">
                             <h2 id="setting_h2">設定</h2>
-                            <label for="on1" class="on_off"><input type="checkbox" name="checkbox1" id="on1">テスト</label>
+                            <label for="on1" class="on_off">
+                                <input type="checkbox" name="checkbox1" id="on1">テスト
+                            </label>
                         </div>
                     </li>
                 </ul>
@@ -61,11 +63,14 @@
         <div class="downCalc">
             <div class="humbugger"><span class="material-icons-round md-36">&#xE8B8;</span></div>
             <div id="buttons">
+                <button onclick="changeCode()" class="greenButton">+/&minus;</button>
+                <button onclick="divHundred()" class="greenButton noLivvic">%</button>
+                <button onclick="clearText(0)" class="pinkButton">C</button>
+                <button onclick="clearText(1)" class="pinkButton">AC</button><br>
                 <button onclick="clickNum(1)" class="blueButton">1</button>
                 <button onclick="clickNum(2)" class="blueButton">2</button>
                 <button onclick="clickNum(3)" class="blueButton">3</button>
-                <button onclick="calcMode('+')" class="greenButton">&plus;</button>
-                <button onclick="clearText()" class="pinkButton">AC</button><br>
+                <button onclick="calcMode('+')" class="greenButton">&plus;</button><br>
                 <button onclick="clickNum(4)" class="blueButton">4</button>
                 <button onclick="clickNum(5)" class="blueButton">5</button>
                 <button onclick="clickNum(6)" class="blueButton">6</button>
@@ -76,9 +81,8 @@
                 <button onclick="calcMode('*')" class="greenButton">&times;</button><br>
                 <button onclick="clickNum(0)" class="blueButton">0</button>
                 <button onclick="clickNum('.')" class="blueButton">.</button>
-                <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
-                <button onclick="calcMode('/')" class="greenButton">&divide;</button>
-                <button onclick="showAnswer()" class="pinkButton">=</button><br>
+                <button onclick="showAnswer()" class="pinkButton">=</button>
+                <button onclick="calcMode('/')" class="greenButton">&divide;</button><br>
             </div>
         </div>
     </main>
@@ -104,8 +108,8 @@
                 rel="noopener noreferrer">Web電卓のソースコード</a>
         </p>
         <p class="footer_p">
-            <span>Version: 0.4.1&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: 2021/11/14 (日)</span>
+            <span>Version: 0.4.3&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: 2021/11/15 (月)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">
