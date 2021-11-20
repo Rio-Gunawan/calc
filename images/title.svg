@@ -7,34 +7,34 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="title.svg"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 210 297"
+   width="210mm"
    height="297mm"
-   width="210mm">
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="title.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:window-maximized="0"
-     inkscape:window-y="25"
-     inkscape:window-x="0"
-     inkscape:window-height="747"
-     inkscape:window-width="1280"
-     showgrid="false"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="mm"
-     inkscape:cy="517.73312"
-     inkscape:cx="106.73087"
-     inkscape:zoom="0.32681245"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
+     id="base"
      pagecolor="#ffffff"
-     id="base" />
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.8509248"
+     inkscape:cx="216.10753"
+     inkscape:cy="246.67145"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="747"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -48,156 +48,194 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
+     inkscape:label="レイヤー 1"
      inkscape:groupmode="layer"
-     inkscape:label="レイヤー 1">
+     id="layer1">
     <g
-       transform="matrix(4.1870169,0,0,4.1870169,-646.31251,-368.67195)"
-       id="g39">
+       id="g39"
+       transform="matrix(4.1870169,0,0,4.1870169,-646.31251,-368.67195)">
       <text
-         xml:space="preserve"
-         style="font-size:10.5833px;line-height:1.25;font-family:Chalkboard;-inkscape-font-specification:Chalkboard;stroke-width:0.264583"
-         x="160.70428"
+         id="text29"
          y="109.84668"
-         id="text29"><tspan
-           sodipodi:role="line"
-           x="160.70428"
-           y="109.84668"
+         x="160.70428"
+         style="font-size:10.5833px;line-height:1.25;font-family:Chalkboard;-inkscape-font-specification:Chalkboard;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           id="tspan54"
            style="stroke-width:0.264583"
-           id="tspan54" /></text>
+           y="109.84668"
+           x="160.70428"
+           sodipodi:role="line" /></text>
       <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58329999999999949px;line-height:1.25;font-family:SetoFont-SP;-inkscape-font-specification:SetoFont-SP;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583;"
-         x="182.7962"
+         id="text33"
          y="110.36037"
-         id="text33"><tspan
-           sodipodi:role="line"
-           id="tspan31"
-           x="182.7962"
+         x="182.7962"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58329999999999949px;line-height:1.25;font-family:SetoFont;-inkscape-font-specification:SetoFont;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583;"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58329999999999949px;font-family:SetoFont;-inkscape-font-specification:SetoFont;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583;"
            y="110.36037"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58329999999999949px;font-family:SetoFont-SP;-inkscape-font-specification:SetoFont-SP;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583;" /></text>
+           x="182.7962"
+           id="tspan31"
+           sodipodi:role="line" /></text>
     </g>
     <text
-       xml:space="preserve"
-       style="font-size:57.9567px;line-height:1.25;font-family:SetoFont-SP;-inkscape-font-specification:'SetoFont-SP, Normal';stroke-width:1.44892"
-       x="40.121212"
+       id="text60"
        y="119.17654"
-       id="text60"><tspan
-         sodipodi:role="line"
-         id="tspan58"
-         x="40.121212"
+       x="40.121212"
+       style="font-size:57.95669999999999789px;line-height:1.25;font-family:SetoFont;-inkscape-font-specification:SetoFont;stroke-width:1.44892;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
+       xml:space="preserve"><tspan
+         style="stroke-width:1.44892;-inkscape-font-specification:SetoFont;font-family:SetoFont;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
          y="119.17654"
-         style="stroke-width:1.44892" /></text>
+         x="40.121212"
+         id="tspan58"
+         sodipodi:role="line" /></text>
     <g
        inkscape:export-ydpi="96.199997"
        inkscape:export-xdpi="96.199997"
-       id="g71">
+       inkscape:export-filename="/Users/rio/g84.png"
+       id="g84">
       <g
-         inkscape:export-ydpi="96.199997"
-         inkscape:export-xdpi="96.199997"
+         transform="matrix(0.33129247,0,0,0.33129247,-12.804348,4.6872045)"
          id="g49"
-         transform="matrix(0.53991975,0,0,0.53991975,-65.310186,14.471035)">
+         inkscape:export-xdpi="96.199997"
+         inkscape:export-ydpi="96.199997">
         <rect
-           style="fill:#60ebf4;fill-opacity:1;stroke:#60ebf4;stroke-width:34.2732;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-           id="rect860"
-           width="61.474636"
-           height="97.838409"
+           y="60.100025"
            x="76.253159"
-           y="60.100025" />
+           height="97.838409"
+           width="61.474636"
+           id="rect860"
+           style="fill:#60ebf4;fill-opacity:1;stroke:#60ebf4;stroke-width:34.2732;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
         <rect
-           y="65.503227"
-           x="73.243309"
-           height="10.540376"
-           width="68.334831"
+           style="fill:#ffccaa;fill-opacity:1;stroke:#ffccaa;stroke-width:11.8605;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
            id="rect12"
-           style="fill:#ffccaa;fill-opacity:1;stroke:#ffccaa;stroke-width:11.8605;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+           width="68.334831"
+           height="10.540376"
+           x="73.243309"
+           y="65.503227" />
         <rect
-           style="fill:#ff4141;fill-opacity:1;stroke:#ff4141;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           y="99.727333"
+           x="72.32003"
+           height="10.999109"
+           width="14.597687"
            id="rect862"
+           style="fill:#ff4141;fill-opacity:1;stroke:#ff4141;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+        <rect
+           style="fill:#ffc710;fill-opacity:1;stroke:#ffc710;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect864"
            width="14.597687"
            height="10.999109"
-           x="72.32003"
+           x="101.27507"
            y="99.727333" />
         <rect
            y="99.727333"
-           x="101.27507"
-           height="10.999109"
-           width="14.597687"
-           id="rect864"
-           style="fill:#ffc710;fill-opacity:1;stroke:#ffc710;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
-        <rect
-           style="fill:#faf860;fill-opacity:1;stroke:#faf860;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-           id="rect866"
-           width="14.597687"
-           height="10.999109"
            x="128.14056"
-           y="99.727333" />
-        <rect
-           y="123.01077"
-           x="72.32003"
            height="10.999109"
            width="14.597687"
+           id="rect866"
+           style="fill:#faf860;fill-opacity:1;stroke:#faf860;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+        <rect
+           style="fill:#a5f201;fill-opacity:1;stroke:#a5f201;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
            id="rect868"
-           style="fill:#a5f201;fill-opacity:1;stroke:#a5f201;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
-        <rect
-           style="fill:#00cf0b;fill-opacity:1;stroke:#00cf0b;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-           id="rect870"
            width="14.597687"
            height="10.999109"
-           x="100.67805"
+           x="72.32003"
            y="123.01077" />
         <rect
            y="123.01077"
-           x="127.84204"
-           height="10.999109"
-           width="14.597687"
-           id="rect872"
-           style="fill:#0089ff;fill-opacity:1;stroke:#0089ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
-        <rect
-           style="fill:#ff89ff;fill-opacity:1;stroke:#ff89ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-           id="rect874"
-           width="14.597687"
-           height="10.999109"
-           x="127.84204"
-           y="145.69717" />
-        <rect
-           y="145.69717"
            x="100.67805"
            height="10.999109"
            width="14.597687"
-           id="rect876"
-           style="fill:#a329ff;fill-opacity:1;stroke:#a329ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+           id="rect870"
+           style="fill:#00cf0b;fill-opacity:1;stroke:#00cf0b;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
         <rect
-           style="fill:#3400a2;fill-opacity:1;stroke:#3400a2;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-           id="rect878"
+           style="fill:#0089ff;fill-opacity:1;stroke:#0089ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect872"
            width="14.597687"
            height="10.999109"
-           x="72.32003"
+           x="127.84204"
+           y="123.01077" />
+        <rect
+           y="145.69717"
+           x="127.84204"
+           height="10.999109"
+           width="14.597687"
+           id="rect874"
+           style="fill:#ff89ff;fill-opacity:1;stroke:#ff89ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+        <rect
+           style="fill:#a329ff;fill-opacity:1;stroke:#a329ff;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect876"
+           width="14.597687"
+           height="10.999109"
+           x="100.67805"
            y="145.69717" />
+        <rect
+           y="145.69717"
+           x="72.32003"
+           height="10.999109"
+           width="14.597687"
+           id="rect878"
+           style="fill:#3400a2;fill-opacity:1;stroke:#3400a2;stroke-width:5.5998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
       </g>
-      <text
-         id="text35"
-         y="91.781845"
-         x="114.55447"
-         style="font-size:48.3973px;line-height:1.25;font-family:SetoFont-SP;-inkscape-font-specification:'SetoFont-SP, Normal';stroke-width:1.20994"
-         xml:space="preserve"
-         transform="scale(0.97886811,1.0215881)"><tspan
-           style="stroke-width:1.20994"
+      <g
+         id="g59"
+         transform="matrix(0.36277376,0,0,0.36277376,33.101889,-0.20900769)">
+        <text
+           id="text35"
            y="91.781845"
            x="114.55447"
-           id="tspan33"
-           sodipodi:role="line">電卓</tspan></text>
-      <text
-         id="text68"
-         y="92.201561"
-         x="28.23287"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.2118px;line-height:1.25;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.1803"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.2118px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.1803"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48.3973px;line-height:1.25;font-family:SetoFont;-inkscape-font-specification:'SetoFont, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.20994"
+           xml:space="preserve"
+           transform="scale(0.9788681,1.0215881)"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48.3973px;font-family:SetoFont;-inkscape-font-specification:'SetoFont, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.20994"
+             y="91.781845"
+             x="114.55447"
+             id="tspan33"
+             sodipodi:role="line">電卓</tspan></text>
+        <text
+           id="text68"
            y="92.201561"
            x="28.23287"
-           id="tspan66"
-           sodipodi:role="line">Web</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.2118px;line-height:1.25;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.1803"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.2118px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.1803"
+             y="92.201561"
+             x="28.23287"
+             id="tspan66"
+             sodipodi:role="line">Web</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.2189px;line-height:1.25;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue Bold';stroke-width:0.177057"
+         x="43.141376"
+         y="59.723259"
+         id="text886"><tspan
+           sodipodi:role="line"
+           id="tspan884"
+           x="43.141376"
+           y="59.723259"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue Bold';stroke-width:0.177057">multum</tspan></text>
     </g>
+    <text
+       id="text894"
+       y="193.8318"
+       x="-124.9705"
+       style="font-size:51.13470000000000226px;line-height:1.25;font-family:APJapanesefontT;-inkscape-font-specification:APJapanesefontT;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583;-inkscape-font-specification:APJapanesefontT;font-family:APJapanesefontT;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
+         y="193.8318"
+         x="-124.9705"
+         id="tspan892"
+         sodipodi:role="line" /></text>
+    <text
+       id="text898"
+       y="180.22957"
+       x="-62.060181"
+       style="font-size:51.1347px;line-height:1.25;font-family:apricotJapanesefontT;-inkscape-font-specification:apricotJapanesefontT;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="180.22957"
+         x="-62.060181"
+         id="tspan896"
+         sodipodi:role="line" /></text>
   </g>
 </svg>
