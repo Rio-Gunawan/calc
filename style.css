@@ -604,6 +604,23 @@ h3 p {
     margin-left: 5%;
 }
 
+iframe {
+    width: 100%;
+    height: 900px;
+}
+
+@media screen and (max-width: 550px) {
+    iframe {
+        height: 1000px;
+    }
+}
+
+@media screen  and (max-width: 450px){
+    iframe {
+        height: 1300px;
+    }
+}
+
 /*フッター*/
 
 footer {
