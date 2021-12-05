@@ -73,11 +73,10 @@ header {
     position: fixed;
     width: 100%;
     height: 50.75px;
-    background-color: #ade800;
+    background-color: #ade800dd;
     z-index: 99;
     top: 0px;
     z-index: 99;
-    opacity: 0.8;
 }
 
 /*タイトル画像の設定*/
@@ -126,7 +125,7 @@ header {
         display: block;
         float: left;
         font-size: 25px;
-        background-color: #ade800;
+        background: none;
         transition-property: background-color;
         transition-duration: 500ms;
         transition-delay: 0s;
@@ -136,7 +135,7 @@ header {
 /*リンクの上にカーソルが乗ったとき*/
 
 .header_list:hover {
-    background-color: #98cc00;
+    background-color: #98cc00bb;
 }
 
 .header_link {
@@ -157,7 +156,7 @@ header {
         width: 50%;
         height: 100vh;
         /*ナビの高さ*/
-        background: #70df27;
+        background: #70df27f3;
         /*動き*/
         transition: all 0.6s;
     }
@@ -193,7 +192,7 @@ header {
         line-height: 150%;
         display: block;
         font-size: 1.5em;
-        background-color: #70df27;
+        background: none;
         transition-property: background-color;
         transition-duration: 500ms;
         transition-delay: 0s;
@@ -203,7 +202,7 @@ header {
     }
 
     .header_list:hover {
-        background-color: #48b117;
+        background-color: #48b117d0;
     }
 
     .header_link {
@@ -381,16 +380,43 @@ h3 {
 /*電卓*/
 
 main {
-    margin: 30px 0;
+    width: 95%;
+    margin: 30px auto;
+    padding-top: 20px;
     height: 430px;
+    background-color: #eee;
+    border-radius: 30px;
+    border: solid 1px #bbb;
 }
 
 #white {
     display: inline-block;
+    width: calc(2.5% - 1px);
+    height: 310px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    z-index: 66;
+}
+
+#black-line {
+    display: inline-block;
+    width: 1px;
+    height: 300px;
+    background-color: #bbb;
+    position: absolute;
+    left: calc(2.5% - 1px);
+    z-index: 69;
+}
+
+#gray {
+    border-bottom-left-radius: 13px;
+    display: inline-block;
     width: calc(8% + 56px);
     height: 310px;
     z-index: 66;
-    background-color: white;
+    background-color: #eee;
+    top: 5px;
     position: relative;
 }
 
@@ -398,14 +424,15 @@ main {
     position: relative;
     z-index: 9;
     /*ナビのスタート位置と形状*/
-    left: -65%;
+    left: -76%;
     top: -305px;
     width: 75%;
     height: 300px;
     /*ナビの高さ*/
-    background: #eee;
+    background: #dddddd;
     /*動き*/
-    transition: all 0.6s;
+    transition: all 0.6s ease 0s;
+    overflow: hidden;
 }
 
 /*アクティブクラスがついたら位置を0に*/
@@ -446,7 +473,7 @@ main {
 
 /*========= ボタンのためのCSS ===============*/
 
-.humbugger {
+.hamburger {
     position: relative;
     z-index: 77;
     cursor: pointer;
@@ -460,7 +487,7 @@ main {
     font-size: 36px;
 }
 
-.humbugger:active .md-36 {
+.hamburger:active .md-36 {
     background-color: #b6ebfad2;
 }
 
@@ -478,7 +505,7 @@ main {
 
 #setting_h2 {
     margin: 0;
-    background-color: #eee;
+    background: none;
     font-size: 25px;
     padding: 0;
     border: none;
@@ -584,7 +611,7 @@ button {
         width: 90%;
     }
 
-    #white {
+    #gray {
         width: calc(10% + 46px);
     }
 
@@ -605,7 +632,7 @@ button {
         width: 20%;
     }
 
-    .humbugger {
+    .hamburger {
         padding-right: 5px;
     }
 }
@@ -619,7 +646,7 @@ button {
         width: 16%;
     }
 
-    #white {
+    #gray {
         width: calc(8% + 34px);
     }
 
