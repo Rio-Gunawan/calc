@@ -11,6 +11,7 @@
     font-family: Livvic;
     src: url(./fonts/Livvic-Regular.ttf);
     font-weight: 400;
+    font-display: swap;
 }
 
 /* Firefox, Opera, Safari */
@@ -19,6 +20,7 @@
     font-family: Livvic;
     src: url(./fonts/Livvic-Regular.ttf) format('truetype');
     font-weight: 400;
+    font-display: swap;
 }
 
 /*Noto Sans Japanese*/
@@ -27,36 +29,42 @@
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Regular.otf);
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Regular.otf) format('opentype');
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Medium.otf);
     font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Medium.otf) format('opentype');
     font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Bold.otf);
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Bold.otf) format('opentype');
     font-weight: 700;
+    font-display: swap;
 }
 
 body {
@@ -429,7 +437,7 @@ main {
     width: 75%;
     height: 300px;
     /*ナビの高さ*/
-    background: #dddddd;
+    background: #fafafa;
     /*動き*/
     transition: all 0.6s ease 0s;
     overflow: hidden;
@@ -477,9 +485,13 @@ main {
     position: relative;
     z-index: 77;
     cursor: pointer;
-    padding: 5px 15px 3px 5px;
-    top: -235px;
+    top: -125px;
     display: inline-block;
+}
+
+.nav_item {
+    display: inline-block;
+    padding: 5px 15px 10px 5px;
 }
 
 .material-icons-round.md-36 {
@@ -487,7 +499,15 @@ main {
     font-size: 36px;
 }
 
-.hamburger:active .md-36 {
+#functions:active #f-b {
+    background-color: #b6ebfad2;
+}
+
+#history:active #h-b {
+    background-color: #b6ebfad2;
+}
+
+#settings:active #s-b {
     background-color: #b6ebfad2;
 }
 
