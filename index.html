@@ -14,15 +14,14 @@
 </head>
 
 <body>
-    <header>
+    <header id="header" class="DownMove">
         <div class="openBtn"><span></span><span></span><span></span></div>
         <nav class="header_nav" id="header_nav">
             <div id="g-nav-list">
-                <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
                 <ul class="header_nav" id="header_list">
+                    <li class="header_list"><a href="#about" class="header_link">multumについて</a></li>
                     <li class="header_list"><a href="#howUse" class="header_link">使い方</a></li>
-                    <li class="header_list"><a href="#5w1h" class="header_link">お問い合わせ</a></li>
-                </ul>
+                    <li class="header_list"><a href="#5w1h" class="header_link">お問い合わせ</a></li>                </ul>
             </div>
         </nav>
         <img src="images/favicon.png" id="title_icon" alt="Web電卓 アイコン">
@@ -34,7 +33,7 @@
     <noscript id="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
         ブラウザによって設定方法が異なります。</noscript>
-    <h1>分数も使える、高機能な関数電卓</h1>
+    <h1 id="title_message">分数も使える、高機能な関数電卓</h1>
     <p class="center_p">ボタンを押して計算をしてみましょう。詳しい使い方はスクロールすると見れます。</p>
     <main id="main">
         <div id="answer">
@@ -101,6 +100,19 @@
             </div>
         </div>
     </main>
+    <section id="about">
+        <h2>multumについて</h2>
+        <p>
+            Web電卓 multum (ムルトゥム) は、Webで使えるインストール不要の無料電卓アプリです。<br>
+            主に、四則演算や分数、あまり、関数類(ルートやn乗など)が使えます。<br>
+            分数が使える電卓が少ないので、作成しました。<br>
+            ブックマークに登録し、何度もアクセスしていただたり、SNS等でシェアしていただけると嬉しいです。
+        </p>
+        <p>
+            「multum」とは、ラテン語で「多くの、たくさんの」という意味があります。<br>
+            この名前には、多くの機能があるこの電卓を、多くの人に使ってもらいたい、という願いが込められています。
+        </p>
+    </section>
     <section id="howUse">
         <h2>使い方</h2>
     </section>
@@ -115,16 +127,16 @@
         marginheight="0" marginwidth="0">読み込んでいます…</iframe>
     <footer>
         <p class="footer_1">
-            <span class="footer_span">Web電卓</span>
+            <span class="footer_span">Web電卓 multum</span>
             <a href="#" class="footer_a">トップ</a>
             <a href="#howUse" class="footer_a">使い方</a>
             <a href="#5w1h" class="footer_a">お問い合わせ</a>
             <a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
-                rel="noopener noreferrer">Web電卓のソースコード</a>
+                rel="noopener noreferrer">multumのソースコード</a>
         </p>
         <p class="footer_p">
-            <span>Version: 0.4.７&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: 2021/12/6 (月)</span>
+            <span>Version: 0.4.8&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: 2021/12/8 (水)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">

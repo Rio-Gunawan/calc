@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: Livvic;
-    src: url(./fonts/Livvic-Regular.ttf);
+    src: url(./fonts/Livvic-Light.ttf);
     font-weight: 400;
     font-display: swap;
 }
@@ -18,8 +18,24 @@
 
 @font-face {
     font-family: Livvic;
-    src: url(./fonts/Livvic-Regular.ttf) format('truetype');
+    src: url(./fonts/Livvic-Light.ttf) format('truetype');
     font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Livvic;
+    src: url(./fonts/Livvic-Light.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* Firefox, Opera, Safari */
+
+@font-face {
+    font-family: Livvic;
+    src: url(./fonts/Livvic-Medium.ttf) format('truetype');
+    font-weight: 500;
     font-display: swap;
 }
 
@@ -27,14 +43,14 @@
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Regular.otf);
+    src: url(./fonts/NotoSansJP-Light.otf);
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Regular.otf) format('opentype');
+    src: url(./fonts/NotoSansJP-Light.otf) format('opentype');
     font-weight: 400;
     font-display: swap;
 }
@@ -73,6 +89,7 @@ body {
     font-weight: 400;
     background-color: white;
     color: black;
+    font-size: 1.1em;
 }
 
 /*ヘッダーの設定*/
@@ -85,6 +102,42 @@ header {
     z-index: 99;
     top: 0px;
     z-index: 99;
+}
+
+/* 上に上がる動き */
+
+header.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+/* 下に下がる動き */
+
+header.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*タイトル画像の設定*/
@@ -115,6 +168,7 @@ header {
     margin-top: 8px;
     margin-left: 10px;
     vertical-align: top;
+    font-size: 0.9em;
 }
 
 /*ナビゲーションバーの設定*/
@@ -126,10 +180,9 @@ header {
     margin: 0;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 955px) {
     .header_list {
         line-height: 51px;
-        padding: 0 25px;
         display: block;
         float: left;
         font-size: 25px;
@@ -147,13 +200,15 @@ header {
 }
 
 .header_link {
+    display: inline-block;
     text-decoration: none;
     color: black;
+    padding: 0 25px;
 }
 
 /*=========ナビゲーションのためのCSS===============*/
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 955px) {
     #header_nav {
         /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
         position: fixed;
@@ -205,7 +260,6 @@ header {
         transition-duration: 500ms;
         transition-delay: 0s;
         list-style: none;
-        text-align: center;
         border-bottom: solid 2px #22c414;
     }
 
@@ -217,7 +271,9 @@ header {
         color: #333;
         text-decoration: none;
         padding: 10px 0;
-        display: block;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
     }
 
     /*========= アイコンのためのCSS ===============*/
@@ -625,7 +681,7 @@ button {
     background-color: #76ba1e;
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 750px) {
     .downCalc {
         left: 10%;
         width: 90%;
@@ -652,7 +708,7 @@ button {
         width: 20%;
     }
 
-    .hamburger {
+    .nav_item {
         padding-right: 5px;
     }
 }
@@ -675,6 +731,10 @@ button {
         width: 92%;
     }
 
+    .hamburger {
+        top: -145px;
+    }
+
     #buttons {
         width: 75%;
     }
@@ -687,8 +747,8 @@ button {
 /*説明欄*/
 
 section {
-    margin-bottom: 20px;
-    padding: 5%;
+    margin-bottom: 50px;
+    padding: 0 5%;
 }
 
 section p {
@@ -767,7 +827,7 @@ footer {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 840px) {
     .footer_1 {
         text-align: center;
     }
