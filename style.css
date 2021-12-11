@@ -579,7 +579,7 @@ main {
     height: 100px;
 }
 
-#setting_h2 {
+.setting_h2 {
     margin: 0;
     background: none;
     font-size: 25px;
@@ -772,6 +772,7 @@ h3 p {
 iframe {
     width: 100%;
     height: 900px;
+    margin: 0;
     border: none;
 }
 

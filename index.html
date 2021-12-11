@@ -22,7 +22,7 @@
                 <ul class="header_nav" id="header_list">
                     <li class="header_list"><a href="#about" class="header_link">multumについて</a></li>
                     <li class="header_list"><a href="#howUse" class="header_link">使い方</a></li>
-                    <li class="header_list"><a href="#5w1h" class="header_link">お問い合わせ</a></li>
+                    <li class="header_list"><a href="#inquiry" class="header_link">お問い合わせ</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,13 +30,14 @@
         <div id="title">
             <img src="images/title.png" id="title_image" alt="Web電卓 タイトル画像">
             <strong class="header_strong">分数などを扱える電卓</strong>
+        </div>
     </header>
     <div id="margin_div"></div>
+    <h1 id="title_message">分数も使える、高機能な関数電卓</h1>
+    <p class="center_p">ボタンを押して計算をしてみましょう。詳しい使い方はスクロールすると見れます。</p>
     <noscript id="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
         ブラウザによって設定方法が異なります。</noscript>
-    <h1 id="title_message">分数も使える、高機能な関数電卓</h1>
-    <p class="center_p">ボタンを押して計算をしてみましょう。詳しい使い方はスクロールすると見れます。</p>
     <main id="main">
         <div id="answer">
             <noscript>JavaScriptを有効にしてください。</noscript>
@@ -50,14 +51,14 @@
                 <ul>
                     <li>
                         <div class="functions">
-                            <h2 id="setting_h2">関数類</h2>
+                            <h2 class="setting_h2">関数類</h2>
                             <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
                             <button onclick="divHundred()" class="greenButton noLivvic">%</button>
                         </div>
                         <div class="settings">
-                            <h2 id="setting_h2">設定</h2>
+                            <h2 class="setting_h2">設定</h2>
                             <label for="on1" class="on_off">
-                                <input type="checkbox" name="checkbox1" id="on1">テスト
+                                <input type="checkbox" name="checkbox1" id="on1" value="test">テスト
                             </label>
                         </div>
                     </li>
@@ -120,15 +121,15 @@
     <section id="howUse">
         <h2>使い方</h2>
     </section>
-    <section id="5w1h">
+    <section id="inquiry">
         <h2>お問い合わせ</h2>
         <p>問い合わせる前に...</p>
         <h3>よくありそうな質問</h3>
         <p>それでもわからない場合は</p>
     </section>
-    <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true"
-        marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    <iframe title="form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true">
+    </iframe>
     <footer id="footer">
         <p id="page-top"><a href="#"><span class="page-top-text">
                     <span class="material-icons-round">&#xE5D8;</span><br>
@@ -140,7 +141,7 @@
             <a href="#" class="footer_a">トップ</a>
             <a href="#about" class="footer_a">multumについて</a>
             <a href="#howUse" class="footer_a">使い方</a>
-            <a href="#5w1h" class="footer_a">お問い合わせ</a>
+            <a href="#inquiry" class="footer_a">お問い合わせ</a>
             <a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
                 rel="noopener noreferrer">multumのソースコード</a>
         </nav>
@@ -156,8 +157,8 @@
         </p>
     </footer>
     <script src='bignumber.js/bignumber.min.js'></script>
-    <script src="main.js" type="text/javascript"></script>
-    <script src="calc.js" type="text/javascript"></script>
+    <script src="main.js"></script>
+    <script src="calc.js"></script>
 </body>
 
 </html>
