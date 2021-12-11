@@ -7,9 +7,15 @@ let mode = [];
 let isFloat = false;
 let haveFloat = false;
 let codeNow = 1;
+let isZero = false;
 
 // eslint-disable-next-line no-unused-vars
 function clickNum(num) {
+    if (num == 0 && answer[answerNum] == undefined) {
+        isZero = true;
+    } else {
+        isZero = false;
+    }
     if (num == '.') {
         let inputStringVersion = String(answer[answerNum]);
         if (inputStringVersion == "undefined") {
@@ -61,6 +67,7 @@ function clearText(howClear) {
         codeNow = 1;
         isFloat = false;
         haveFloat = false;
+        isZero = false;
         const $output = $('#answer');
         $output.html('');
         $output.text(0);
@@ -69,6 +76,7 @@ function clearText(howClear) {
         answer[answerNum] = undefined;
         inputStrings = inputtedText;
         isFloat = false;
+        isZero = false;
         const $output = $('#answer');
         $output.html(inputStrings);
         if (answerNum == 0) {
@@ -152,4 +160,27 @@ function divHundred() {
     answer[answerNum] /= 100;
     inputStrings = inputtedText + answer[answerNum];
     showInputStrings();
+}
+
+//eslint-disable-next-line no-unused-vars
+function backspace() {
+    if (answer[answerNum] == undefined) {
+        return;
+    }
+    answer[answerNum] = Math.floor(answer[answerNum] / 10);
+    if (!isZero && answer[answerNum] == 0) {
+        answer[answerNum] = undefined;
+    }
+    inputStrings = inputStrings.slice(0, -1);
+    if (inputStrings.slice(-1) == 0 && answer[answerNum] == undefined) {
+        answer[answerNum] = 0;
+    }
+    isZero = false;
+    showInputStrings();
+    if (inputStrings.length == 0) {
+        const $output = $('#answer');
+        $output.html('');
+        $output.text(0);
+        $output.append('<div id="cursor"></div>');
+    }
 }

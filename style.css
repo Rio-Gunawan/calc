@@ -107,10 +107,10 @@ header {
 /* 上に上がる動き */
 
 header.UpMove {
-    animation: UpAnime 0.5s forwards;
+    animation: UpAnimeHeader 0.5s forwards;
 }
 
-@keyframes UpAnime {
+@keyframes UpAnimeHeader {
     from {
         opacity: 1;
         transform: translateY(0);
@@ -125,10 +125,10 @@ header.UpMove {
 /* 下に下がる動き */
 
 header.DownMove {
-    animation: DownAnime 0.5s forwards;
+    animation: DownAnimeHeader 0.5s forwards;
 }
 
-@keyframes DownAnime {
+@keyframes DownAnimeHeader {
     from {
         opacity: 0;
         transform: translateY(-100px);
@@ -681,6 +681,16 @@ button {
     background-color: #76ba1e;
 }
 
+.downLittle {
+    position: relative;
+    top: 2px;
+}
+
+.downLittleText {
+    position: relative;
+    top: 3px;
+}
+
 @media screen and (max-width: 750px) {
     .downCalc {
         left: 10%;
@@ -713,7 +723,7 @@ button {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
     .material-icons-round.md-36 {
         font-size: 30px;
     }
@@ -777,6 +787,98 @@ iframe {
     }
 }
 
+/*========= ページトップのためのCSS ===============*/
+/*リンクの形状*/
+#page-top a {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: #3c8ff0;
+    border-radius: 8px;
+    width: 65px;
+    height: 65px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+#toTop {
+    position: relative;
+    top: -10px;
+}
+
+.page-top-text {
+    position: relative;
+    top: 10px
+}
+
+@media screen and (max-width: 700px) {
+    #page-top a {
+        width: 50px;
+        height: 50px;
+        font-size: 0.6rem;
+    }
+
+    .page-top-text {
+        position: relative;
+        top: 5px
+    }
+}
+
+#page-top a:hover {
+    background: #777;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+    position: fixed;
+    right: 20px;
+    z-index: 2;
+    /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/*上に上がる動き*/
+
+#page-top.UpMove {
+    animation: UpAnimeTop 0.5s forwards;
+}
+
+@keyframes UpAnimeTop {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*下に下がる動き*/
+
+#page-top.DownMove {
+    animation: DownAnimeTop 0.5s forwards;
+}
+
+@keyframes DownAnimeTop {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+}
+
 /*フッター*/
 
 footer {
@@ -787,7 +889,12 @@ footer {
     margin-top: 30px;
 }
 
+.footer_nav {
+    display: inline-block;
+}
+
 .footer_1 {
+    display: inline-block;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -827,12 +934,37 @@ footer {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1010px) {
     .footer_1 {
+        display: block;
         text-align: center;
     }
 
-    .footer_1 a {
+    .footer_nav {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .footer_p {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+    .footer_1 {
+        display: block;
+        text-align: center;
+    }
+
+    .footer_nav {
+        display: block;
+        text-align: center;
+    }
+
+    .footer_nav a {
         display: block;
         margin: 10px 0;
     }
