@@ -43,7 +43,6 @@
             <noscript>JavaScriptを有効にしてください。</noscript>
         </div>
         <div id="white"></div>
-        <div id="black-line"></div>
         <div id="gray"></div>
         <nav id="setNav">
             <div id="setNav-list">
@@ -54,6 +53,7 @@
                             <h2 class="setting_h2">関数類</h2>
                             <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
                             <button onclick="divHundred()" class="greenButton noLivvic">%</button>
+                            <button onclick="divHundred()" class="greenButton noLivvic">&Sqrt;</button>
                         </div>
                         <div class="settings">
                             <h2 class="setting_h2">設定</h2>
@@ -86,22 +86,33 @@
                     <span class="material-icons-outlined downLittleText">&#xE14A;</span></button>
                 <button onclick="clearText(0)" class="pinkButton">C</button>
                 <button onclick="clearText(1)" class="pinkButton">AC</button><br>
-                <button onclick="clickNum(1)" class="blueButton">1</button>
-                <button onclick="clickNum(2)" class="blueButton">2</button>
-                <button onclick="clickNum(3)" class="blueButton">3</button>
-                <button onclick="calcMode('+')" class="greenButton">&plus;</button><br>
-                <button onclick="clickNum(4)" class="blueButton">4</button>
-                <button onclick="clickNum(5)" class="blueButton">5</button>
-                <button onclick="clickNum(6)" class="blueButton">6</button>
-                <button onclick="calcMode('-')" class="greenButton">&minus;</button><br>
-                <button onclick="clickNum(7)" class="blueButton">7</button>
-                <button onclick="clickNum(8)" class="blueButton">8</button>
-                <button onclick="clickNum(9)" class="blueButton">9</button>
-                <button onclick="calcMode('*')" class="greenButton">&times;</button><br>
-                <button onclick="clickNum(0)" class="blueButton">0</button>
-                <button onclick="clickNum('.')" class="blueButton">.</button>
-                <button onclick="showAnswer()" class="pinkButton">=</button>
-                <button onclick="calcMode('/')" class="greenButton">&divide;</button><br>
+                <button onclick="clickNum(1)" class="greenButton upButton">x&sup2;</button>
+                <button onclick="clickFraction()" class="orangeButton">
+                    <span class="topLittle">a</span><span class="fraction">b
+                        <hr>c
+                    </span>
+                </button>
+                <button onclick="clickFraction()" class="orangeButton"><span class="fraction">a
+                        <hr>b
+                    </span>
+                </button>
+                <button onclick="clickNum(1)" class="orangeButton upButton smallFont">あまり</button><br>
+                <button onclick="clickNum(1)" class="blueButton upButton">1</button>
+                <button onclick="clickNum(2)" class="blueButton upButton">2</button>
+                <button onclick="clickNum(3)" class="blueButton upButton">3</button>
+                <button onclick="calcMode('+')" class="greenButton upButton">&plus;</button><br>
+                <button onclick="clickNum(4)" class="blueButton upButton">4</button>
+                <button onclick="clickNum(5)" class="blueButton upButton">5</button>
+                <button onclick="clickNum(6)" class="blueButton upButton">6</button>
+                <button onclick="calcMode('-')" class="greenButton upButton">&minus;</button><br>
+                <button onclick="clickNum(7)" class="blueButton upButton">7</button>
+                <button onclick="clickNum(8)" class="blueButton upButton">8</button>
+                <button onclick="clickNum(9)" class="blueButton upButton">9</button>
+                <button onclick="calcMode('*')" class="greenButton upButton">&times;</button><br>
+                <button onclick="clickNum(0)" class="blueButton upButton">0</button>
+                <button onclick="clickNum('.')" class="blueButton upButton">.</button>
+                <button onclick="showAnswer()" class="pinkButton upButton">=</button>
+                <button onclick="calcMode('/')" class="greenButton upButton">&divide;</button><br>
             </div>
         </div>
     </main>
@@ -147,8 +158,8 @@
                 rel="noopener noreferrer">multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.4.9&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: 2021/12/12 (日)</span>
+            <span>Version: 0.5.0&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: 2021/12/13 (月)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">

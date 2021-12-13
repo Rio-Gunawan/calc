@@ -444,7 +444,7 @@ main {
     width: 95%;
     margin: 30px auto;
     padding-top: 20px;
-    height: 430px;
+    height: 490px;
     background-color: #eee;
     border-radius: 30px;
     border: solid 1px #bbb;
@@ -453,42 +453,35 @@ main {
 #white {
     display: inline-block;
     width: calc(2.5% - 1px);
-    height: 310px;
+    height: 382px;
     background-color: white;
     position: absolute;
     left: 0;
     z-index: 66;
 }
 
-#black-line {
-    display: inline-block;
-    width: 1px;
-    height: 300px;
-    background-color: #bbb;
-    position: absolute;
-    left: calc(2.5% - 1px);
-    z-index: 69;
-}
-
 #gray {
-    border-bottom-left-radius: 13px;
+    border-bottom-left-radius: 30px;
     display: inline-block;
     width: calc(8% + 56px);
-    height: 310px;
+    height: 385px;
     z-index: 66;
     background-color: #eee;
     top: 5px;
     position: relative;
+    left: -1px;
+    border-left: solid 1px #bbb;
+    border-bottom: solid 1px #bbb;
 }
 
 #setNav {
     position: relative;
     z-index: 9;
     /*ナビのスタート位置と形状*/
-    left: -76%;
-    top: -305px;
-    width: 75%;
-    height: 300px;
+    left: -77%;
+    top: -385px;
+    width: 76%;
+    height: 372px;
     /*ナビの高さ*/
     background: #fafafa;
     /*動き*/
@@ -538,7 +531,7 @@ main {
     position: relative;
     z-index: 77;
     cursor: pointer;
-    top: -125px;
+    top: -197px;
     display: inline-block;
 }
 
@@ -550,6 +543,19 @@ main {
 .material-icons-round.md-36 {
     background: none;
     font-size: 36px;
+    border-radius: 3px;
+    background: none;
+    transition: background 0.4s;
+}
+
+.nav_item:hover .material-icons-round.md-36 {
+    background-color: #ade800;
+}
+
+@media (hover: none) {
+    .nav_item:hover .material-icons-round.md-36 {
+        background: none;
+    }
 }
 
 #functions:active #f-b {
@@ -568,7 +574,7 @@ main {
     width: 86%;
     position: relative;
     left: 8%;
-    top: -600px
+    top: -752px
 }
 
 .settings {
@@ -612,6 +618,7 @@ input[type="checkbox"] {
     border-radius: 20px;
     text-align: right;
     font-size: 26px;
+    z-index: 98;
 }
 
 #cursor {
@@ -654,6 +661,10 @@ button {
     background-color: #96e034;
 }
 
+.orangeButton {
+    background-color: #ffc423;
+}
+
 .blueButton:hover {
     background-color: #3cbfff;
 }
@@ -666,6 +677,10 @@ button {
     background-color: #8cd62b;
 }
 
+.orangeButton:hover {
+    background-color: #ff9a15;
+}
+
 .blueButton:active {
     background-color: #3c8ff0;
 }
@@ -676,6 +691,48 @@ button {
 
 .greenButton:active {
     background-color: #76ba1e;
+}
+
+.orangeButton:active {
+    background-color: #f76300;
+}
+
+.upButton {
+    position: relative;
+    top: -12px;
+}
+
+.smallFont {
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 350px) {
+    .smallFont {
+        font-size: 0.45rem;
+        position: relative;
+        top: -15px;
+    }
+
+}
+
+.fraction {
+    display: inline-block;
+    font-size: 0.9em
+}
+
+.fraction hr {
+    width: 20px;
+    border: 0 none;
+    height: 1px;
+    color: #000000;
+    background-color: #000000;
+    margin: 1px auto;
+}
+
+.topLittle {
+    position: relative;
+    top: -15px;
+    margin-right: 2px;
 }
 
 .downLittle {
@@ -739,7 +796,7 @@ button {
     }
 
     .hamburger {
-        top: -145px;
+        top: -217px;
     }
 
     #buttons {
@@ -823,6 +880,16 @@ img {
     top: 10px
 }
 
+#page-top a:hover {
+    background: #3044ff;
+}
+
+@media (hover: none) {
+    #page-top a:hover {
+        background: #3c8ff0;
+    }
+}
+
 @media screen and (max-width: 700px) {
     #page-top a {
         width: 50px;
@@ -834,10 +901,6 @@ img {
         position: relative;
         top: 5px
     }
-}
-
-#page-top a:hover {
-    background: #777;
 }
 
 /*リンクを右下に固定*/
