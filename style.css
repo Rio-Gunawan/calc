@@ -704,12 +704,13 @@ button {
 
 .smallFont {
     font-size: 0.9rem;
+    position: relative;
+    top: -13px;
 }
 
 @media screen and (max-width: 350px) {
     .smallFont {
         font-size: 0.45rem;
-        position: relative;
         top: -15px;
     }
 
