@@ -106,6 +106,8 @@ function showAnswer() {
                 localAnswer = localAnswer.times(bigNum);
             } else if (mode[forNum] == '/') {
                 localAnswer = localAnswer.div(bigNum);
+            } else if(mode[forNum] == '%') {
+                localAnswer = localAnswer.mod(bigNum);
             }
             forNum++;
         });
@@ -119,6 +121,8 @@ function showAnswer() {
                 localAnswer *= num;
             } else if (mode[forNum] == '/') {
                 localAnswer /= num;
+            } else if (mode[forNum] == '%') {
+                localAnswer %= num;
             }
             forNum++;
         });
@@ -142,7 +146,11 @@ function calcMode(modeLocal) {
     mode[answerNum] = modeLocal;
     answerNum++;
     answer[answerNum] = undefined;
-    inputStrings += modeLocal;
+    if (modeLocal == '%') {
+        inputStrings += 'あまり';
+    } else {
+        inputStrings += modeLocal;
+    }
     inputtedText = inputStrings;
     showInputStrings();
 }
@@ -193,6 +201,24 @@ function powNum() {
         localAnswer = localAnswer.pow(2);
     } else {
         localAnswer = Math.pow(localAnswer, 2);
+    }
+    if (haveFloat) {
+        localAnswer = localAnswer.toNumber();
+    }
+    inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
+    answer[answerNum] = localAnswer;
+    inputStrings = inputStrings + String(localAnswer);
+    showInputStrings();
+}
+
+//eslint-disable-next-line no-unused-vars
+function sqrtNum() {
+    let localAnswer = answer[answerNum];
+    if (haveFloat) {
+        localAnswer = BigNumber(localAnswer);
+        localAnswer = localAnswer.sqrt(2);
+    } else {
+        localAnswer = Math.sqrt(localAnswer, 2);
     }
     if (haveFloat) {
         localAnswer = localAnswer.toNumber();
