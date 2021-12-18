@@ -184,3 +184,21 @@ function backspace() {
         $output.append('<div id="cursor"></div>');
     }
 }
+
+//eslint-disable-next-line no-unused-vars
+function powNum() {
+    let localAnswer = answer[answerNum];
+    if (haveFloat) {
+        localAnswer = BigNumber(localAnswer);
+        localAnswer = localAnswer.pow(2);
+    } else {
+        localAnswer = Math.pow(localAnswer, 2);
+    }
+    if (haveFloat) {
+        localAnswer = localAnswer.toNumber();
+    }
+    inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
+    answer[answerNum] = localAnswer;
+    inputStrings = inputStrings + String(localAnswer);
+    showInputStrings();
+}

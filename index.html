@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web電卓 - 分数などを扱える高機能な電卓</title>
+    <title>Web電卓 multum - 分数などを扱える高機能な電卓</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
@@ -26,9 +26,9 @@
                 </ul>
             </div>
         </nav>
-        <img src="images/favicon.png" id="title_icon" alt="Web電卓 アイコン">
+        <img src="images/favicon.png" id="title_icon" alt="multum アイコン">
         <div id="title">
-            <img src="images/title.png" id="title_image" alt="Web電卓 タイトル画像">
+            <img src="images/title.png" id="title_image" alt="multumタイトル画像">
             <strong class="header_strong">分数などを扱える電卓</strong>
         </div>
     </header>
@@ -86,14 +86,14 @@
                     <span class="material-icons-outlined downLittleText">&#xE14A;</span></button>
                 <button onclick="clearText(0)" class="pinkButton">C</button>
                 <button onclick="clearText(1)" class="pinkButton">AC</button><br>
-                <button onclick="clickNum(1)" class="greenButton upButton">x&sup2;</button>
+                <button onclick="powNum()" class="greenButton upButton">x&sup2;</button>
                 <button onclick="clickFraction()" class="orangeButton">
-                    <span class="topLittle">a</span><span class="fraction">b
-                        <hr>c
+                    <span class="topLittle">a</span><span class="fraction"><span>b</span><br>
+                        c
                     </span>
                 </button>
-                <button onclick="clickFraction()" class="orangeButton"><span class="fraction">a
-                        <hr>b
+                <button onclick="clickFraction()" class="orangeButton"><span class="fraction"><span>a</span><br>
+                        b
                     </span>
                 </button>
                 <button onclick="clickNum(1)" class="orangeButton upButton smallFont">あまり</button><br>
@@ -118,7 +118,7 @@
     </main>
     <section id="about">
         <h2>multumについて</h2>
-        <img src="images/main.png" class="mainPicture">
+        <img src="images/main.png" class="mainPicture" alt="multumの画像">
         <p>
             Web電卓 multum (ムルトゥム) は、Webで使えるインストール不要の無料電卓アプリです。<br>
             主に、四則演算や分数、あまり、関数類(ルートやn乗など)が使えます。<br>
@@ -158,8 +158,8 @@
                 rel="noopener noreferrer">multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.5.0&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: 2021/12/14 (火)</span>
+            <span>Version: 0.5.1&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: 2021/12/18 (土)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">

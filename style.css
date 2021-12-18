@@ -721,13 +721,13 @@ button {
     font-size: 0.9em
 }
 
-.fraction hr {
-    width: 20px;
-    border: 0 none;
-    height: 1px;
-    color: #000000;
-    background-color: #000000;
-    margin: 1px auto;
+.fraction span {
+    display: inline-block;
+    width: calc(1em + 4px);
+    border-bottom: solid 1px #000000;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+    text-align: center;
 }
 
 .topLittle {
