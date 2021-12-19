@@ -172,10 +172,18 @@ function divHundred() {
 
 //eslint-disable-next-line no-unused-vars
 function backspace() {
-    if (answer[answerNum] == undefined) {
+    if (answer[answerNum] == undefined || answer[answerNum] == '') {
         return;
     }
-    answer[answerNum] = Math.floor(answer[answerNum] / 10);
+    if (isFloat) {
+        const remove = answer[answerNum].slice(-1);
+        answer[answerNum] = answer[answerNum].slice(0, -1);
+        if (remove == '.') {
+            isFloat = false;
+        }
+    } else {
+        answer[answerNum] = Math.floor(answer[answerNum] / 10);
+    }
     if (!isZero && answer[answerNum] == 0) {
         answer[answerNum] = undefined;
     }
