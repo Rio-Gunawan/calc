@@ -236,3 +236,15 @@ function sqrtNum() {
     inputStrings = inputStrings + String(localAnswer);
     showInputStrings();
 }
+
+//eslint-disable-next-line no-unused-vars
+function addFraction() {
+    if (answer[answerNum] == undefined) {
+        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
+    } else {
+        let denominator = answer[answerNum].toString();
+        inputStrings = inputStrings.slice(0, denominator.length * -1);
+        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>'+denominator+'</span></span>';
+    }
+    showInputStrings();
+}

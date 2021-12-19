@@ -393,17 +393,30 @@ header.DownMove {
     height: 60px;
 }
 
-/*javascriptが無効のとき*/
+/*アラート*/
 
-#alert {
+.alert {
     display: block;
-    width: 550px;
+    width: 90%;
     padding: 10px;
     margin: 0 auto;
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #ff831d;
+    background-color: #ff9d1d;
     text-align: center;
+}
+
+.alert h2 {
+    font-size: 25px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.alert p {
+    margin: 3px 0;
 }
 
 /*見出し*/
@@ -464,11 +477,11 @@ main {
     border-bottom-left-radius: 30px;
     display: inline-block;
     width: calc(8% + 56px);
-    height: 385px;
+    height: 390px;
     z-index: 66;
     background-color: #eee;
-    top: 5px;
     position: relative;
+    top: 5px;
     left: -1px;
     border-left: solid 1px #bbb;
     border-bottom: solid 1px #bbb;
@@ -608,17 +621,19 @@ input[type="checkbox"] {
 /*答えのところ*/
 
 #answer {
-    padding: 20px;
-    max-width: 80%;
-    height: 40px;
+    padding: 15px;
+    width: 80%;
+    height: 45px;
     overflow: auto;
     background-color: #ffe935;
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
-    text-align: right;
-    font-size: 26px;
+    font-size: 25px;
     z-index: 98;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 #cursor {
@@ -627,8 +642,6 @@ input[type="checkbox"] {
     width: 2px;
     height: 30px;
     margin-left: 5px;
-    position: relative;
-    top: 5px;
 }
 
 /*ボタン*/
@@ -718,16 +731,29 @@ button {
 
 .fraction {
     display: inline-block;
-    font-size: 0.9em
+    font-size: 0.9em;
 }
 
 .fraction span {
+    text-align: center;
     display: inline-block;
+}
+
+.numerator {
     width: calc(1em + 4px);
     border-bottom: solid 1px #000000;
     margin-bottom: 1px;
     padding-bottom: 1px;
+}
+
+#answer .fraction span {
+    width: calc(100% + 6px);
+}
+
+#answer .fraction {
+    font-size: 0.6em;
     text-align: center;
+    margin: 0 8px;
 }
 
 .topLittle {

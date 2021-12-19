@@ -35,7 +35,14 @@
     <div id="margin_div"></div>
     <h1 id="title_message">分数も使える、高機能な関数電卓</h1>
     <p class="center_p">ボタンを押して計算をしてみましょう。詳しい使い方はスクロールすると見れます。</p>
-    <noscript id="alert">このサイトではJavaScriptを利用しております。<br>
+    <div class="alert">
+        <h2>注意</h2>
+        <p>現在このサイトは&alpha;(アルファ)版となっております。<br>
+            そのため、分数は利用できませんし、動作や表示が不安定な場合があります。<br>
+            また、計算結果はバグにより間違っている場合もあります。<br>
+            結果は保証しません。ご了承ください。</p>
+    </div>
+    <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
         ブラウザによって設定方法が異なります。</noscript>
     <main id="main">
@@ -87,13 +94,14 @@
                 <button onclick="clearText(0)" class="pinkButton">C</button>
                 <button onclick="clearText(1)" class="pinkButton">AC</button><br>
                 <button onclick="powNum()" class="greenButton upButton">x&sup2;</button>
-                <button onclick="clickFraction()" class="orangeButton">
-                    <span class="topLittle">a</span><span class="fraction"><span>b</span><br>
-                        c
+                <button onclick="addFraction()" class="orangeButton">
+                    <span class="topLittle">a</span><span class="fraction"><span class="numerator">b</span><br>
+                        <span>c</span>
                     </span>
                 </button>
-                <button onclick="clickFraction()" class="orangeButton"><span class="fraction"><span>a</span><br>
-                        b
+                <button onclick="addFraction()" class="orangeButton"><span class="fraction"><span
+                            class="numerator">a</span><br>
+                        <span>b</span>
                     </span>
                 </button>
                 <button onclick="calcMode('%')" class="orangeButton upButton smallFont">あまり</button><br>
@@ -158,7 +166,7 @@
                 rel="noopener noreferrer">multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.5.3&alpha; (Alpha version)</span>
+            <span>Version: 0.5.31&alpha; (Alpha version)</span>
             <span class="margin-left_div">最終更新日: 2021/12/19 (日)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
