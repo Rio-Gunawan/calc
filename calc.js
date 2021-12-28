@@ -106,7 +106,7 @@ function showAnswer() {
                 localAnswer = localAnswer.times(bigNum);
             } else if (mode[forNum] == '/') {
                 localAnswer = localAnswer.div(bigNum);
-            } else if(mode[forNum] == '%') {
+            } else if (mode[forNum] == '%') {
                 localAnswer = localAnswer.mod(bigNum);
             }
             forNum++;
@@ -244,7 +244,7 @@ function addFraction() {
     } else {
         let denominator = answer[answerNum].toString();
         inputStrings = inputStrings.slice(0, denominator.length * -1);
-        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>'+denominator+'</span></span>';
+        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
     }
     showInputStrings();
 }

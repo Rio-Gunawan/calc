@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web電卓 multum - 分数などを扱える高機能な電卓</title>
+    <title>Web電卓 multum - 分数を使える電卓</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="jquery-3.6.0.min.js"></script>
+    <script src="bignumber.js/bignumber.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-215856807-1"></script>
     <script>
@@ -25,6 +26,7 @@
 </head>
 
 <body>
+    <script src="calc.js"></script>
     <header id="header" class="DownMove">
         <div class="openBtn"><span></span><span></span><span></span></div>
         <nav class="header_nav" id="header_nav">
@@ -172,22 +174,24 @@
             <a href="#about" class="footer_a">multumについて</a>
             <a href="#howUse" class="footer_a">使い方</a>
             <a href="#inquiry" class="footer_a">お問い合わせ</a>
+            <a href="./terms.html" class="footer_a">利用規約</a>
             <a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
                 rel="noopener noreferrer">multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.5.32&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: 2021/12/25 (土)</span>
+            <span>Version: 0.5.33&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: 2021/12/28 (火)</span>
             <span class="margin-left_div copy">&copy; <span class="noLivvic">Copyright</span> 2021 rio</span>
         </p>
         <p class="footer_3">
-            このサイトは、<a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github
-                pages</a>を利用して作成しています。
+            このサイトは、<a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub
+                Pages</a>を利用して作成しています。また、<a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">
+                    Apache Licenses, Version 2.0
+                </a>によりライセンスされています。
         </p>
     </footer>
-    <script src="bignumber.js/bignumber.min.js"></script>
     <script src="main.js"></script>
-    <script src="calc.js"></script>
+    <script src="calc_contorol.js"></script>
 </body>
 
 </html>

@@ -177,12 +177,12 @@ header.DownMove {
     margin: 0;
 }
 
-@media screen and (min-width: 955px) {
+@media screen and (min-width: 900px) {
     .header_list {
         line-height: 51px;
         display: block;
         float: left;
-        font-size: 25px;
+        font-size: 1.2em;
         background: none;
         transition-property: background-color;
         transition-duration: 500ms;
@@ -205,7 +205,7 @@ header.DownMove {
 
 /*=========ナビゲーションのためのCSS===============*/
 
-@media screen and (max-width: 955px) {
+@media screen and (max-width: 900px) {
     #header_nav {
         /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
         position: fixed;
@@ -884,7 +884,7 @@ img {
     display: block;
     justify-content: center;
     align-items: center;
-    background: #3c8ff0;
+    background: #3c90f0bb;
     border-radius: 8px;
     width: 65px;
     height: 65px;
@@ -984,6 +984,7 @@ footer {
     line-height: 25px;
     color: white;
     margin-top: 30px;
+    font-size: 0.9em;
 }
 
 .footer_nav {
@@ -1002,7 +1003,7 @@ footer {
 
 .footer_a {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 20px;
     color: white;
 }
 
@@ -1031,7 +1032,7 @@ footer {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1000px) {
     .footer_1 {
         display: block;
         text-align: center;
@@ -1044,13 +1045,13 @@ footer {
     }
 
     .footer_p {
-        margin-top: 50px;
+        margin-top: 30px;
         text-align: center;
     }
 
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 750px) {
     .footer_1 {
         display: block;
         text-align: center;
@@ -1079,4 +1080,31 @@ footer {
     .footer_3 {
         margin-top: 50px;
     }
+}
+
+/*terms.html*/
+
+.normalLink:link {
+    color: #2696e0;
+}
+
+.normalLink:visited {
+    color: #a435ff;
+}
+
+#bread {
+    margin-left: 3%;
+}
+
+.blueLink {
+    color: #2696e0;
+}
+
+.index {
+    text-align: center;
+}
+
+.index .blueLink {
+    display: inline-block;
+    margin: 0 2%;
 }
