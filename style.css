@@ -1084,6 +1084,10 @@ footer {
 
 /*terms.html*/
 
+.normalLink {
+    word-break: break-all;
+}
+
 .normalLink:link {
     color: #2696e0;
 }
