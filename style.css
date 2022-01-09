@@ -859,6 +859,10 @@ section {
     padding: 0 5%;
 }
 
+div p {
+    margin: 5px;
+}
+
 section p {
     margin-left: 10px;
 }
