@@ -83,13 +83,16 @@
     font-display: swap;
 }
 
+html {
+    font-size: 1.1em;
+}
+
 body {
     margin: 0;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
     font-weight: 400;
     background-color: white;
     color: black;
-    font-size: 1.1em;
 }
 
 /*ヘッダーの設定*/
@@ -350,7 +353,7 @@ header.DownMove {
         top: 5px;
         left: -5px;
         color: #fff;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         text-transform: uppercase;
     }
 
@@ -407,7 +410,7 @@ header.DownMove {
 }
 
 .alert h2 {
-    font-size: 25px;
+    font-size: 1.3em;
     border: none;
     background: none;
     padding: 0;
@@ -423,7 +426,7 @@ header.DownMove {
 
 h1 {
     margin: 10px 0;
-    font-size: 45px;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
 }
@@ -431,7 +434,7 @@ h1 {
 h2 {
     margin: 20px 0;
     background-color: #eee;
-    font-size: 30px;
+    font-size: 1.75rem;
     padding: 10px 30px;
     margin-left: 0px;
     font-weight: 500;
@@ -439,7 +442,7 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     border-left: solid 20px #ade800;
     margin: 20px;
     font-weight: 500;
@@ -598,7 +601,7 @@ main {
 .setting_h2 {
     margin: 0;
     background: none;
-    font-size: 25px;
+    font-size: 1.5rem;
     padding: 0;
     border: none;
 }
@@ -629,7 +632,7 @@ input[type="checkbox"] {
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
-    font-size: 25px;
+    font-size: 1.5rem;
     z-index: 98;
     display: flex;
     justify-content: flex-end;
@@ -640,8 +643,22 @@ input[type="checkbox"] {
     display: inline-block;
     background-color: #000;
     width: 2px;
-    height: 30px;
+    height: calc(1.5rem + 4px);
     margin-left: 5px;
+}
+
+#cursor.up {
+    position: relative;
+    bottom: calc(1.5rem * 0.6 - 4px);
+    height: calc(1.5rem * 0.6);
+    margin-left: 0;
+}
+
+#cursor.down {
+    position: relative;
+    top: calc(1.5rem * 0.6 - 4px);
+    height: calc(1.5rem * 0.6);
+    margin-left: 0;
 }
 
 /*ボタン*/
@@ -652,7 +669,7 @@ button {
     border: none;
     border-radius: 10px;
     padding: 0;
-    font-size: 20px;
+    font-size: 1.1em;
     margin-bottom: 10px;
     margin-right: 1%;
     transition-property: background-color;
@@ -716,14 +733,14 @@ button {
 }
 
 .smallFont {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: relative;
     top: -13px;
 }
 
 @media screen and (max-width: 350px) {
     .smallFont {
-        font-size: 0.45rem;
+        font-size: 0.35rem;
         top: -15px;
     }
 
@@ -892,7 +909,7 @@ img {
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: all 0.3s;
     position: relative;
 }
@@ -921,12 +938,16 @@ img {
     #page-top a {
         width: 50px;
         height: 50px;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 
     .page-top-text {
         position: relative;
         top: 5px
+    }
+
+    #toTop {
+        top: -13px;
     }
 }
 
@@ -998,7 +1019,7 @@ footer {
 }
 
 .footer_span {
-    font-size: 30px;
+    font-size: 1.8em;
 }
 
 .footer_a {

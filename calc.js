@@ -1,13 +1,14 @@
 let answer = [];
 let answerNum = 0;
 let inputStrings = "";
-let buttonHtml = "";
 let inputtedText = "";
 let mode = [];
 let isFloat = false;
 let haveFloat = false;
 let codeNow = 1;
 let isZero = false;
+let isFraction = false;
+let fractionMode = null;
 
 // eslint-disable-next-line no-unused-vars
 function clickNum(num) {
@@ -18,6 +19,11 @@ function clickNum(num) {
     }
     if (num == '.') {
         let inputStringVersion = String(answer[answerNum]);
+        if (isFraction) {
+            if (fractionMode == "n") {
+                inputStringVersion = String(answer[answerNum][0]);
+            }
+        }
         if (inputStringVersion == "undefined") {
             inputStringVersion = '0.';
             num = '0.';
@@ -26,34 +32,87 @@ function clickNum(num) {
         }
         isFloat = true;
         haveFloat = true;
-        inputStrings += String(num);
-        answer[answerNum] = inputStringVersion;
-        showInputStrings();
+        if (isFraction) {
+            if (fractionMode == "n") {
+                answer[answerNum][0] = inputStringVersion;
+                inputStrings =
+                    inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                    '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                showInputStrings(1);
+            }
+        } else {
+            inputStrings += String(num);
+            answer[answerNum] = inputStringVersion;
+            showInputStrings(0);
+        }
     } else {
         if (isFloat) {
-            answer[answerNum] += String(num);
-        } else {
-            if (String(answer[answerNum]) == "undefined") {
-                answer[answerNum] = num;
+            if (isFraction) {
+                if (fractionMode == "n") {
+                    answer[answerNum][0] += String(num);
+                    answer[answerNum][0] = Number(answer[answerNum][0]);
+                    inputStrings =
+                        inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                        '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                    showInputStrings(1);
+                }
             } else {
-                if (codeNow == -1) {
-                    answer[answerNum] = answer[answerNum] * 10 - num;
+                answer[answerNum] += String(num);
+                inputStrings += String(num);
+                showInputStrings(0);
+            }
+        } else {
+            if (isFraction) {
+                if (fractionMode == "n") {
+                    if (String(answer[answerNum][0]) == "undefined") {
+                        answer[answerNum][0] = num;
+                        inputStrings =
+                            inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        showInputStrings(1);
+                    } else {
+                        if (codeNow == -1) {
+                            answer[answerNum][0] = answer[answerNum][0] * 10 - num;
+                        } else {
+                            answer[answerNum][0] = answer[answerNum][0] * 10 + num;
+                        }
+                        inputStrings =
+                            inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        showInputStrings(1);
+                    }
+                }
+            } else {
+                if (String(answer[answerNum]) == "undefined") {
+                    answer[answerNum] = num;
+                    inputStrings += String(num);
+                    showInputStrings(0);
                 } else {
-                    answer[answerNum] = answer[answerNum] * 10 + num;
+                    if (codeNow == -1) {
+                        answer[answerNum] = answer[answerNum] * 10 - num;
+                    } else {
+                        answer[answerNum] = answer[answerNum] * 10 + num;
+                    }
+                    inputStrings += String(num);
+                    showInputStrings(0);
                 }
             }
+
         }
-        inputStrings += String(num);
-        showInputStrings();
     }
 }
 
-function showInputStrings() {
-    const $output = $('#answer');
-    const $buttons = $('#buttons');
-    $buttons.append(buttonHtml);
-    $output.html(inputStrings);
-    $output.append('<div id="cursor"></div>');
+
+function showInputStrings(modeLocal) {
+    if (modeLocal == 0) {
+        const $output = $('#answer');
+        $output.html(inputStrings);
+        $output.append('<div id="cursor"></div>');
+    } else if (modeLocal == 1) {
+        const $output = $('#answer');
+        $output.html(inputStrings);
+        $output.append('<div id="cursor" class="up"></div>');
+    }
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -68,6 +127,8 @@ function clearText(howClear) {
         isFloat = false;
         haveFloat = false;
         isZero = false;
+        isFraction = false;
+        fractionMode = null;
         const $output = $('#answer');
         $output.html('');
         $output.text(0);
@@ -77,6 +138,8 @@ function clearText(howClear) {
         inputStrings = inputtedText;
         isFloat = false;
         isZero = false;
+        isFraction = false;
+        fractionMode = null;
         const $output = $('#answer');
         $output.html(inputStrings);
         if (answerNum == 0) {
@@ -88,6 +151,10 @@ function clearText(howClear) {
 
 // eslint-disable-next-line no-unused-vars
 function showAnswer() {
+    if (isFraction) {
+        isFraction = false;
+        return;
+    }
     if (isFloat) {
         isFloat = false;
     }
@@ -152,14 +219,14 @@ function calcMode(modeLocal) {
         inputStrings += modeLocal;
     }
     inputtedText = inputStrings;
-    showInputStrings();
+    showInputStrings(0);
 }
 
 // eslint-disable-next-line no-unused-vars
 function changeCode() {
     answer[answerNum] *= -1;
     inputStrings = inputtedText + answer[answerNum];
-    showInputStrings();
+    showInputStrings(0);
     codeNow = Math.sign(answer[answerNum]);
 }
 
@@ -167,7 +234,7 @@ function changeCode() {
 function divHundred() {
     answer[answerNum] /= 100;
     inputStrings = inputtedText + answer[answerNum];
-    showInputStrings();
+    showInputStrings(0);
 }
 
 //eslint-disable-next-line no-unused-vars
@@ -192,7 +259,7 @@ function backspace() {
         answer[answerNum] = 0;
     }
     isZero = false;
-    showInputStrings();
+    showInputStrings(0);
     if (inputStrings.length == 0) {
         const $output = $('#answer');
         $output.html('');
@@ -216,7 +283,7 @@ function powNum() {
     inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
     answer[answerNum] = localAnswer;
     inputStrings = inputStrings + String(localAnswer);
-    showInputStrings();
+    showInputStrings(0);
 }
 
 //eslint-disable-next-line no-unused-vars
@@ -234,17 +301,37 @@ function sqrtNum() {
     inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
     answer[answerNum] = localAnswer;
     inputStrings = inputStrings + String(localAnswer);
-    showInputStrings();
+    showInputStrings(0);
 }
 
 //eslint-disable-next-line no-unused-vars
-function addFraction() {
-    if (answer[answerNum] == undefined) {
-        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
+function addFraction(fracMode) {
+    isFraction = true;
+    if (fracMode) {
+        if (answer[answerNum] == undefined) {
+            answer[answerNum] = [undefined, undefined];
+            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
+            showInputStrings(1);
+        } else {
+            let denominator = answer[answerNum].toString();
+            answer[answerNum] = [undefined, Number(denominator)];
+            inputStrings = inputStrings.slice(0, denominator.length * -1);
+            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
+            showInputStrings(1);
+        }
     } else {
-        let denominator = answer[answerNum].toString();
-        inputStrings = inputStrings.slice(0, denominator.length * -1);
-        inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
+        if (answer[answerNum] == undefined) {
+            fractionMode = "d";
+            answer[answerNum] = [undefined, undefined];
+            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
+            showInputStrings(1);
+        } else {
+            fractionMode = "n";
+            let denominator = answer[answerNum].toString();
+            answer[answerNum] = [undefined, Number(denominator)];
+            inputStrings = inputStrings.slice(0, denominator.length * -1);
+            inputStrings += '<span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
+            showInputStrings(1);
+        }
     }
-    showInputStrings();
 }
