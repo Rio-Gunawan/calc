@@ -5,37 +5,10 @@
 
 /*Livvic*/
 
-/* IE */
-
-@font-face {
-    font-family: Livvic;
-    src: url(./fonts/Livvic-Light.ttf);
-    font-weight: 400;
-    font-display: swap;
-}
-
-/* Firefox, Opera, Safari */
-
 @font-face {
     font-family: Livvic;
     src: url(./fonts/Livvic-Light.ttf) format('truetype');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Livvic;
-    src: url(./fonts/Livvic-Light.ttf);
-    font-weight: 500;
-    font-display: swap;
-}
-
-/* Firefox, Opera, Safari */
-
-@font-face {
-    font-family: Livvic;
-    src: url(./fonts/Livvic-Medium.ttf) format('truetype');
-    font-weight: 500;
+    font-weight: 300;
     font-display: swap;
 }
 
@@ -43,22 +16,8 @@
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Light.otf);
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noto Sans JP';
     src: url(./fonts/NotoSansJP-Light.otf) format('opentype');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Medium.otf);
-    font-weight: 500;
+    font-weight: 300;
     font-display: swap;
 }
 
@@ -71,14 +30,30 @@
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Bold.otf);
+    src: url(./fonts/NotoSansJP-Bold.otf) format('opentype');
     font-weight: 700;
     font-display: swap;
 }
 
+/*Roboto*/
+
 @font-face {
-    font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Bold.otf) format('opentype');
+    font-family: 'Roboto';
+    src: url(./fonts/Roboto-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./fonts/Roboto-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./fonts/Roboto-Bold.ttf) format('truetype');
     font-weight: 700;
     font-display: swap;
 }
@@ -89,8 +64,8 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
-    font-weight: 400;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
     background-color: white;
     color: black;
 }
@@ -180,7 +155,7 @@ header.DownMove {
     margin: 0;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 950px) {
     .header_list {
         line-height: 51px;
         display: block;
@@ -208,7 +183,7 @@ header.DownMove {
 
 /*=========ナビゲーションのためのCSS===============*/
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     #header_nav {
         /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
         position: fixed;
@@ -390,6 +365,13 @@ header.DownMove {
     }
 }
 
+@media screen and (max-width: 475px) {
+    #header_list {
+        margin-top: 165px;
+    }
+
+}
+
 /*重ならないように*/
 
 #margin_div {
@@ -426,7 +408,7 @@ header.DownMove {
 
 h1 {
     margin: 10px 0;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     text-align: center;
 }
@@ -464,6 +446,7 @@ main {
     background-color: #eee;
     border-radius: 30px;
     border: solid 1px #bbb;
+    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
 }
 
 #white {
@@ -677,6 +660,7 @@ button {
     transition-delay: 0s;
     cursor: pointer;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
 }
 
 .blueButton {
@@ -1047,6 +1031,7 @@ footer {
 .footer_3 {
     color: #83b2de;
     text-align: left;
+    margin-bottom: 0;
 }
 
 .footer_3 a {
@@ -1055,6 +1040,11 @@ footer {
 
 .noLivvic {
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+.counter {
+    display: block;
+    text-align: right;
 }
 
 @media screen and (max-width: 1000px) {
