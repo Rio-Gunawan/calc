@@ -539,20 +539,20 @@ main {
     padding: 5px 15px 10px 5px;
 }
 
-.material-icons-round.md-36 {
+.md-36 {
     background: none;
-    font-size: 36px;
+    width: 36px;
     border-radius: 3px;
     background: none;
     transition: background 0.4s;
 }
 
-.nav_item:hover .material-icons-round.md-36 {
+.nav_item:hover .md-36 {
     background-color: #ade800;
 }
 
 @media (hover: none) {
-    .nav_item:hover .material-icons-round.md-36 {
+    .nav_item:hover .md-36 {
         background: none;
     }
 }
@@ -765,11 +765,6 @@ button {
 
 .downLittle {
     position: relative;
-    top: 2px;
-}
-
-.downLittleText {
-    position: relative;
     top: 3px;
 }
 
@@ -806,7 +801,7 @@ button {
 }
 
 @media screen and (max-width: 390px) {
-    .material-icons-round.md-36 {
+    .md-36 {
         font-size: 30px;
     }
 
