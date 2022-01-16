@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^arcody\.com$
+RewriteRule ^(.*)$ https://www.arcody.com/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ https://www.arcody.com/$1 [R=301,L]
+
+RewriteCond %{ HTTPS} off
+RewriteRule ^(.*)$ https://%{ HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+ErrorDocument 404 /404.html
