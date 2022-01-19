@@ -661,6 +661,7 @@ button {
     cursor: pointer;
     font-family: 'Livvic', 'Noto Sans JP', sans-serif;
     font-weight: 300;
+    color: black;
 }
 
 .blueButton {
@@ -802,7 +803,7 @@ button {
 
 @media screen and (max-width: 390px) {
     .md-36 {
-        font-size: 30px;
+        width: 30px;
     }
 
     button {
