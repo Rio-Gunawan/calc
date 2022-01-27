@@ -723,6 +723,16 @@ button {
     top: -13px;
 }
 
+.upFraction {
+    position: relative;
+    top: -11px;
+}
+
+.upButtonSmallFont {
+    position: relative;
+    top: -33px;
+}
+
 @media screen and (max-width: 350px) {
     .smallFont {
         font-size: 0.35rem;

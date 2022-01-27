@@ -20,8 +20,15 @@ function clickNum(num) {
     if (num == '.') {
         let inputStringVersion = String(answer[answerNum]);
         if (isFraction) {
-            if (fractionMode == "n") {
-                inputStringVersion = String(answer[answerNum][0]);
+            switch (fractionMode) {
+                case "n":
+                    inputStringVersion = String(answer[answerNum][0]);
+                    break;
+                case "d":
+                    inputStringVersion = String(answer[answerNum][1]);
+                    break;
+                default:
+                    break;
             }
         }
         if (inputStringVersion == "undefined") {
@@ -33,12 +40,23 @@ function clickNum(num) {
         isFloat = true;
         haveFloat = true;
         if (isFraction) {
-            if (fractionMode == "n") {
-                answer[answerNum][0] = inputStringVersion;
-                inputStrings =
-                    inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
-                    '</span><br><span>' + answer[answerNum][1] + '</span></span>';
-                showInputStrings(1);
+            switch (fractionMode) {
+                case "n":
+                    answer[answerNum][0] = inputStringVersion;
+                    inputStrings =
+                        inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                        '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                    showInputStrings(1);
+                    break;
+                case "d":
+                    answer[answerNum][1] = inputStringVersion;
+                    inputStrings =
+                        inputtedText + '<span class="fraction"><span class="numerator">' +
+                        '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                    showInputStrings(2);
+                    break;
+                default:
+                    break;
             }
         } else {
             inputStrings += String(num);
@@ -48,14 +66,41 @@ function clickNum(num) {
     } else {
         if (isFloat) {
             if (isFraction) {
-                if (fractionMode == "n") {
-                    answer[answerNum][0] += String(num);
-                    answer[answerNum][0] = Number(answer[answerNum][0]);
-                    inputStrings =
-                        inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
-                        '</span><br><span>' + answer[answerNum][1] + '</span></span>';
-                    showInputStrings(1);
+                switch (fractionMode) {
+                    case "n":
+                        if (String(answer[answerNum][0]) == "undefined") {
+                            answer[answerNum][0] = num;
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        } else {
+                            answer[answerNum][0] += String(num);
+                            answer[answerNum][0] = Number(answer[answerNum][0]);
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        }
+                        showInputStrings(1);
+                        break;
+                    case "d":
+                        if (String(answer[answerNum][1]) == "undefined") {
+                            answer[answerNum][1] = num;
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        } else {
+                            answer[answerNum][1] += String(num);
+                            answer[answerNum][1] = Number(answer[answerNum][1]);
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        }
+                        showInputStrings(2);
+                        break;
+                    default:
+                        break;
                 }
+
             } else {
                 answer[answerNum] += String(num);
                 inputStrings += String(num);
@@ -63,24 +108,47 @@ function clickNum(num) {
             }
         } else {
             if (isFraction) {
-                if (fractionMode == "n") {
-                    if (String(answer[answerNum][0]) == "undefined") {
-                        answer[answerNum][0] = num;
-                        inputStrings =
-                            inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
-                            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
-                        showInputStrings(1);
-                    } else {
-                        if (codeNow == -1) {
-                            answer[answerNum][0] = answer[answerNum][0] * 10 - num;
+                switch (fractionMode) {
+                    case "n":
+                        if (String(answer[answerNum][0]) == "undefined") {
+                            answer[answerNum][0] = num;
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                            showInputStrings(1);
                         } else {
-                            answer[answerNum][0] = answer[answerNum][0] * 10 + num;
+                            if (codeNow == -1) {
+                                answer[answerNum][0] = answer[answerNum][0] * 10 - num;
+                            } else {
+                                answer[answerNum][0] = answer[answerNum][0] * 10 + num;
+                            }
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                            showInputStrings(1);
                         }
-                        inputStrings =
-                            inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
-                            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
-                        showInputStrings(1);
-                    }
+                        break;
+                    case "d":
+                        if (String(answer[answerNum][1]) == "undefined") {
+                            answer[answerNum][1] = num;
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                            showInputStrings(2);
+                        } else {
+                            if (codeNow == -1) {
+                                answer[answerNum][1] = answer[answerNum][1] * 10 - num;
+                            } else {
+                                answer[answerNum][1] = answer[answerNum][1] * 10 + num;
+                            }
+                            inputStrings =
+                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                            showInputStrings(2);
+                        }
+                        break;
+                    default:
+                        break;
                 }
             } else {
                 if (String(answer[answerNum]) == "undefined") {
@@ -104,14 +172,22 @@ function clickNum(num) {
 
 
 function showInputStrings(modeLocal) {
-    if (modeLocal == 0) {
-        const $output = $('#answer');
-        $output.html(inputStrings);
-        $output.append('<div id="cursor"></div>');
-    } else if (modeLocal == 1) {
-        const $output = $('#answer');
-        $output.html(inputStrings);
-        $output.append('<div id="cursor" class="up"></div>');
+    const $output = $('#answer');
+    switch (modeLocal) {
+        case 0:
+            $output.html(inputStrings);
+            $output.append('<div id="cursor"></div>');
+            break;
+        case 1:
+            $output.html(inputStrings);
+            $output.append('<div id="cursor" class="up"></div>');
+            break;
+        case 2:
+            $output.html(inputStrings);
+            $output.append('<div id="cursor" class="down"></div>');
+            break;
+        default:
+            break;
     }
 }
 
@@ -133,6 +209,7 @@ function clearText(howClear) {
         $output.html('');
         $output.text(0);
         $output.append('<div id="cursor"></div>');
+        backToFraction();
     } else {
         answer[answerNum] = undefined;
         inputStrings = inputtedText;
@@ -147,6 +224,13 @@ function clearText(howClear) {
         }
         $output.append('<div id="cursor"></div>');
     }
+}
+
+function backToFraction() {
+    const $button = $('#fraction1');
+    $button.html('<span class="fraction"><span class= "numerator">a</span>'
+        + '<br><span>b</span></span>');
+    $button.removeClass("upFraction upFractionSmallFont smallFont");
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -307,31 +391,82 @@ function sqrtNum() {
 //eslint-disable-next-line no-unused-vars
 function addFraction(fracMode) {
     isFraction = true;
+    const $button = $('#fraction1');
     if (fracMode) {
-        if (answer[answerNum] == undefined) {
-            answer[answerNum] = [undefined, undefined];
-            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
-            showInputStrings(1);
-        } else {
-            let denominator = answer[answerNum].toString();
-            answer[answerNum] = [undefined, Number(denominator)];
-            inputStrings = inputStrings.slice(0, denominator.length * -1);
-            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
-            showInputStrings(1);
+        return;
+    } else {
+        switch (fractionMode) {
+            case "n":
+                $button.text('確定');
+                $button.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                break;
+            case "d":
+                $button.text('分子へ');
+                $button.addClass('upFractionSmallFont smallFont');
+                break;
+            default:
+                break;
+        }
+    }
+    if ($button.attr('class').indexOf('upFraction') != -1) {
+        switch (fractionMode) {
+            case "n":
+                isFraction = false;
+                showInputStrings(0);
+                backToFraction();
+                fractionMode = null;
+                break;
+            case "d":
+                fractionMode = "n";
+                showInputStrings(1);
+                break;
+            default:
+                break;
         }
     } else {
-        if (answer[answerNum] == undefined) {
-            fractionMode = "d";
-            answer[answerNum] = [undefined, undefined];
-            inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
-            showInputStrings(1);
+        if (fracMode) {
+            if (answer[answerNum] == undefined) {
+                answer[answerNum] = [undefined, undefined];
+                inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
+                showInputStrings(2);
+            } else {
+                let denominator = answer[answerNum].toString();
+                answer[answerNum] = [undefined, Number(denominator)];
+                inputStrings = inputStrings.slice(0, denominator.length * -1);
+                inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
+                showInputStrings(1);
+            }
         } else {
-            fractionMode = "n";
-            let denominator = answer[answerNum].toString();
-            answer[answerNum] = [undefined, Number(denominator)];
-            inputStrings = inputStrings.slice(0, denominator.length * -1);
-            inputStrings += '<span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
-            showInputStrings(1);
+            if (answer[answerNum] == undefined) {
+                fractionMode = "d";
+                answer[answerNum] = [undefined, undefined];
+                inputStrings += '<span class="fraction"><span class="numerator"></span><br><span></span></span>';
+                showInputStrings(2);
+            } else {
+                fractionMode = "n";
+                let denominator = answer[answerNum].toString();
+                answer[answerNum] = [undefined, Number(denominator)];
+                inputStrings = inputStrings.slice(0, denominator.length * -1);
+                inputStrings += '<span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
+                showInputStrings(1);
+            }
+        }
+    }
+
+    if (fracMode) {
+        return;
+    } else {
+        switch (fractionMode) {
+            case "n":
+                $button.text('確定');
+                $button.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                break;
+            case "d":
+                $button.text('分子へ');
+                $button.addClass('upFractionSmallFont smallFont');
+                break;
+            default:
+                break;
         }
     }
 }
