@@ -1,8 +1,8 @@
-let answer = [];
+let answer = [null];
 let answerNum = 0;
 let inputStrings = "";
 let inputtedText = "";
-let mode = [];
+let mode = [null];
 let isFloat = false;
 let haveFloat = false;
 let codeNow = 1;
@@ -12,7 +12,7 @@ let fractionMode = null;
 
 // eslint-disable-next-line no-unused-vars
 function clickNum(num) {
-    if (num == 0 && answer[answerNum] == undefined) {
+    if (num == 0 && answer[answerNum] == null) {
         isZero = true;
     } else {
         isZero = false;
@@ -31,7 +31,7 @@ function clickNum(num) {
                     break;
             }
         }
-        if (inputStringVersion == "undefined") {
+        if (inputStringVersion == "null") {
             inputStringVersion = '0.';
             num = '0.';
         } else {
@@ -68,7 +68,7 @@ function clickNum(num) {
             if (isFraction) {
                 switch (fractionMode) {
                     case "n":
-                        if (String(answer[answerNum][0]) == "undefined") {
+                        if (String(answer[answerNum][0]) == "null") {
                             answer[answerNum][0] = num;
                             inputStrings =
                                 inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
@@ -83,7 +83,7 @@ function clickNum(num) {
                         showInputStrings(1);
                         break;
                     case "d":
-                        if (String(answer[answerNum][1]) == "undefined") {
+                        if (String(answer[answerNum][1]) == "null") {
                             answer[answerNum][1] = num;
                             inputStrings =
                                 inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
@@ -110,7 +110,7 @@ function clickNum(num) {
             if (isFraction) {
                 switch (fractionMode) {
                     case "n":
-                        if (String(answer[answerNum][0]) == "undefined") {
+                        if (String(answer[answerNum][0]) == "null") {
                             answer[answerNum][0] = num;
                             inputStrings =
                                 inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
@@ -129,7 +129,7 @@ function clickNum(num) {
                         }
                         break;
                     case "d":
-                        if (String(answer[answerNum][1]) == "undefined") {
+                        if (String(answer[answerNum][1]) == "null") {
                             answer[answerNum][1] = num;
                             inputStrings =
                                 inputtedText + '<span class="fraction"><span class="numerator">' +
@@ -151,7 +151,7 @@ function clickNum(num) {
                         break;
                 }
             } else {
-                if (String(answer[answerNum]) == "undefined") {
+                if (String(answer[answerNum]) == "null") {
                     answer[answerNum] = num;
                     inputStrings += String(num);
                     showInputStrings(0);
@@ -194,8 +194,8 @@ function showInputStrings(modeLocal) {
 // eslint-disable-next-line no-unused-vars
 function clearText(howClear) {
     if (howClear == 1) {
-        answer = [];
-        mode = [];
+        answer = [null];
+        mode = [null];
         inputStrings = "";
         inputtedText = "";
         answerNum = 0;
@@ -211,7 +211,7 @@ function clearText(howClear) {
         $output.append('<div id="cursor"></div>');
         backToFraction();
     } else {
-        answer[answerNum] = undefined;
+        answer[answerNum] = null;
         inputStrings = inputtedText;
         isFloat = false;
         isZero = false;
@@ -296,7 +296,7 @@ function calcMode(modeLocal) {
     isFloat = false;
     mode[answerNum] = modeLocal;
     answerNum++;
-    answer[answerNum] = undefined;
+    answer[answerNum] = null;
     if (modeLocal == '%') {
         inputStrings += 'あまり';
     } else {
@@ -323,7 +323,7 @@ function divHundred() {
 
 //eslint-disable-next-line no-unused-vars
 function backspace() {
-    if (answer[answerNum] == undefined || answer[answerNum] == '') {
+    if (answer[answerNum] == null || answer[answerNum] == '') {
         return;
     }
     if (isFloat) {
@@ -336,10 +336,10 @@ function backspace() {
         answer[answerNum] = Math.floor(answer[answerNum] / 10);
     }
     if (!isZero && answer[answerNum] == 0) {
-        answer[answerNum] = undefined;
+        answer[answerNum] = null;
     }
     inputStrings = inputStrings.slice(0, -1);
-    if (inputStrings.slice(-1) == 0 && answer[answerNum] == undefined) {
+    if (inputStrings.slice(-1) == 0 && answer[answerNum] == null) {
         answer[answerNum] = 0;
     }
     isZero = false;
@@ -425,27 +425,27 @@ function addFraction(fracMode) {
         }
     } else {
         if (fracMode) {
-            if (answer[answerNum] == undefined) {
-                answer[answerNum] = [undefined, undefined];
+            if (answer[answerNum] == null) {
+                answer[answerNum] = [null, null];
                 inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
                 showInputStrings(2);
             } else {
                 let denominator = answer[answerNum].toString();
-                answer[answerNum] = [undefined, Number(denominator)];
+                answer[answerNum] = [null, Number(denominator)];
                 inputStrings = inputStrings.slice(0, denominator.length * -1);
                 inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
                 showInputStrings(1);
             }
         } else {
-            if (answer[answerNum] == undefined) {
+            if (answer[answerNum] == null) {
                 fractionMode = "d";
-                answer[answerNum] = [undefined, undefined];
+                answer[answerNum] = [null, null];
                 inputStrings += '<span class="fraction"><span class="numerator"></span><br><span></span></span>';
                 showInputStrings(2);
             } else {
                 fractionMode = "n";
                 let denominator = answer[answerNum].toString();
-                answer[answerNum] = [undefined, Number(denominator)];
+                answer[answerNum] = [null, Number(denominator)];
                 inputStrings = inputStrings.slice(0, denominator.length * -1);
                 inputStrings += '<span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
                 showInputStrings(1);
