@@ -27,6 +27,9 @@ function clickNum(num) {
                 case "d":
                     inputStringVersion = String(answer[answerNum][1]);
                     break;
+                case "i":
+                    inputStringVersion = String(answer[answerNum][2]);
+                    break;
                 default:
                     break;
             }
@@ -44,16 +47,26 @@ function clickNum(num) {
                 case "n":
                     answer[answerNum][0] = inputStringVersion;
                     inputStrings =
-                        inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                        inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                        + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                         '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                     showInputStrings(1);
                     break;
                 case "d":
                     answer[answerNum][1] = inputStringVersion;
                     inputStrings =
-                        inputtedText + '<span class="fraction"><span class="numerator">' +
+                        inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                        + '</span><span class="fraction"><span class="numerator">' +
                         '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                     showInputStrings(2);
+                    break;
+                case "i":
+                    answer[answerNum][2] = inputStringVersion;
+                    inputStrings =
+                        inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                        + '</span><span class="fraction"><span class="numerator">' +
+                        '</span><br><span></span></span>';
+                    showInputStrings(3);
                     break;
                 default:
                     break;
@@ -71,13 +84,15 @@ function clickNum(num) {
                         if (String(answer[answerNum][0]) == "null") {
                             answer[answerNum][0] = num;
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                         } else {
                             answer[answerNum][0] += String(num);
                             answer[answerNum][0] = Number(answer[answerNum][0]);
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                         }
                         showInputStrings(1);
@@ -86,16 +101,35 @@ function clickNum(num) {
                         if (String(answer[answerNum][1]) == "null") {
                             answer[answerNum][1] = num;
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                         } else {
                             answer[answerNum][1] += String(num);
                             answer[answerNum][1] = Number(answer[answerNum][1]);
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                         }
                         showInputStrings(2);
+                        break;
+                    case "i":
+                        if (String(answer[answerNum][2]) == "null") {
+                            answer[answerNum][2] = num;
+                            inputStrings =
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+                        } else {
+                            answer[answerNum][2] += String(num);
+                            answer[answerNum][2] = Number(answer[answerNum][1]);
+                            inputStrings =
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
+                                '</span><br><span></span></span>';
+                        }
+                        showInputStrings(3);
                         break;
                     default:
                         break;
@@ -113,7 +147,8 @@ function clickNum(num) {
                         if (String(answer[answerNum][0]) == "null") {
                             answer[answerNum][0] = num;
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                             showInputStrings(1);
                         } else {
@@ -123,7 +158,8 @@ function clickNum(num) {
                                 answer[answerNum][0] = answer[answerNum][0] * 10 + num;
                             }
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                             showInputStrings(1);
                         }
@@ -132,7 +168,8 @@ function clickNum(num) {
                         if (String(answer[answerNum][1]) == "null") {
                             answer[answerNum][1] = num;
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                             showInputStrings(2);
                         } else {
@@ -142,9 +179,31 @@ function clickNum(num) {
                                 answer[answerNum][1] = answer[answerNum][1] * 10 + num;
                             }
                             inputStrings =
-                                inputtedText + '<span class="fraction"><span class="numerator">' +
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
                                 '</span><br><span>' + answer[answerNum][1] + '</span></span>';
                             showInputStrings(2);
+                        }
+                        break;
+                    case "i":
+                        if (String(answer[answerNum][2]) == "null") {
+                            answer[answerNum][2] = num;
+                            inputStrings =
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
+                                '</span><br><span></span></span>';
+                            showInputStrings(3);
+                        } else {
+                            if (codeNow == -1) {
+                                answer[answerNum][2] = answer[answerNum][2] * 10 - num;
+                            } else {
+                                answer[answerNum][2] = answer[answerNum][2] * 10 + num;
+                            }
+                            inputStrings =
+                                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                                + '</span><span class="fraction"><span class="numerator">' +
+                                '</span><br><span></span></span>';
+                            showInputStrings(3);
                         }
                         break;
                     default:
@@ -170,6 +229,13 @@ function clickNum(num) {
     }
 }
 
+function getInteger() {
+    if (answer[answerNum][2] == null) {
+        return '';
+    } else {
+        return answer[answerNum][2];
+    }
+}
 
 function showInputStrings(modeLocal) {
     const $output = $('#answer');
@@ -185,6 +251,10 @@ function showInputStrings(modeLocal) {
         case 2:
             $output.html(inputStrings);
             $output.append('<div id="cursor" class="down"></div>');
+            break;
+        case 3:
+            $output.html(inputStrings);
+            $output.append('<div id="cursor" class="left"></div>');
             break;
         default:
             break;
@@ -227,10 +297,14 @@ function clearText(howClear) {
 }
 
 function backToFraction() {
-    const $button = $('#fraction1');
-    $button.html('<span class="fraction"><span class= "numerator">a</span>'
+    const $button0 = $('#fraction0');
+    const $button1 = $('#fraction1');
+    $button1.html('<span class="fraction"><span class= "numerator">a</span>'
         + '<br><span>b</span></span>');
-    $button.removeClass("upFraction upFractionSmallFont smallFont");
+    $button1.removeClass("upFraction upFractionSmallFont smallFont");
+    $button0.html('<span class="topLittle">a</span><span class="fraction">'
+        + '<span class="numerator">b</span><br><span>c</span></span>');
+    $button0.removeClass("upFraction upFractionSmallFont smallFont");
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -391,24 +465,41 @@ function sqrtNum() {
 //eslint-disable-next-line no-unused-vars
 function addFraction(fracMode) {
     isFraction = true;
-    const $button = $('#fraction1');
+    const $button0 = $('#fraction0');
+    const $button1 = $('#fraction1');
     if (fracMode) {
-        return;
+        switch (fractionMode) {
+            case "n":
+                $button0.text('確定');
+                $button0.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                break;
+            case "d":
+                $button0.text('分子へ');
+                $button0.addClass('upFractionSmallFont smallFont');
+                break;
+            case "i":
+                $button0.text('分母へ');
+                $button0.addClass('upFractionSmallFont smallFont');
+                break;
+            default:
+                break;
+        }
     } else {
         switch (fractionMode) {
             case "n":
-                $button.text('確定');
-                $button.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                $button1.text('確定');
+                $button1.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
                 break;
             case "d":
-                $button.text('分子へ');
-                $button.addClass('upFractionSmallFont smallFont');
+                $button1.text('分子へ');
+                $button1.addClass('upFractionSmallFont smallFont');
                 break;
             default:
                 break;
         }
     }
-    if ($button.attr('class').indexOf('upFraction') != -1) {
+    if ($button1.attr('class').indexOf('upFraction') != -1 ||
+    $button0.attr('class').indexOf('upFraction') != -1) {
         switch (fractionMode) {
             case "n":
                 isFraction = false;
@@ -420,50 +511,75 @@ function addFraction(fracMode) {
                 fractionMode = "n";
                 showInputStrings(1);
                 break;
+            case "i":
+                fractionMode = "d";
+                showInputStrings(2);
+                break;
             default:
                 break;
         }
     } else {
         if (fracMode) {
             if (answer[answerNum] == null) {
-                answer[answerNum] = [null, null];
-                inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>2</span></span>';
-                showInputStrings(2);
+                fractionMode = "i";
+                answer[answerNum] = [null, null, null];
+                inputStrings += '<span class="smallFontAnswerBox">'
+                    + '</span><span class="fraction"><span class="numerator"></span><br><span></span></span>';
+                showInputStrings(3);
             } else {
-                let denominator = answer[answerNum].toString();
-                answer[answerNum] = [null, Number(denominator)];
-                inputStrings = inputStrings.slice(0, denominator.length * -1);
-                inputStrings += '<span class="fraction"><span class="numerator">1</span><br><span>' + denominator + '</span></span>';
-                showInputStrings(1);
+                fractionMode = "d";
+                let integer = answer[answerNum].toString();
+                answer[answerNum] = [null, null, Number(integer)];
+                inputStrings = inputStrings.slice(0, integer.length * -1);
+                inputStrings += '<span class="smallFontAnswerBox">' + integer + '</span><span class="fraction">' +
+                    '<span class="numerator"></span><br><span></span></span>';
+                showInputStrings(2);
             }
         } else {
             if (answer[answerNum] == null) {
                 fractionMode = "d";
-                answer[answerNum] = [null, null];
-                inputStrings += '<span class="fraction"><span class="numerator"></span><br><span></span></span>';
+                answer[answerNum] = [null, null, null];
+                inputStrings += '<span class="smallFontAnswerBox">'
+                    + '</span><span class="fraction"><span class="numerator"></span><br><span></span></span>';
                 showInputStrings(2);
             } else {
                 fractionMode = "n";
                 let denominator = answer[answerNum].toString();
-                answer[answerNum] = [null, Number(denominator)];
+                answer[answerNum] = [null, Number(denominator), null];
                 inputStrings = inputStrings.slice(0, denominator.length * -1);
-                inputStrings += '<span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
+                inputStrings += '<span class="smallFontAnswerBox">'
+                    + '</span><span class="fraction"><span class="numerator"></span><br><span>' + denominator + '</span></span>';
                 showInputStrings(1);
             }
         }
     }
 
     if (fracMode) {
-        return;
+        switch (fractionMode) {
+            case "n":
+                $button0.text('確定');
+                $button0.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                break;
+            case "d":
+                $button0.text('分子へ');
+                $button0.addClass('upFractionSmallFont smallFont');
+                break;
+            case "i":
+                $button0.text('分母へ');
+                $button0.addClass('upFractionSmallFont smallFont');
+                break;
+            default:
+                break;
+        }
     } else {
         switch (fractionMode) {
             case "n":
-                $button.text('確定');
-                $button.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
+                $button1.text('確定');
+                $button1.addClass('upFraction').removeClass('upFractionSmallFont smallFont');
                 break;
             case "d":
-                $button.text('分子へ');
-                $button.addClass('upFractionSmallFont smallFont');
+                $button1.text('分子へ');
+                $button1.addClass('upFractionSmallFont smallFont');
                 break;
             default:
                 break;

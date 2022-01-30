@@ -644,6 +644,12 @@ input[type="checkbox"] {
     margin-left: 0;
 }
 
+#cursor.left {
+    position: relative;
+    right: 0.6em;
+    height: calc(1.5rem * 0.6);
+}
+
 /*ボタン*/
 
 button {
@@ -731,6 +737,12 @@ button {
 .upButtonSmallFont {
     position: relative;
     top: -33px;
+}
+
+.smallFontAnswerBox {
+    position: relative;
+    font-size: 0.7em;
+    left: 5px;
 }
 
 @media screen and (max-width: 350px) {
