@@ -8,6 +8,7 @@ let haveFloat = false;
 let codeNow = 1;
 let isZero = false;
 let isFraction = false;
+let haveFraction = false;
 let fractionMode = null;
 
 // eslint-disable-next-line no-unused-vars
@@ -274,6 +275,7 @@ function clearText(howClear) {
         haveFloat = false;
         isZero = false;
         isFraction = false;
+        haveFraction = false;
         fractionMode = null;
         const $output = $('#answer');
         $output.html('');
@@ -309,51 +311,150 @@ function backToFraction() {
 
 // eslint-disable-next-line no-unused-vars
 function showAnswer() {
-    if (isFraction) {
+    let answerCopy = answer.slice(0, answer.length);
+    let localAnswer = answerCopy.shift();
+    let forNum = 0;
+    if (haveFraction) {
         isFraction = false;
+        if (mode[0] === null) {
+            reduceFraction(null, null);
+            inputStrings =
+                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+            showInputStrings(0);
+        } else {
+            let localNumerator = localAnswer[0];
+            let localDenominator = localAnswer[1];
+            let localInteger = localAnswer[2];
+            answerCopy.forEach(num => {
+                switch (mode[forNum]) {
+                    case '+':
+                        localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
+                        num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
+                        localNumerator += num[0];
+                        localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
+                        if (localInteger !== null || num[2] !== null) {
+                            localInteger += num[2];
+                            if (localNumerator >= localDenominator) {
+                                localInteger += ~~(localNumerator / localDenominator);
+                                localNumerator -= ~~(localNumerator / localDenominator) * localDenominator;
+                            }
+                        }
+                        break;
+                    case '-':
+                        if (localInteger !== null || num[2] !== null) {
+                            if (localNumerator < num[0]) {
+                                localInteger -= ~~((num[0] - localNumerator) / localDenominator) + 1;
+                                localNumerator += (~~((num[0] - localNumerator) / localDenominator) + 1) * localDenominator;
+                            }
+                            localInteger -= num[2];
+                        }
+                        localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
+                        num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
+                        localNumerator -= num[0];
+                        localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
+                        break;
+                    case '*':
+                        localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                        localInteger = null;
+                        num[0] = beImproperFraction(num)[0];
+                        localNumerator *= num[0];
+                        localDenominator *= num[1];
+                        break;
+                    case '/':
+                        localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                        localInteger = null;
+                        num[0] = beImproperFraction(num)[0];
+                        localNumerator *= num[1];
+                        localDenominator *= num[0];
+                        break;
+                    case '%':
+                        localAnswer %= num;
+                        break;
+                    default:
+                        break;
+                }
+                forNum++;
+            });
+
+            //分数の約分をする。
+            let greatest = reduceFraction(localNumerator, localDenominator);
+            localNumerator /= greatest;
+            localDenominator /= greatest;
+
+            if (localInteger === null) {
+                localAnswer = '<span class="fraction"><span class="numerator">' + localNumerator +
+                    '</span><br><span>' + localDenominator + '</span></span>';
+            } else {
+                localAnswer = '<span class="smallFontAnswerBox">' + localInteger
+                + '</span><span class="fraction"><span class="numerator">' + localNumerator +
+                    '</span><br><span>' + localDenominator + '</span></span>';
+            }
+
+            const $output = $('#answer');
+            if (answerCopy.length == 0) {
+                $output.html('0');
+            } else {
+                $output.html('');
+            }
+            $output.html(localAnswer);
+            $output.append('<div id="cursor"></div>');
+        }
         return;
     }
     if (isFloat) {
         isFloat = false;
     }
-    let answerCopy = answer.slice(0, answer.length);
-    let localAnswer = answerCopy.shift();
-    let forNum = 0;
     if (haveFloat) {
         localAnswer = BigNumber(localAnswer);
         answerCopy.forEach(num => {
             const bigNum = BigNumber(num);
-            if (mode[forNum] == '+') {
-                localAnswer = localAnswer.plus(bigNum);
-            } else if (mode[forNum] == '-') {
-                localAnswer = localAnswer.minus(bigNum);
-            } else if (mode[forNum] == '*') {
-                localAnswer = localAnswer.times(bigNum);
-            } else if (mode[forNum] == '/') {
-                localAnswer = localAnswer.div(bigNum);
-            } else if (mode[forNum] == '%') {
-                localAnswer = localAnswer.mod(bigNum);
+            switch (mode[forNum]) {
+                case '+':
+                    localAnswer = localAnswer.plus(bigNum);
+                    break;
+                case '-':
+                    localAnswer = localAnswer.minus(bigNum);
+                    break;
+                case '*':
+                    localAnswer = localAnswer.times(bigNum);
+                    break;
+                case '/':
+                    localAnswer = localAnswer.div(bigNum);
+                    break;
+                case '%':
+                    localAnswer = localAnswer.mod(bigNum);
+                    break;
+                default:
+                    break;
             }
             forNum++;
         });
+        localAnswer = localAnswer.toNumber();
     } else {
         answerCopy.forEach(num => {
-            if (mode[forNum] == '+') {
-                localAnswer += num;
-            } else if (mode[forNum] == '-') {
-                localAnswer -= num;
-            } else if (mode[forNum] == '*') {
-                localAnswer *= num;
-            } else if (mode[forNum] == '/') {
-                localAnswer /= num;
-            } else if (mode[forNum] == '%') {
-                localAnswer %= num;
+            switch (mode[forNum]) {
+                case '+':
+                    localAnswer += num;
+                    break;
+                case '-':
+                    localAnswer -= num;
+                    break;
+                case '*':
+                    localAnswer *= num;
+                    break;
+                case '/':
+                    localAnswer /= num;
+                    break;
+                case '%':
+                    localAnswer %= num;
+                    break;
+                default:
+                    break;
             }
             forNum++;
         });
-    }
-    if (haveFloat) {
-        localAnswer = localAnswer.toNumber();
     }
     const $output = $('#answer');
     if (answerCopy.length == 0) {
@@ -363,6 +464,48 @@ function showAnswer() {
     }
     $output.text(localAnswer);
     $output.append('<div id="cursor"></div>');
+}
+
+function reduceFraction(n, d) {
+    if (n !== null && d !== null) {
+        let greatest;
+        let variable;
+        if (n < d) {
+            variable = d % n;
+            greatest = n;
+        } else {
+            variable = n % d;
+            greatest = d;
+        }
+        while (variable != 0) {
+            let variable1 = greatest % variable;
+            greatest = variable;
+            variable = variable1;
+        }
+        return greatest;
+    } else {
+        let greatest;
+        let variable;
+        if (answer[answerNum][0] < answer[answerNum][1]) {
+            variable = answer[answerNum][1] % answer[answerNum][0];
+            greatest = answer[answerNum][0];
+        } else {
+            variable = answer[answerNum][0] % answer[answerNum][1];
+            greatest = answer[answerNum][1];
+        }
+        while (variable != 0) {
+            let variable1 = greatest % variable;
+            greatest = variable;
+            variable = variable1;
+        }
+        answer[answerNum][0] /= greatest;
+        answer[answerNum][1] /= greatest;
+    }
+}
+
+function beImproperFraction(frac) {
+    frac[0] = frac[2] * frac[1] + frac[0];
+    return frac;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -465,6 +608,7 @@ function sqrtNum() {
 //eslint-disable-next-line no-unused-vars
 function addFraction(fracMode) {
     isFraction = true;
+    haveFraction = true;
     const $button0 = $('#fraction0');
     const $button1 = $('#fraction1');
     if (fracMode) {
@@ -499,7 +643,7 @@ function addFraction(fracMode) {
         }
     }
     if ($button1.attr('class').indexOf('upFraction') != -1 ||
-    $button0.attr('class').indexOf('upFraction') != -1) {
+        $button0.attr('class').indexOf('upFraction') != -1) {
         switch (fractionMode) {
             case "n":
                 isFraction = false;
