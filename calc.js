@@ -318,16 +318,33 @@ function showAnswer() {
         isFraction = false;
         if (mode[0] === null) {
             reduceFraction(null, null);
-            inputStrings =
-                inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
-                + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
-                '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+            if (answer[answerNum][1] == 1) {
+                inputStrings = answer[answerNum][0];
+            } else {
+                inputStrings =
+                    '<span class="smallFontAnswerBox">' + getInteger()
+                    + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+                    '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+            }
             showInputStrings(0);
         } else {
-            let localNumerator = localAnswer[0];
-            let localDenominator = localAnswer[1];
-            let localInteger = localAnswer[2];
+            let localNumerator;
+            let localDenominator;
+            let localInteger;
+            if (typeof (localAnswer) == 'object') {
+                localNumerator = localAnswer[0];
+                localDenominator = localAnswer[1];
+                localInteger = localAnswer[2];
+            } else {
+                localNumerator = localAnswer;
+                localDenominator = 1;
+                localInteger = null;
+                localAnswer = [localAnswer, 1, null];
+            }
             answerCopy.forEach(num => {
+                if (!(typeof (num) == 'object')) {
+                    num = [num, 1, null];
+                }
                 switch (mode[forNum]) {
                     case '+':
                         localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
@@ -383,12 +400,14 @@ function showAnswer() {
             localNumerator /= greatest;
             localDenominator /= greatest;
 
-            if (localInteger === null) {
+            if (localDenominator == 1) {
+                localAnswer = localNumerator + localInteger;
+            } else if (localInteger === null) {
                 localAnswer = '<span class="fraction"><span class="numerator">' + localNumerator +
                     '</span><br><span>' + localDenominator + '</span></span>';
             } else {
                 localAnswer = '<span class="smallFontAnswerBox">' + localInteger
-                + '</span><span class="fraction"><span class="numerator">' + localNumerator +
+                    + '</span><span class="fraction"><span class="numerator">' + localNumerator +
                     '</span><br><span>' + localDenominator + '</span></span>';
             }
 
