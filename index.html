@@ -50,12 +50,12 @@
     </header>
     <div id="margin_div"></div>
     <h1 id="title_message">分数やあまりがWebで使える電卓 - Web電卓 Multum</h1>
-    <div class="alert">
-        <h2>注意</h2>
+    <div class="hint">
+        <h2>ヒント</h2>
         <p>現在このサイトは&alpha;(アルファ)版となっております。<br>
-            そのため、分数は利用できませんし、動作や表示が不安定な場合があります。<br>
-            また、計算結果はバグにより間違っている場合もあります。<br>
-            結果は保証しません。ご了承ください。</p>
+            動作や表示が不安定な場合があり、計算結果はバグにより間違っている場合もあります。<br>
+            結果は保証しませんので、ご了承ください。<br>
+            最終更新日:2022/2/13 (日) バージョン:0.5.7&alpha; Web電卓 Multum</p>
     </div>
     <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
@@ -74,8 +74,12 @@
                         <div class="functions">
                             <h2 class="setting_h2">関数類</h2>
                             <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
-                            <button onclick="divHundred()" class="greenButton noLivvic">%</button>
-                            <button onclick="sqrtNum()" class="greenButton noLivvic">&Sqrt;</button>
+                            <button onclick="divHundred()" class="greenButton">%</button>
+                            <button onclick="sqrtNum()" class="greenButton noRoboto">&Sqrt;</button>
+                        </div>
+                        <div class="history">
+                            <h2 class="setting_h2">履歴</h2>
+                            <p>準備中</p>
                         </div>
                         <div class="settings">
                             <h2 class="setting_h2">設定</h2>
@@ -188,9 +192,9 @@
                 rel="noopener noreferrer">Multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.5.6&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: <time datetime="2022-2-8" itemprop="modified">2022/2/8 (火)</time></span>
-            <span class="margin-left_div copy">&copy; 2021-2022 Rio Gunawan</span>
+            <span>Version: 0.5.7&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: <time datetime="2022-2-13" itemprop="modified">2022/2/13 (日)</time></span>
+            <span class="margin-left_div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
         </p>
         <p class="footer_3">
             このサイトは、<a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">

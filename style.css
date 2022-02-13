@@ -16,21 +16,21 @@
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Light.otf) format('opentype');
+    src: url(./fonts/NotoSansJP-Light.ttf) format('truetype');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Medium.otf) format('opentype');
+    src: url(./fonts/NotoSansJP-Medium.ttf) format('truetype');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Bold.otf) format('opentype');
+    src: url(./fonts/NotoSansJP-Bold.ttf) format('truetype');
     font-weight: 700;
     font-display: swap;
 }
@@ -404,6 +404,30 @@ header.DownMove {
     margin: 3px 0;
 }
 
+.hint {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #66d4ff;
+    text-align: center;
+}
+
+.hint h2 {
+    font-size: 1.3em;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.hint p {
+    margin: 3px 0;
+}
+
 /*見出し*/
 
 h1 {
@@ -446,7 +470,7 @@ main {
     background-color: #eee;
     border-radius: 30px;
     border: solid 1px #bbb;
-    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
+    font-family: 'Livvic', 'Roboto', 'Noto Sans JP', sans-serif;
 }
 
 #white {
@@ -665,7 +689,7 @@ button {
     transition-duration: 500ms;
     transition-delay: 0s;
     cursor: pointer;
-    font-family: 'Livvic', 'Noto Sans JP', sans-serif;
+    font-family: 'Livvic', 'Roboto', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     color: black;
 }
@@ -1056,7 +1080,7 @@ footer {
     color: #3cd5ff;
 }
 
-.noLivvic {
+.noRoboto {
     font-family: 'Noto Sans JP', sans-serif;
 }
 

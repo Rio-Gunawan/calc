@@ -331,6 +331,7 @@ function showAnswer() {
             let localNumerator;
             let localDenominator;
             let localInteger;
+            let errorLog = false;
             if (typeof (localAnswer) == 'object') {
                 localNumerator = localAnswer[0];
                 localDenominator = localAnswer[1];
@@ -341,65 +342,140 @@ function showAnswer() {
                 localInteger = null;
                 localAnswer = [localAnswer, 1, null];
             }
-            answerCopy.forEach(num => {
-                if (!(typeof (num) == 'object')) {
-                    num = [num, 1, null];
+            if (haveFloat) {
+                localNumerator = BigNumber(localNumerator);
+                localDenominator = BigNumber(localDenominator);
+                if (localInteger != null) {
+                    localInteger = BigNumber(localInteger);
                 }
-                switch (mode[forNum]) {
-                    case '+':
-                        localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
-                        num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
-                        localNumerator += num[0];
-                        localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
-                        if (localInteger !== null || num[2] !== null) {
-                            localInteger += num[2];
-                            if (localNumerator >= localDenominator) {
-                                localInteger += ~~(localNumerator / localDenominator);
-                                localNumerator -= ~~(localNumerator / localDenominator) * localDenominator;
+                answerCopy.forEach(num => {
+                    if (!(typeof (num) == 'object')) {
+                        num = [num, 1, null];
+                    }
+                    num[0] = BigNumber(num[0]);
+                    num[1] = BigNumber(num[1]);
+                    if (num[2] != null) {
+                        num[2] = BigNumber(num[2]);
+                    }
+                    switch (mode[forNum]) {
+                        case '+':
+                            //通分をする
+                            localNumerator = localNumerator.times(num[1].div(reduceFraction(localDenominator, num[1])));
+                            num[0] = num[0].times(localDenominator.div(reduceFraction(localDenominator, num[1])));
+                            //計算
+                            localDenominator = localDenominator.div(reduceFraction(localDenominator, num[1])).times(num[1]);
+                            localNumerator = localNumerator.plus(num[0]);
+                            if (localInteger !== null || num[2] !== null) {
+                                localInteger += num[2];
+                                if (localNumerator >= localDenominator) {
+                                    localInteger += ~~(localNumerator / localDenominator);
+                                    localNumerator -= ~~(localNumerator / localDenominator) * localDenominator;
+                                }
                             }
-                        }
-                        break;
-                    case '-':
-                        if (localInteger !== null || num[2] !== null) {
-                            if (localNumerator < num[0]) {
-                                localInteger -= ~~((num[0] - localNumerator) / localDenominator) + 1;
-                                localNumerator += (~~((num[0] - localNumerator) / localDenominator) + 1) * localDenominator;
+                            break;
+                        case '-':
+                            if (localInteger !== null || num[2] !== null) {
+                                if (localNumerator < num[0]) {
+                                    localInteger -= ~~((num[0] - localNumerator) / localDenominator) + 1;
+                                    localNumerator += (~~((num[0] - localNumerator) / localDenominator) + 1) * localDenominator;
+                                }
+                                localInteger -= num[2];
                             }
-                            localInteger -= num[2];
-                        }
-                        localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
-                        num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
-                        localNumerator -= num[0];
-                        localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
-                        break;
-                    case '*':
-                        localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
-                        localInteger = null;
-                        num[0] = beImproperFraction(num)[0];
-                        localNumerator *= num[0];
-                        localDenominator *= num[1];
-                        break;
-                    case '/':
-                        localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
-                        localInteger = null;
-                        num[0] = beImproperFraction(num)[0];
-                        localNumerator *= num[1];
-                        localDenominator *= num[0];
-                        break;
-                    case '%':
-                        localAnswer %= num;
-                        break;
-                    default:
-                        break;
-                }
-                forNum++;
-            });
+                            localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
+                            num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
+                            localNumerator -= num[0];
+                            localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
+                            break;
+                        case '*':
+                            localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                            localInteger = null;
+                            num[0] = beImproperFraction(num)[0];
+                            localNumerator *= num[0];
+                            localDenominator *= num[1];
+                            break;
+                        case '/':
+                            localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                            localInteger = null;
+                            num[0] = beImproperFraction(num)[0];
+                            localNumerator *= num[1];
+                            localDenominator *= num[0];
+                            break;
+                        case '%':
+                            errorLog = true;
+                            break;
+                        default:
+                            break;
+                    }
+                    forNum++;
+                });
+            } else {
+                answerCopy.forEach(num => {
+                    if (!(typeof (num) == 'object')) {
+                        num = [num, 1, null];
+                    }
+                    switch (mode[forNum]) {
+                        case '+':
+                            localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
+                            num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
+                            localNumerator += num[0];
+                            localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
+                            if (localInteger !== null || num[2] !== null) {
+                                localInteger += num[2];
+                                if (localNumerator >= localDenominator) {
+                                    localInteger += ~~(localNumerator / localDenominator);
+                                    localNumerator -= ~~(localNumerator / localDenominator) * localDenominator;
+                                }
+                            }
+                            break;
+                        case '-':
+                            if (localInteger !== null || num[2] !== null) {
+                                if (localNumerator < num[0]) {
+                                    localInteger -= ~~((num[0] - localNumerator) / localDenominator) + 1;
+                                    localNumerator += (~~((num[0] - localNumerator) / localDenominator) + 1) * localDenominator;
+                                }
+                                localInteger -= num[2];
+                            }
+                            localNumerator *= num[1] / reduceFraction(localDenominator, num[1]);
+                            num[0] *= localDenominator / reduceFraction(localDenominator, num[1]);
+                            localNumerator -= num[0];
+                            localDenominator = localDenominator / reduceFraction(localDenominator, num[1]) * num[1];
+                            break;
+                        case '*':
+                            localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                            localInteger = null;
+                            num[0] = beImproperFraction(num)[0];
+                            localNumerator *= num[0];
+                            localDenominator *= num[1];
+                            break;
+                        case '/':
+                            localNumerator = beImproperFraction([localNumerator, localDenominator, localInteger])[0];
+                            localInteger = null;
+                            num[0] = beImproperFraction(num)[0];
+                            localNumerator *= num[1];
+                            localDenominator *= num[0];
+                            break;
+                        case '%':
+                            errorLog = true;
+                            break;
+                        default:
+                            break;
+                    }
+                    forNum++;
+                });
+            }
 
             //分数の約分をする。
             let greatest = reduceFraction(localNumerator, localDenominator);
-            localNumerator /= greatest;
-            localDenominator /= greatest;
-
+            if (haveFloat) {
+                localNumerator = localNumerator.div(greatest);
+                localDenominator = localDenominator.div(greatest);
+                //数値に戻す
+                localDenominator = localDenominator.toNumber();
+                localNumerator = localNumerator.toNumber();
+            } else {
+                localNumerator /= greatest;
+                localDenominator /= greatest;
+            }
             if (localDenominator == 1) {
                 localAnswer = localNumerator + localInteger;
             } else if (localInteger === null) {
@@ -409,6 +485,10 @@ function showAnswer() {
                 localAnswer = '<span class="smallFontAnswerBox">' + localInteger
                     + '</span><span class="fraction"><span class="numerator">' + localNumerator +
                     '</span><br><span>' + localDenominator + '</span></span>';
+            }
+
+            if (errorLog) {
+                localAnswer = 'エラー';
             }
 
             const $output = $('#answer');
@@ -489,17 +569,32 @@ function reduceFraction(n, d) {
     if (n !== null && d !== null) {
         let greatest;
         let variable;
-        if (n < d) {
-            variable = d % n;
-            greatest = n;
+        if (BigNumber.isBigNumber(n)) {
+            if (n.lt(d)) {
+                variable = d.mod(n);
+                greatest = n;
+            } else {
+                variable = n.mod(d);
+                greatest = d;
+            }
+            while (variable != 0) {
+                let variable1 = greatest.mod(variable);
+                greatest = variable;
+                variable = variable1;
+            }
         } else {
-            variable = n % d;
-            greatest = d;
-        }
-        while (variable != 0) {
-            let variable1 = greatest % variable;
-            greatest = variable;
-            variable = variable1;
+            if (n < d) {
+                variable = d % n;
+                greatest = n;
+            } else {
+                variable = n % d;
+                greatest = d;
+            }
+            while (variable != 0) {
+                let variable1 = greatest % variable;
+                greatest = variable;
+                variable = variable1;
+            }
         }
         return greatest;
     } else {
