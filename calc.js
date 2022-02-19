@@ -619,6 +619,7 @@ function reduceFraction(n, d) {
 
 function beImproperFraction(frac) {
     frac[0] = frac[2] * frac[1] + frac[0];
+    frac[2] = null;
     return frac;
 }
 
@@ -639,17 +640,35 @@ function calcMode(modeLocal) {
 
 // eslint-disable-next-line no-unused-vars
 function changeCode() {
-    answer[answerNum] *= -1;
-    inputStrings = inputtedText + answer[answerNum];
-    showInputStrings(0);
-    codeNow = Math.sign(answer[answerNum]);
+    if (haveFraction) {
+        inputStrings = inputtedText + '<span class="smallFontAnswerBox">-' + getInteger()
+            + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+        answer[answerNum][0] *= -1;
+        showInputStrings(0);
+        codeNow = Math.sign(answer[answerNum][0]);
+    } else {
+        answer[answerNum] *= -1;
+        inputStrings = inputtedText + answer[answerNum];
+        showInputStrings(0);
+        codeNow = Math.sign(answer[answerNum]);
+    }
 }
 
 //eslint-disable-next-line no-unused-vars
 function divHundred() {
-    answer[answerNum] /= 100;
-    inputStrings = inputtedText + answer[answerNum];
-    showInputStrings(0);
+    if (haveFraction) {
+        answer[answerNum][1] *= 100;
+        reduceFraction(null, null);
+        inputStrings = inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+            + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+        showInputStrings(0);
+    } else {
+        answer[answerNum] /= 100;
+        inputStrings = inputtedText + answer[answerNum];
+        showInputStrings(0);
+    }
 }
 
 //eslint-disable-next-line no-unused-vars
@@ -657,24 +676,78 @@ function backspace() {
     if (answer[answerNum] == null || answer[answerNum] == '') {
         return;
     }
-    if (isFloat) {
-        const remove = answer[answerNum].slice(-1);
-        answer[answerNum] = answer[answerNum].slice(0, -1);
-        if (remove == '.') {
-            isFloat = false;
+    if (haveFraction) {
+        let fracNum = null;
+        switch (fractionMode) {
+            case 'n':
+                fracNum = 0;
+                break;
+            case 'd':
+                fracNum = 1;
+                break;
+            case 'i':
+                fracNum = 2;
+                break;
+            default:
+                break;
         }
-    } else {
-        answer[answerNum] = Math.floor(answer[answerNum] / 10);
+        if (isFloat) {
+            const remove = answer[answerNum][fracNum].slice(-1);
+            answer[answerNum][fracNum] = answer[answerNum][fracNum].slice(0, -1);
+            if (remove == '.') {
+                isFloat = false;
+            }
+        } else {
+            answer[answerNum][fracNum] = Math.floor(answer[answerNum][fracNum] / 10);
+        }
+        if (!isZero && answer[answerNum][fracNum] == 0) {
+            answer[answerNum][fracNum] = null;
+        }
+        let localNumerator = answer[answerNum][0];
+        let localDenominator = answer[answerNum][1];
+        if (localDenominator === null) {
+            localDenominator = '';
+        }
+        if (localNumerator === null) {
+            localNumerator = '';
+        }
+        inputStrings = inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+            + '</span><span class="fraction"><span class="numerator">' + localNumerator +
+            '</span><br><span>' + localDenominator + '</span></span>';
+        switch (fractionMode) {
+            case 'n':
+                showInputStrings(1);
+                break;
+            case 'd':
+                showInputStrings(2);
+                break;
+            case 'i':
+                showInputStrings(3);
+                break;
+            default:
+                break;
+        }
     }
-    if (!isZero && answer[answerNum] == 0) {
-        answer[answerNum] = null;
-    }
-    inputStrings = inputStrings.slice(0, -1);
-    if (inputStrings.slice(-1) == 0 && answer[answerNum] == null) {
-        answer[answerNum] = 0;
+    else {
+        if (isFloat) {
+            const remove = answer[answerNum].slice(-1);
+            answer[answerNum] = answer[answerNum].slice(0, -1);
+            if (remove == '.') {
+                isFloat = false;
+            }
+        } else {
+            answer[answerNum] = Math.floor(answer[answerNum] / 10);
+        }
+        if (!isZero && answer[answerNum] == 0) {
+            answer[answerNum] = null;
+        }
+        inputStrings = inputStrings.slice(0, -1);
+        if (inputStrings.slice(-1) == 0 && answer[answerNum] == null) {
+            answer[answerNum] = 0;
+        }
+        showInputStrings(0);
     }
     isZero = false;
-    showInputStrings(0);
     if (inputStrings.length == 0) {
         const $output = $('#answer');
         $output.html('');
@@ -685,38 +758,77 @@ function backspace() {
 
 //eslint-disable-next-line no-unused-vars
 function powNum() {
-    let localAnswer = answer[answerNum];
-    if (haveFloat) {
-        localAnswer = BigNumber(localAnswer);
-        localAnswer = localAnswer.pow(2);
+    if (haveFraction) {
+        let localAnswer = answer[answerNum];
+        localAnswer = beImproperFraction(localAnswer);
+        if (haveFloat) {
+            localAnswer[0] = BigNumber(localAnswer);
+            localAnswer[1] = BigNumber(localAnswer);
+            localAnswer[0] = localAnswer.pow(2);
+            localAnswer[1] = localAnswer.pow(2);
+            localAnswer[0] = localAnswer.toNumber();
+            localAnswer[1] = localAnswer.toNumber();
+        } else {
+            localAnswer[0] = Math.pow(localAnswer[0], 2);
+            localAnswer[1] = Math.pow(localAnswer[1], 2);
+        }
+        answer[answerNum] = localAnswer;
+        reduceFraction(null, null);
+        inputStrings = inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+            + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+        showInputStrings(0);
     } else {
-        localAnswer = Math.pow(localAnswer, 2);
+        let localAnswer = answer[answerNum];
+        if (haveFloat) {
+            localAnswer = BigNumber(localAnswer);
+            localAnswer = localAnswer.pow(2);
+            localAnswer = localAnswer.toNumber();
+        } else {
+            localAnswer = Math.pow(localAnswer, 2);
+        }
+        answer[answerNum] = localAnswer;
+        inputStrings = inputtedText + String(localAnswer);
+        showInputStrings(0);
     }
-    if (haveFloat) {
-        localAnswer = localAnswer.toNumber();
-    }
-    inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
-    answer[answerNum] = localAnswer;
-    inputStrings = inputStrings + String(localAnswer);
-    showInputStrings(0);
 }
 
 //eslint-disable-next-line no-unused-vars
 function sqrtNum() {
-    let localAnswer = answer[answerNum];
-    if (haveFloat) {
-        localAnswer = BigNumber(localAnswer);
-        localAnswer = localAnswer.sqrt(2);
+    if (haveFraction) {
+        let localAnswer = answer[answerNum];
+        localAnswer = beImproperFraction(localAnswer);
+        if (haveFloat) {
+            localAnswer[0] = BigNumber(localAnswer);
+            localAnswer[1] = BigNumber(localAnswer);
+            localAnswer[0] = localAnswer.sqrt(2);
+            localAnswer[1] = localAnswer.sqrt(2);
+            localAnswer[0] = localAnswer.toNumber();
+            localAnswer[1] = localAnswer.toNumber();
+        } else {
+            localAnswer[0] = Math.sqrt(localAnswer[0], 2);
+            localAnswer[1] = Math.sqrt(localAnswer[1], 2);
+        }
+        answer[answerNum] = localAnswer;
+        reduceFraction(null, null);
+        inputStrings = inputtedText + '<span class="smallFontAnswerBox">' + getInteger()
+            + '</span><span class="fraction"><span class="numerator">' + answer[answerNum][0] +
+            '</span><br><span>' + answer[answerNum][1] + '</span></span>';
+        showInputStrings(0);
     } else {
-        localAnswer = Math.sqrt(localAnswer, 2);
+        let localAnswer = answer[answerNum];
+        if (haveFloat) {
+            localAnswer = BigNumber(localAnswer);
+            localAnswer = localAnswer.sqrt(2);
+            localAnswer = localAnswer.toNumber();
+        } else {
+            localAnswer = Math.sqrt(localAnswer, 2);
+        }
+        inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
+        answer[answerNum] = localAnswer;
+        inputStrings = inputStrings + String(localAnswer);
+        showInputStrings(0);
     }
-    if (haveFloat) {
-        localAnswer = localAnswer.toNumber();
-    }
-    inputStrings = inputStrings.slice(0, String(answer[answerNum]).length * -1);
-    answer[answerNum] = localAnswer;
-    inputStrings = inputStrings + String(localAnswer);
-    showInputStrings(0);
 }
 
 //eslint-disable-next-line no-unused-vars

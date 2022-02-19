@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217301817-1"></script>
     <script>
@@ -19,12 +19,20 @@
     <meta name="description" content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。
     Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
     <meta name="author" content="Rio Gunawan">
-    <title>分数やあまりがWebで使える電卓 - Web電卓 Multum</title>
+    <title>分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="./images/appletouchicon.png">
     <meta http-equiv="default-style" content="style.css">
+    <meta name="og:url" content="https://www.arcody.com/tools/calc/">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="分数やあまりがWebで使えるシンプルな電卓!">
+    <meta name="og:description" content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。
+    Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
+    <meta property="og:site_name" content="Web電卓 Multum">
+    <meta property="og:image" content="https://www.arcody.com/tools/calc/images/main.png">
+    <meta name="twitter:card" content="Summary with Large Image">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="bignumber.js/bignumber.js"></script>
 </head>
@@ -49,7 +57,7 @@
         </div>
     </header>
     <div id="margin_div"></div>
-    <h1 id="title_message">分数やあまりがWebで使える電卓 - Web電卓 Multum</h1>
+    <h1 id="title_message">分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</h1>
     <div class="hint">
         <h2>ヒント</h2>
         <p>現在このサイトは&alpha;(アルファ)版となっております。<br>
@@ -74,7 +82,7 @@
                         <div class="functions">
                             <h2 class="setting_h2">関数類</h2>
                             <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
-                            <button onclick="divHundred()" class="greenButton">%</button>
+                            <button onclick="powNum()" class="greenButton">x&sup2;</button>
                             <button onclick="sqrtNum()" class="greenButton noRoboto">&Sqrt;</button>
                         </div>
                         <div class="history">
@@ -113,7 +121,7 @@
                 </button>
                 <button onclick="clearText(0)" class="pinkButton">C</button>
                 <button onclick="clearText(1)" class="pinkButton">AC</button><br>
-                <button onclick="powNum()" class="greenButton upButton">x&sup2;</button>
+                <button onclick="divHundred()" class="greenButton upButton">%</button>
                 <button onclick="addFraction(true)" class="orangeButton" id="fraction0">
                     <span class="topLittle">a</span><span class="fraction"><span class="numerator">b</span><br>
                         <span>c</span>
@@ -192,8 +200,9 @@
                 rel="noopener noreferrer">Multumのソースコード</a>
         </nav>
         <p class="footer_p">
-            <span>Version: 0.5.7&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: <time datetime="2022-2-13" itemprop="modified">2022/2/13 (日)</time></span>
+            <span>Version: 0.6&alpha; (Alpha version)</span>
+            <span class="margin-left_div">最終更新日: <time datetime="2022-2-19" itemprop="modified">2022/2/19
+                    (土)</time></span>
             <span class="margin-left_div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
         </p>
         <p class="footer_3">
