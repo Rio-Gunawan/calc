@@ -33,31 +33,32 @@
     <meta property="og:site_name" content="Web電卓 Multum">
     <meta property="og:image" content="https://www.arcody.com/tools/calc/images/main.png">
     <meta name="twitter:card" content="Summary with Large Image">
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="bignumber.js/bignumber.js"></script>
 </head>
 
 <body>
-    <script src="calc.js"></script>
     <header id="header" class="DownMove">
+        <img src="images/favicon.png" id="title-icon" alt="Multum アイコン">
+        <div id="title">
+            <img src="images/title.png" id="title-image" alt="Multumタイトル画像">
+            <strong class="header-strong">分数やあまりなども使える電卓</strong>
+        </div>
         <div class="openBtn"><span></span><span></span><span></span></div>
-        <nav class="header_nav" id="header_nav">
+        <nav id="header-nav">
             <div id="g-nav-list">
-                <ul class="header_nav" id="header_list">
-                    <li class="header_list"><a href="#about" class="header_link">Multumについて</a></li>
-                    <li class="header_list"><a href="#howUse" class="header_link">使い方</a></li>
-                    <li class="header_list"><a href="#inquiry" class="header_link">お問い合わせ</a></li>
+                <ul id="header-ul">
+                    <li><a href="#about">Multumについて</a></li>
+                    <li><a href="#howUse">使い方</a></li>
+                    <li><a href="#inquiry">お問い合わせ</a></li>
                 </ul>
             </div>
         </nav>
-        <img src="images/favicon.png" id="title_icon" alt="Multum アイコン">
-        <div id="title">
-            <img src="images/title.png" id="title_image" alt="Multumタイトル画像">
-            <strong class="header_strong">分数やあまりなども使える電卓</strong>
-        </div>
     </header>
-    <div id="margin_div"></div>
-    <h1 id="title_message">分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</h1>
+    <div id="margin-div"></div>
+    <nav id="bread">
+        <a href="https://www.arcody.com/tools/" class="blueLink">ホーム</a>&gt;<a href="./" class="blueLink">Web電卓 Multum</a>
+    </nav>
+    <div class="version">バージョン:0.5.7&alpha; 最終更新日:2022/2/13 (日)</div>
+    <h1 id="title-message">分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</h1>
     <div class="hint">
         <h2>ヒント</h2>
         <p>現在このサイトは&alpha;(アルファ)版となっております。<br>
@@ -80,18 +81,18 @@
                 <ul>
                     <li>
                         <div class="functions">
-                            <h2 class="setting_h2">関数類</h2>
+                            <h2 class="setting-h2">関数類</h2>
                             <button onclick="clickNum(Math.PI)" class="blueButton">&pi;</button>
                             <button onclick="powNum()" class="greenButton">x&sup2;</button>
                             <button onclick="sqrtNum()" class="greenButton noRoboto">&Sqrt;</button>
                         </div>
                         <div class="history">
-                            <h2 class="setting_h2">履歴</h2>
+                            <h2 class="setting-h2">履歴</h2>
                             <p>準備中</p>
                         </div>
                         <div class="settings">
-                            <h2 class="setting_h2">設定</h2>
-                            <label for="on1" class="on_off">
+                            <h2 class="setting-h2">設定</h2>
+                            <label for="on1" class="on-off">
                                 <input type="checkbox" name="checkbox1" id="on1" value="test">テスト
                             </label>
                         </div>
@@ -101,15 +102,15 @@
         </nav>
         <div class="downCalc">
             <div class="hamburger">
-                <span class="nav_item" id="functions">
+                <span class="nav-item" id="functions">
                     <!--関数(functions)-->
                     <img src="./images/functions.svg" title="関数" id="f-b" class="md-36" alt="関数">
                 </span><br>
-                <span class="nav_item" id="history">
+                <span class="nav-item" id="history">
                     <img src="./images/history.svg" title="履歴" id="h-b" class="md-36" alt="履歴">
                     <!--履歴(history)-->
                 </span><br>
-                <span class="nav_item" id="settings">
+                <span class="nav-item" id="settings">
                     <img src="./images/settings.svg" title="設定" id="s-b" class="md-36" alt="設定">
                     <!--設定(settings)-->
                 </span>
@@ -159,7 +160,7 @@
             <p>Web電卓 Multum (ムルタム) は、Webで使えるインストール不要の無料電卓アプリです。</p>
             <p>主に、四則演算や分数、あまり、関数類(ルートやn乗など)が使えます。</p>
             <p>分数を計算できるWeb上の電卓が少ないので、作成しました。</p>
-            <p>ブックマークに登録し、何度もアクセスしていただたり、SNS等でシェアしていただけると嬉しいです。</p>
+            <p>ブックマークに登録し、何度もアクセスしていただたり、SNS等でシェアしていただけるとうれしいです。</p>
         </div>
         <div>
             <p>「Multum」とは、ラテン語で「多くの、たくさんの」という意味があります。</p>
@@ -187,25 +188,25 @@
                 </span>
             </a>
         </p>
-        <p class="footer_1">
-            <span class="footer_span">Web電卓 Multum</span>
+        <p class="footer-1">
+            <span class="footer-span">Web電卓 Multum</span>
         </p>
-        <nav class="footer_nav">
-            <a href="#" class="footer_a">トップ</a>
-            <a href="#about" class="footer_a">Multumについて</a>
-            <a href="#howUse" class="footer_a">使い方</a>
-            <a href="#inquiry" class="footer_a">お問い合わせ</a>
-            <a href="./terms.html" class="footer_a">利用規約</a>
-            <a href="https://github.com/Rio-Gunawan/calc-web" class="footer_a" target="_blank"
+        <nav class="footer-nav">
+            <a href="#" class="footer-">トップ</a>
+            <a href="#about" class="footer-a">Multumについて</a>
+            <a href="#howUse" class="footer-a">使い方</a>
+            <a href="#inquiry" class="footer-a">お問い合わせ</a>
+            <a href="./terms.html" class="footer-a">利用規約</a>
+            <a href="https://github.com/Rio-Gunawan/calc-web" class="footer-a" target="_blank"
                 rel="noopener noreferrer">Multumのソースコード</a>
         </nav>
-        <p class="footer_p">
+        <p class="footer-p">
             <span>Version: 0.6&alpha; (Alpha version)</span>
-            <span class="margin-left_div">最終更新日: <time datetime="2022-2-19" itemprop="modified">2022/2/19
+            <span class="margin-left-div">最終更新日: <time datetime="2022-2-19" itemprop="modified">2022/2/19
                     (土)</time></span>
-            <span class="margin-left_div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
+            <span class="margin-left-div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
         </p>
-        <p class="footer_3">
+        <p class="footer-3">
             このサイトは、<a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">
                 Apache Licenses, Version 2.0
             </a>によりライセンスされています。
@@ -217,8 +218,11 @@
             </a>
         </div>
     </footer>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bignumber.js/bignumber.js"></script>
+    <script src="calc.js"></script>
     <script src="main.js"></script>
-    <script src="calc_contorol.js"></script>
+    <script src="calc-contorol.js"></script>
 </body>
 
 </html>

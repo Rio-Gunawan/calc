@@ -1,8 +1,10 @@
+// スクロールのヘッダーここから
+
 var beforePos = 0;//スクロールの値の比較用の設定
 
 //スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
 function ScrollAnime() {
-    var elemTop = $('#title_message').offset().top;//タイトルの位置まできたら
+    var elemTop = $('#title-message').offset().top;//タイトルの位置まできたら
     var scroll = $(window).scrollTop();
     //ヘッダーの出し入れをする
     if (scroll == beforePos) {
@@ -19,7 +21,6 @@ function ScrollAnime() {
 
     beforePos = scroll;//現在のスクロール値を比較用のbeforePosに格納
 }
-
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
@@ -67,7 +68,9 @@ $(window).on('load', function () {
     PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 });
 
-// #page-topをクリックした際の設定
+// スクロールのヘッダーここまで
+
+// トップのボタンをクリックした際の設定
 $('#page-top').click(function () {
     $('body,html').animate({
         scrollTop: 0//ページトップまでスクロール
@@ -75,7 +78,7 @@ $('#page-top').click(function () {
     return false;//リンク自体の無効化
 });
 
-// for scroll
+// ページ内リンク
 $(function () {
     $('a[href^="#"]').click(function () {
         //スピード
@@ -93,14 +96,16 @@ $(function () {
     });
 });
 
+// スマホ用のナビボタン
+
 $(".openBtn").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-    $("#header_nav").toggleClass('panelActive');//ナビゲーションにpanelActiveクラスを付与
+    $("#header-nav").toggleClass('panelActive');//ナビゲーションにpanelActiveクラスを付与
     $("#title").toggleClass('titleActive');//これもtitleActiveクラスを付与
 });
 
-$("#header_nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+$("#header-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openBtn").removeClass('active');//ボタンの activeクラスを除去し
-    $("#header_nav").removeClass('panelActive');//ナビゲーションのpanelActiveクラスも除去
+    $("#header-nav").removeClass('panelActive');//ナビゲーションのpanelActiveクラスも除去
     $("#title").removeClass('titleActive');//これもtitleActiveクラスを除去
 });
