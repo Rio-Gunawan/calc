@@ -83,12 +83,6 @@ header {
     /* 全面へ */
     z-index: 99;
     top: 0;
-    display: flex;
-    /* 改行禁止 */
-    flex-wrap: nowrap;
-    /* 左寄せ */
-    flex-direction: row;
-    justify-content: flex-start;
 }
 
 /* 上に上がる動き */
@@ -135,9 +129,10 @@ header.DownMove {
 #title {
     margin-left: 2vw;
     text-align: left;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-wrap: nowrap;
+    height: 100%;
 }
 
 #title-image {
@@ -153,16 +148,13 @@ header.DownMove {
 }
 
 #header-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-end;
-    /* 上下中央揃え */
-    align-items: center;
     height: 100%;
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    position: relative;
+    top: -100%;
     margin-right: 1.5vw;
-    position: fixed;
-    right: 0;
 }
 
 #g-nav-list {
@@ -241,22 +233,6 @@ header.DownMove {
         width: 100%;
     }
 
-    /* リストのレイアウト設定 */
-    #header-ul li {
-        width: 100%;
-        display: block;
-        font-size: 1.5em;
-        background: none;
-        transition-property: all;
-        transition-duration: 500ms;
-        transition-delay: 0s;
-        list-style: none;
-    }
-
-    #header-ul li:hover {
-        background-color: #48b117d0;
-    }
-
     #header-ul li a {
         color: #333;
         text-decoration: none;
@@ -266,6 +242,20 @@ header.DownMove {
         text-align: center;
         line-height: 40px;
     }
+
+    /* リストのレイアウト設定 */
+    #header-ul li {
+        width: 100%;
+        display: block;
+        font-size: 1.5em;
+        background: none;
+        list-style: none;
+    }
+
+    #header-ul li:hover {
+        background-color: #48b117d0;
+    }
+
 
     /* ナビの調整 */
     #header-nav {
@@ -418,5 +408,5 @@ header.DownMove {
 }
 
 .mainPicture {
-    width: 75vh;
+    width: 50vh;
 }

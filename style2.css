@@ -119,7 +119,7 @@ header.DownMove {
     padding-bottom: 7px;
 }
 
-#title_image {
+#title-image {
     width: 130px;
 }
 
@@ -128,7 +128,7 @@ header.DownMove {
     width: 30px;
 }
 
-.header_strong {
+.header-strong {
     display: inline-block;
     font-weight: 500;
     margin-top: 8px;
@@ -139,7 +139,7 @@ header.DownMove {
 
 /*ナビゲーションバーの設定*/
 
-.header_nav {
+#header-nav {
     list-style-type: none;
     display: inline;
     float: right;
@@ -147,7 +147,7 @@ header.DownMove {
 }
 
 @media screen and (min-width: 950px) {
-    .header_list {
+    #header-ul li {
         line-height: 51px;
         display: block;
         float: left;
@@ -161,11 +161,11 @@ header.DownMove {
 
 /*リンクの上にカーソルが乗ったとき*/
 
-.header_list:hover {
+#header-ul li:hover {
     background-color: #98cc00bb;
 }
 
-.header_link {
+#header-ul li a {
     display: inline-block;
     text-decoration: none;
     color: black;
@@ -175,7 +175,7 @@ header.DownMove {
 /*=========ナビゲーションのためのCSS===============*/
 
 @media screen and (max-width: 950px) {
-    #header_nav {
+    #header-nav {
         /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
         position: fixed;
         z-index: 999;
@@ -191,12 +191,12 @@ header.DownMove {
     }
 
     /*アクティブクラスがついたら位置を0に*/
-    #header_nav.panelActive {
+    #header-nav.panelActive {
         right: 0;
     }
 
     /*ナビゲーションの縦スクロール*/
-    #header_nav.panelActive #g-nav-list {
+    #header-nav.panelActive #g-nav-list {
         /*ナビの数が増えた場合縦スクロール*/
         position: fixed;
         z-index: 999;
@@ -205,7 +205,7 @@ header.DownMove {
     }
 
     /*ナビゲーション*/
-    #header_list {
+    #header-ul {
         /*ナビゲーション天地中央揃え*/
         position: absolute;
         z-index: 999;
@@ -216,7 +216,7 @@ header.DownMove {
     }
 
     /*リストのレイアウト設定*/
-    .header_list {
+    #header-ul li {
         width: 100%;
         line-height: 150%;
         display: block;
@@ -229,11 +229,11 @@ header.DownMove {
         border-bottom: solid 2px #22c414;
     }
 
-    .header_list:hover {
+    #header-ul li:hover {
         background-color: #48b117d0;
     }
 
-    .header_link {
+    #header-ul li a {
         color: #333;
         text-decoration: none;
         padding: 10px 0;
@@ -264,7 +264,7 @@ header.DownMove {
         transition: all 0.6s;
     }
 
-    .header_strong {
+    .header-strong {
         display: block;
     }
 
@@ -357,7 +357,7 @@ header.DownMove {
 }
 
 @media screen and (max-width: 475px) {
-    #header_list {
+    #header-ul {
         margin-top: 165px;
     }
 
@@ -365,7 +365,7 @@ header.DownMove {
 
 /*重ならないように*/
 
-#margin_div {
+#margin-div {
     height: 60px;
 }
 
@@ -446,7 +446,7 @@ h3 {
     padding: 5px 30px;
 }
 
-.center_p {
+.center-p {
     margin: 5px 0;
     text-align: center;
 }
@@ -549,7 +549,7 @@ main {
     display: inline-block;
 }
 
-.nav_item {
+.nav-item {
     display: inline-block;
     padding: 5px 15px 10px 5px;
 }
@@ -562,12 +562,12 @@ main {
     transition: background 0.4s;
 }
 
-.nav_item:hover .md-36 {
+.nav-item:hover .md-36 {
     background-color: #ade800;
 }
 
 @media (hover: none) {
-    .nav_item:hover .md-36 {
+    .nav-item:hover .md-36 {
         background: none;
     }
 }
@@ -596,7 +596,7 @@ main {
     height: 100px;
 }
 
-.setting_h2 {
+.setting-h2 {
     margin: 0;
     background: none;
     font-size: 1.5rem;
@@ -604,7 +604,7 @@ main {
     border: none;
 }
 
-.on_off {
+.on-off {
     cursor: pointer;
 }
 
@@ -833,7 +833,7 @@ button {
         width: 20%;
     }
 
-    .nav_item {
+    .nav-item {
         padding-right: 5px;
     }
 }
@@ -1029,45 +1029,45 @@ footer {
     font-size: 0.9em;
 }
 
-.footer_nav {
+.footer-nav {
     display: inline-block;
 }
 
-.footer_1 {
+.footer-1 {
     display: inline-block;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.footer_span {
+.footer-span {
     font-size: 1.8em;
 }
 
-.footer_a {
+.footer-a {
     display: inline-block;
     margin-left: 20px;
     color: white;
 }
 
-.footer_p {
+.footer-p {
     color: #afc4f8;
     margin-top: 0;
     text-align: right;
     margin-left: 10px;
 }
 
-.margin-left_div {
+.margin-left-div {
     margin-left: 30px;
     display: inline-block;
 }
 
-.footer_3 {
+.footer-3 {
     color: #83b2de;
     text-align: left;
     margin-bottom: 0;
 }
 
-.footer_3 a {
+.footer-3 a {
     color: #3cd5ff;
 }
 
@@ -1081,18 +1081,18 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
-    .footer_1 {
+    .footer-1 {
         display: block;
         text-align: center;
     }
 
-    .footer_nav {
+    .footer-nav {
         display: block;
         text-align: center;
         margin-top: 30px;
     }
 
-    .footer_p {
+    .footer-p {
         margin-top: 30px;
         text-align: center;
     }
@@ -1100,32 +1100,32 @@ footer {
 }
 
 @media screen and (max-width: 750px) {
-    .footer_1 {
+    .footer-1 {
         display: block;
         text-align: center;
     }
 
-    .footer_nav {
+    .footer-nav {
         display: block;
         text-align: center;
     }
 
-    .footer_nav a {
+    .footer-nav a {
         display: block;
         margin: 10px 0;
     }
 
-    .footer_p>span {
+    .footer-p>span {
         display: block;
         margin: 10px 0;
         text-align: center;
     }
 
-    .footer_p {
+    .footer-p {
         margin-top: 50px;
     }
 
-    .footer_3 {
+    .footer-3 {
         margin-top: 50px;
     }
 }
