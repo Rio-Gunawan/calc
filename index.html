@@ -54,17 +54,13 @@
         </nav>
     </header>
     <div id="margin-div"></div>
-    <nav id="bread">
-        <a href="https://www.arcody.com/tools/" class="blueLink">ホーム</a>&gt;<a href="./" class="blueLink">Web電卓 Multum</a>
-    </nav>
-    <div class="version">バージョン:0.5.7&alpha; 最終更新日:2022/2/13 (日)</div>
-    <h1 id="title-message">分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</h1>
-    <div class="hint">
-        <h2>ヒント</h2>
-        <p>現在このサイトは&alpha;(アルファ)版となっております。<br>
-            動作や表示が不安定な場合があり、計算結果はバグにより間違っている場合もあります。<br>
-            結果は保証しませんので、ご了承ください。<br>
-            最終更新日:2022/2/13 (日) バージョン:0.5.7&alpha; Web電卓 Multum</p>
+    <div id="gray-sheet"></div>
+    <div class="note">
+        <nav id="bread">
+            <a href="https://www.arcody.com/tools/" class="blueLink">Web便利ツールホーム</a><span class="bread-gt">&gt;</span><a href="./" class="blueLink">Web電卓
+                Multum</a>
+        </nav>
+        <div class="version">バージョン:0.6&alpha; 最終更新日:2022/2/28 (月)</div>
     </div>
     <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
@@ -134,17 +130,17 @@
                     </span>
                 </button>
                 <button onclick="calcMode('%')" class="orangeButton upButton smallFont">あまり</button><br>
-                <button onclick="clickNum(1)" class="blueButton upButton">1</button>
-                <button onclick="clickNum(2)" class="blueButton upButton">2</button>
-                <button onclick="clickNum(3)" class="blueButton upButton">3</button>
-                <button onclick="calcMode('+')" class="greenButton upButton">&plus;</button><br>
-                <button onclick="clickNum(4)" class="blueButton upButton">4</button>
-                <button onclick="clickNum(5)" class="blueButton upButton">5</button>
-                <button onclick="clickNum(6)" class="blueButton upButton">6</button>
-                <button onclick="calcMode('-')" class="greenButton upButton">&minus;</button><br>
                 <button onclick="clickNum(7)" class="blueButton upButton">7</button>
                 <button onclick="clickNum(8)" class="blueButton upButton">8</button>
                 <button onclick="clickNum(9)" class="blueButton upButton">9</button>
+                <button onclick="calcMode('+')" class="greenButton upButton">&plus;</button><br>
+                <button onclick="clickNum(3)" class="blueButton upButton">3</button>
+                <button onclick="clickNum(5)" class="blueButton upButton">5</button>
+                <button onclick="clickNum(6)" class="blueButton upButton">6</button>
+                <button onclick="calcMode('-')" class="greenButton upButton">&minus;</button><br>
+                <button onclick="clickNum(1)" class="blueButton upButton">1</button>
+                <button onclick="clickNum(2)" class="blueButton upButton">2</button>
+                <button onclick="clickNum(3)" class="blueButton upButton">3</button>
                 <button onclick="calcMode('*')" class="greenButton upButton">&times;</button><br>
                 <button onclick="clickNum(0)" class="blueButton upButton">0</button>
                 <button onclick="clickNum('.')" class="blueButton upButton">.</button>
@@ -153,6 +149,7 @@
             </div>
         </div>
     </main>
+    <h1>分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</h1>
     <section id="about">
         <h2>Multumについて</h2>
         <img src="images/main.png" class="mainPicture" alt="Multumの画像">
@@ -179,26 +176,26 @@
     <iframe title="form"
         src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true">
     </iframe>
+    <p id="page-top">
+        <a href="#">
+            <span class="page-top-text">
+                <img src="./images/arrow-up.svg" alt="トップ"><br>
+                <span id="toTop">トップへ</span>
+            </span>
+        </a>
+    </p>
     <footer id="footer">
-        <p id="page-top">
-            <a href="#">
-                <span class="page-top-text">
-                    <img src="./images/arrow-up.svg" alt="トップ"><br>
-                    <span id="toTop">トップへ</span>
-                </span>
-            </a>
-        </p>
         <p class="footer-1">
             <span class="footer-span">Web電卓 Multum</span>
         </p>
         <nav class="footer-nav">
-            <a href="#" class="footer-">トップ</a>
+            <a href="#" class="footer-a">トップ</a>
             <a href="#about" class="footer-a">Multumについて</a>
             <a href="#howUse" class="footer-a">使い方</a>
             <a href="#inquiry" class="footer-a">お問い合わせ</a>
             <a href="./terms.html" class="footer-a">利用規約</a>
             <a href="https://github.com/Rio-Gunawan/calc-web" class="footer-a" target="_blank"
-                rel="noopener noreferrer">Multumのソースコード</a>
+                rel="noopener noreferrer">Multumのソースコード<img src="./images/open-new.svg" class="text-image"></a>
         </nav>
         <p class="footer-p">
             <span>Version: 0.6&alpha; (Alpha version)</span>

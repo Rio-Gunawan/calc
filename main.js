@@ -4,7 +4,10 @@ var beforePos = 0;//スクロールの値の比較用の設定
 
 //スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
 function ScrollAnime() {
-    var elemTop = $('#title-message').offset().top;//タイトルの位置まできたら
+    if (String($('#header-nav').attr('class')).indexOf('panelActive') != -1) {
+        return;
+    }
+    var elemTop = $('#bread').offset().top;//タイトルの位置まできたら
     var scroll = $(window).scrollTop();
     //ヘッダーの出し入れをする
     if (scroll == beforePos) {
@@ -34,7 +37,9 @@ $(window).on('load', function () {
 
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
-
+    if (String($('#header-nav').attr('class')).indexOf('panelActive') != -1) {
+        return;
+    }
     var scroll = $(window).scrollTop(); //スクロール値を取得
     if (scroll >= 230) {//200pxスクロールしたら
         $('#page-top').removeClass('DownMove');		// DownMoveというクラス名を除去して
@@ -102,10 +107,28 @@ $(".openBtn").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#header-nav").toggleClass('panelActive');//ナビゲーションにpanelActiveクラスを付与
     $("#title").toggleClass('titleActive');//これもtitleActiveクラスを付与
+    $("#gray-sheet").fadeToggle(); //ほかを暗くする
 });
 
 $("#header-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openBtn").removeClass('active');//ボタンの activeクラスを除去し
     $("#header-nav").removeClass('panelActive');//ナビゲーションのpanelActiveクラスも除去
     $("#title").removeClass('titleActive');//これもtitleActiveクラスを除去
+    $("#gray-sheet").fadeOut(); //ほかを明るくする
+});
+
+// ナビゲーションバー以外をタップして閉じる
+
+$(document).click(function (e) {
+    if (String($('#header-nav').attr('class')).indexOf('panelActive') != -1) {
+        if (!($(e.target).closest('#header-nav').length)
+            &&!($(e.target).closest('#title').length)
+            && !($(e.target).closest('.openBtn').length)) {
+            // ターゲット要素の外側をクリックした時の操作
+            $(".openBtn").removeClass('active');//ボタンの activeクラスを除去し
+            $("#header-nav").removeClass('panelActive');//ナビゲーションのpanelActiveクラスも除去
+            $("#title").removeClass('titleActive');//これもtitleActiveクラスを除去
+            $("#gray-sheet").fadeOut(); //ほかを明るくする
+        }
+    }
 });

@@ -18,13 +18,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Noto Sans JP';
-    src: url(./fonts/NotoSansJP-Bold.ttf) format('truetype');
-    font-weight: 700;
-    font-display: swap;
-}
-
 /* Roboto */
 
 @font-face {
@@ -38,13 +31,6 @@
     font-family: 'Roboto';
     src: url(./fonts/Roboto-Medium.ttf) format('truetype');
     font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url(./fonts/Roboto-Bold.ttf) format('truetype');
-    font-weight: 700;
     font-display: swap;
 }
 
@@ -70,6 +56,18 @@ body {
 
 img {
     image-rendering: -webkit-optimize-contrast;
+}
+
+a {
+    word-break: break-all;
+}
+
+a:link {
+    color: #2696e0;
+}
+
+a:visited {
+    color: #a435ff;
 }
 
 /* ヘッダーの設定 */
@@ -407,6 +405,358 @@ header.DownMove {
     height: 70px;
 }
 
+/* 短すぎないように */
+
+.margin-div-high {
+    height: 50vh;
+}
+
+/* ナビゲーションバーが出てきたときに、他のコンテンツを暗くする */
+
+#gray-sheet {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000bf;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    display: none;
+}
+
+/* パンくずメニュー */
+
+.bread {
+    margin-left: 3%;
+}
+
+.blueLink:link {
+    color: #2696e0;
+}
+
+.blueLink:visited {
+    color: #2696e0;
+}
+
+.bread-gt {
+    display: inline-block;
+    margin: 0 0.3vw;
+}
+
+/* バージョン表記 */
+
+.version {
+    text-align: right;
+    padding-right: 3%;
+}
+
+/* 電卓 */
+
+.noRoboto {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* 見出し */
+
+h1 {
+    font-size: 2.1em;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.index {
+    text-align: center;
+}
+
+.index .blueLink {
+    display: inline-block;
+    margin: 0 2%;
+}
+
+.center-p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* セクション */
+
+section {
+    margin: 10px 3vw;
+}
+
+section h2 {
+    border-left: 12px solid #ade800;
+    padding: 10px 0;
+    padding-left: 2%;
+    font-size: 1.7em;
+    margin: 15px 0;
+    background-color: #efefef;
+    font-weight: 500;
+}
+
 .mainPicture {
-    width: 50vh;
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+}
+
+section p {
+    padding-left: 3vw;
+    line-height: calc(10px + 1em);
+}
+
+section div {
+    margin: 10px 0;
+}
+
+section h3 {
+    border-left: 10px solid #ade800;
+    padding: 10px 0;
+    padding-left: 2%;
+    margin: 10px 0;
+    margin-left: 2vw;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+iframe {
+    width: 100%;
+    height: 900px;
+    margin: 0;
+    border: none;
+}
+
+@media screen and (max-width: 550px) {
+    iframe {
+        height: 1000px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    iframe {
+        height: 1300px;
+    }
+}
+
+/* ========= ページトップのためのCSS =============== */
+/* リンクの形状 */
+#page-top a {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: #3c90f0bb;
+    border-radius: 8px;
+    width: 65px;
+    height: 65px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.page-top-text {
+    position: relative;
+    top: 10px
+}
+
+#page-top a:hover {
+    background: #3044ff;
+}
+
+@media (hover: none) {
+    #page-top a:hover {
+        background: #3c8ff0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #page-top a {
+        width: 50px;
+        height: 50px;
+        font-size: 0.5rem;
+    }
+
+    .page-top-text {
+        position: relative;
+        top: 5px
+    }
+
+    #toTop {
+        top: -13px;
+    }
+}
+
+/* リンクを右下に固定 */
+#page-top {
+    position: fixed;
+    right: 20px;
+    z-index: 2;
+    /* はじめは非表示 */
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/* 上に上がる動き */
+
+#page-top.UpMove {
+    animation: UpAnimeTop 0.5s forwards;
+}
+
+@keyframes UpAnimeTop {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 下に下がる動き */
+
+#page-top.DownMove {
+    animation: DownAnimeTop 0.5s forwards;
+}
+
+@keyframes DownAnimeTop {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+}
+
+/* フッター */
+
+footer {
+    background-color: #2b3a61;
+    padding: 40px 3vw 30px 3vw;
+    line-height: calc(0.9em + 10px);
+    color: white;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    display: inline-block;
+}
+
+.footer-1 {
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer-span {
+    font-size: 1.8em;
+}
+
+.footer-a {
+    display: inline-block;
+    margin-left: 2vw;
+    color: white;
+}
+
+.footer-a:link {
+    color: white;
+}
+
+.footer-a:visited {
+    color: white;
+}
+
+.text-image {
+    width: 1em;
+}
+
+.footer-p {
+    color: #d7def0;
+    margin-top: 0;
+    text-align: right;
+    margin-left: 1vw;
+}
+
+.margin-left-div {
+    margin-left: 3vw;
+    display: inline-block;
+}
+
+.footer-3 {
+    color: #d1e7fc;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.footer-3 a:link {
+    color: #56d4f7;
+}
+
+.footer-3 a:visited {
+    color: #8fd9ee;
+}
+
+.counter {
+    display: block;
+    text-align: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer-1 {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .footer-p {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .footer-1 {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .footer-p>span {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-p {
+        margin-top: 50px;
+    }
+
+    .footer-3 {
+        margin-top: 50px;
+    }
 }
