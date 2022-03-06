@@ -452,6 +452,135 @@ header.DownMove {
 
 /* 電卓 */
 
+main {
+    background-color: #f9f9f9;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* CSSをリセット */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    /* 要素に標準スタイルを適用させない */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+button {
+    height: 50px;
+    min-width: 50px;
+    margin: 4px;
+    border-radius: 50%;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    /* 放射グラデーションイメージの位置を中央に設定 */
+    background-position: center;
+    /* background属性にアニメーションを0.4秒で設定 */
+    transition: background 0.4s;
+}
+
+button:hover {
+    /* 放射グラデーションイメージのサイズを拡大し要素を覆うように設定 */
+    background-size: 15000%;
+}
+
+button:active {
+    /* 放射グラデーションイメージのサイズを元のサイズに戻すように設定 */
+    background-size: 100%;
+    /* ここではアニメーションを無効にするように設定 */
+    transition: background 0s;
+}
+
+/* Contained Button */
+button.contained-button {
+    color: #000;
+    background-color: #ade800;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 1px 5px 0 rgba(0, 0, 0, 0.12),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+button.contained-button:hover {
+    /* ホバーしたときの背景色を設定 */
+    background-color: #b8e23a;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12),
+        0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    /* 1%の大きさで作成された放射グラデーションイメージを背景画像に設定 */
+    background-image: radial-gradient(circle, transparent 1%, #add633 1%);
+}
+
+button.contained-button:active {
+    /* クリックまたはタップされている間の背景色を設定 */
+    background-color: #dae7b4;
+}
+
+.contained-button.green-button {
+    color: #fff;
+    background-color: #74cc00;
+}
+
+.contained-button.green-button:hover {
+    /* ホバーしたときの背景色を設定 */
+    background-color: #9fcf60;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12),
+        0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    /* 1%の大きさで作成された放射グラデーションイメージを背景画像に設定 */
+    background-image: radial-gradient(circle, transparent 1%, #7dcf12 1%);
+}
+
+.contained-button.green-button:active {
+    /* クリックまたはタップされている間の背景色を設定 */
+    background-color: #c2d4ab;
+}
+
+/* Outline Button */
+button.outline-button {
+    color: #000;
+    border: solid 1px #ade800;
+    background-color: white;
+    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 5px 0 rgba(0, 0, 0, 0.12),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+button.outline-button:hover {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12),
+        0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    /* 1%の大きさで作成された放射グラデーションイメージを背景画像に設定 */
+    background-image: radial-gradient(circle, transparent 1%, #add63388 1%);
+    background-color: #b8e23a88;
+}
+
+/* Text Button */
+button.text-button {
+    color: #74cc00;
+    border: none;
+    background-color: none;
+    box-shadow: none;
+}
+
+button.text-button:hover {
+    /* ホバーしたときの背景色を設定 */
+    background-color: #b8e23a;
+    box-shadow: none;
+    /* 1%の大きさで作成された放射グラデーションイメージを背景画像に設定 */
+    background-image: radial-gradient(circle, transparent 1%, #add63388 1%);
+    background-color: #b8e23a88;
+}
+
+button.text-button:active,
+button.outline-button:active {
+    background-color: #dae7b488;
+}
+
 .noRoboto {
     font-family: 'Noto Sans JP', sans-serif;
 }
