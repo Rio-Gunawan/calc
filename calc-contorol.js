@@ -9,13 +9,13 @@ $(function () {
     }, cursorTiming);
 });
 
-$(".hamburger").click(function () {//ボタンがクリックされたら
+$(".open-nav").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('activeSet');//ボタン自身に activeSetクラスを付与し
-    $("#setNav").toggleClass('setPanelActive');//ナビゲーションにsetPanelActiveクラスを付与
+    $("#set-nav").toggleClass('setPanelActive');//ナビゲーションにsetPanelActiveクラスを付与
 });
 
 $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-    $(".hamburger").removeClass('activeSet');//ボタンの activeSetクラスを除去し
+    $(".open-nav").removeClass('activeSet');//ボタンの activeSetクラスを除去し
     $("#setNav").removeClass('setPanelActive');//ナビゲーションのsetPanelActiveクラスも除去
 });
 

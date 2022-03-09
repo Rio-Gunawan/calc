@@ -453,9 +453,123 @@ header.DownMove {
 /* 電卓 */
 
 main {
+    position: relative;
     background-color: #f9f9f9;
     width: 90vw;
+    max-width: 360px;
+    padding: 15px 0;
     margin: 0 auto;
+    border-radius: 20px;
+    border: solid 1px #999;
+    margin-top: 20px;
+}
+
+#answer {
+    display: flex;
+    width: 90%;
+    max-width: 300px;
+    background-color: #dae7b4;
+    height: calc(1em + 30px);
+    padding: 0 7px;
+    font-size: 2em;
+    border-radius: 10px;
+    margin: 0 auto;
+    justify-content: end;
+    align-items: center;
+}
+
+#cursor {
+    height: 1em;
+    width: 2px;
+    display: inline-block;
+    background-color: #000;
+    margin-left: 2px;
+}
+
+#gray {
+    position: absolute;
+    width: 90px;
+    height: 370px;
+    background: #f9f9f9;
+    bottom: -1px;
+    left: -1px;
+    z-index: 3999;
+    border-bottom-left-radius: 20px;
+    border-left: solid 1px #999;
+    border-bottom: solid 1px #999;
+}
+
+#white {
+    position: absolute;
+    width: calc((100vw - 360px) / 2);
+    height: 370px;
+    background: #fff;
+    bottom: -1px;
+    left: calc((100vw - 360px) / -2);
+    z-index: 3999;
+}
+
+/* 隠しているボタン,ナビ */
+
+#set-nav {
+    position: absolute;
+    /*ナビのスタート位置と形状*/
+    left: -162px;
+    width: 250px;
+    height: calc(420px - 1em - 45px);
+    margin-top: 8px;
+    /*ナビの高さ*/
+    background: #fff;
+    /*動き*/
+    transition: all 0.6s;
+    z-index: 999;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#set-nav.setPanelActive {
+    left: 88px;
+}
+
+@media screen and (max-width: 400px) {
+    #set-nav {
+        left: calc((90vw - 280px) / 2 - 202px);
+    }
+
+    #set-nav.setPanelActive {
+        left: calc((90vw - 280px) / 2 + 48px);
+    }
+}
+
+/*ナビゲーションの縦スクロール*/
+#set-nav-list {
+    /*ナビの数が増えた場合縦スクロール*/
+    position: absolute;
+    z-index: 999;
+    width: 250px;
+    height: 100vh;
+    padding: 15px 0;
+    /*表示する高さ*/
+    overflow: auto;
+}
+
+.function-list {
+    /*ナビゲーション天地中央揃え*/
+    width: 250px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.downCalc {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+#buttons div {
+    display: flex;
 }
 
 /* CSSをリセット */
@@ -473,7 +587,7 @@ button {
 
 button {
     height: 50px;
-    min-width: 50px;
+    width: 50px;
     margin: 4px;
     border-radius: 50%;
     font-family: 'Roboto', 'Noto Sans JP', sans-serif;
@@ -482,6 +596,7 @@ button {
     background-position: center;
     /* background属性にアニメーションを0.4秒で設定 */
     transition: background 0.4s;
+    font-size: 1.25em;
 }
 
 button:hover {
@@ -579,6 +694,53 @@ button.text-button:hover {
 button.text-button:active,
 button.outline-button:active {
     background-color: #dae7b488;
+}
+
+.open-nav .outline-button {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 9999;
+}
+
+/* 分数のCSS */
+
+.fraction {
+    display: inline-block;
+    font-size: 0.7em;
+}
+
+.fraction span {
+    text-align: center;
+    display: inline-block;
+}
+
+.numerator {
+    width: calc(1em + 4px);
+    border-bottom: solid 1px #000000;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+#answer .fraction span {
+    width: calc(100% + 6px);
+}
+
+#answer .fraction {
+    font-size: 0.6em;
+    text-align: center;
+    margin: 0 8px;
+}
+
+.topLittle {
+    position: relative;
+    top: -9px;
+    margin-right: 2px;
+    font-size: 0.75em;
+}
+
+.smallFont {
+    font-size: 0.5em;
 }
 
 .noRoboto {

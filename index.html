@@ -57,7 +57,8 @@
     <div id="gray-sheet"></div>
     <div class="note">
         <nav id="bread">
-            <a href="https://www.arcody.com/tools/" class="blueLink">Web便利ツールホーム</a><span class="bread-gt">&gt;</span><a href="./" class="blueLink">Web電卓
+            <a href="https://www.arcody.com/tools/" class="blueLink">Web便利ツールホーム</a><span class="bread-gt">&gt;</span><a
+                href="./" class="blueLink">Web電卓
                 Multum</a>
         </nav>
         <div class="version">バージョン:0.6&alpha; 最終更新日:2022/2/28 (月)</div>
@@ -71,81 +72,90 @@
         </div>
         <div id="white"></div>
         <div id="gray"></div>
-        <nav id="setNav">
-            <div id="setNav-list">
-                <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
-                <ul>
-                    <li>
-                        <div class="functions">
-                            <h2 class="setting-h2">関数類</h2>
-                            <button onclick="clickNum(Math.PI)" class="outline-button">&pi;</button>
-                            <button onclick="powNum()" class="contained-button">x&sup2;</button>
-                            <button onclick="sqrtNum()" class="contained-button noRoboto">&Sqrt;</button>
-                        </div>
-                        <div class="history">
-                            <h2 class="setting-h2">履歴</h2>
-                            <p>準備中</p>
-                        </div>
-                        <div class="settings">
-                            <h2 class="setting-h2">設定</h2>
-                            <label for="on1" class="on-off">
-                                <input type="checkbox" name="checkbox1" id="on1" value="test">テスト
-                            </label>
-                        </div>
-                    </li>
-                </ul>
+        <nav id="set-nav">
+            <div id="set-nav-list">
+                <div class="function-list">
+                    <div class="functions">
+                        <h2 class="setting-h2">関数類</h2>
+                        <button onclick="clickNum(Math.PI)" class="outline-button">&pi;</button>
+                        <button onclick="powNum()" class="contained-button">x&sup2;</button>
+                        <button onclick="sqrtNum()" class="contained-button noRoboto">&Sqrt;</button>
+                    </div>
+                    <div class="history">
+                        <h2 class="setting-h2">履歴</h2>
+                        <p>準備中</p>
+                    </div>
+                    <div class="settings">
+                        <h2 class="setting-h2">設定</h2>
+                        <label for="on1" class="on-off">
+                            <input type="checkbox" name="checkbox1" id="on1" value="test">テスト
+                        </label>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="downCalc">
-            <div class="hamburger">
-                <span class="nav-item" id="functions">
+            <div class="open-nav">
+                <button class="outline-button" id="functions">
                     <!--関数(functions)-->
                     <img src="./images/functions.svg" title="関数" id="f-b" class="md-36" alt="関数">
-                </span><br>
-                <span class="nav-item" id="history">
-                    <img src="./images/history.svg" title="履歴" id="h-b" class="md-36" alt="履歴">
+                </button><br>
+                <button class="outline-button" id="history">
                     <!--履歴(history)-->
-                </span><br>
-                <span class="nav-item" id="settings">
-                    <img src="./images/settings.svg" title="設定" id="s-b" class="md-36" alt="設定">
+                    <img src="./images/history.svg" title="履歴" id="h-b" class="md-36" alt="履歴">
+                </button><br>
+                <button class="outline-button" id="settings">
                     <!--設定(settings)-->
-                </span>
+                    <img src="./images/settings.svg" title="設定" id="s-b" class="md-36" alt="設定">
+                </button>
             </div>
             <div id="buttons">
-                <button onclick="changeCode()" class="contained-button">+/&minus;</button>
-                <button onclick="backspace()" class="green-button contained-button">
-                    <img src="./images/backscape.svg" class="downLittle" alt="削除">
-                </button>
-                <button onclick="clearText(0)" class="green-button contained-button">C</button>
-                <button onclick="clearText(1)" class="green-button contained-button">AC</button><br>
-                <button onclick="divHundred()" class="contained-button upButton">%</button>
-                <button onclick="addFraction(true)" class="contained-button" id="fraction0">
-                    <span class="topLittle">a</span><span class="fraction"><span class="numerator">b</span><br>
-                        <span>c</span>
-                    </span>
-                </button>
-                <button onclick="addFraction(false)" class="contained-button" id="fraction1"><span class="fraction"><span
-                            class="numerator">a</span><br>
-                        <span>b</span>
-                    </span>
-                </button>
-                <button onclick="calcMode('%')" class="contained-button smallFont">あまり</button><br>
-                <button onclick="clickNum(7)" class="outline-button">7</button>
-                <button onclick="clickNum(8)" class="outline-button">8</button>
-                <button onclick="clickNum(9)" class="outline-button">9</button>
-                <button onclick="calcMode('+')" class="contained-button">&plus;</button><br>
-                <button onclick="clickNum(3)" class="outline-button">4</button>
-                <button onclick="clickNum(5)" class="outline-button">5</button>
-                <button onclick="clickNum(6)" class="outline-button">6</button>
-                <button onclick="calcMode('-')" class="contained-button">&minus;</button><br>
-                <button onclick="clickNum(1)" class="outline-button">1</button>
-                <button onclick="clickNum(2)" class="outline-button">2</button>
-                <button onclick="clickNum(3)" class="outline-button">3</button>
-                <button onclick="calcMode('*')" class="contained-button">&times;</button><br>
-                <button onclick="clickNum(0)" class="outline-button">0</button>
-                <button onclick="clickNum('.')" class="outline-button">.</button>
-                <button onclick="showAnswer()" class="green-button contained-button">=</button>
-                <button onclick="calcMode('/')" class="contained-button">&divide;</button><br>
+                <div>
+                    <button onclick="changeCode()" class="contained-button">+/&minus;</button>
+                    <button onclick="backspace()" class="green-button contained-button">
+                        <img src="./images/backscape.svg" class="downLittle" alt="削除">
+                    </button>
+                    <button onclick="clearText(0)" class="green-button contained-button">C</button>
+                    <button onclick="clearText(1)" class="green-button contained-button">AC</button>
+                </div>
+                <div>
+                    <button onclick="divHundred()" class="contained-button upButton">%</button>
+                    <button onclick="addFraction(true)" class="contained-button" id="fraction0">
+                        <span class="topLittle">a</span><span class="fraction"><span class="numerator">b</span><br>
+                            <span>c</span>
+                        </span>
+                    </button>
+                    <button onclick="addFraction(false)" class="contained-button" id="fraction1"><span
+                            class="fraction"><span class="numerator">a</span><br>
+                            <span>b</span>
+                        </span>
+                    </button>
+                    <button onclick="calcMode('%')" class="contained-button smallFont">あまり</button>
+                </div>
+                <div>
+                    <button onclick="clickNum(7)" class="outline-button">7</button>
+                    <button onclick="clickNum(8)" class="outline-button">8</button>
+                    <button onclick="clickNum(9)" class="outline-button">9</button>
+                    <button onclick="calcMode('+')" class="contained-button">&plus;</button>
+                </div>
+                <div>
+                    <button onclick="clickNum(4)" class="outline-button">4</button>
+                    <button onclick="clickNum(5)" class="outline-button">5</button>
+                    <button onclick="clickNum(6)" class="outline-button">6</button>
+                    <button onclick="calcMode('-')" class="contained-button">&minus;</button>
+                </div>
+                <div>
+                    <button onclick="clickNum(1)" class="outline-button">1</button>
+                    <button onclick="clickNum(2)" class="outline-button">2</button>
+                    <button onclick="clickNum(3)" class="outline-button">3</button>
+                    <button onclick="calcMode('*')" class="contained-button">&times;</button>
+                </div>
+                <div>
+                    <button onclick="clickNum(0)" class="outline-button">0</button>
+                    <button onclick="clickNum('.')" class="outline-button">.</button>
+                    <button onclick="showAnswer()" class="green-button contained-button">=</button>
+                    <button onclick="calcMode('/')" class="contained-button">&divide;</button>
+                </div>
             </div>
         </div>
     </main>
