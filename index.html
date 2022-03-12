@@ -42,7 +42,7 @@
             <img src="images/title.png" id="title-image" alt="Multumタイトル画像">
             <strong class="header-strong">分数やあまりなども使える電卓</strong>
         </div>
-        <div class="openBtn"><span></span><span></span><span></span></div>
+        <button class="openBtn contained-button green-button"><span></span><span></span><span></span></button>
         <nav id="header-nav">
             <div id="g-nav-list">
                 <ul id="header-ul">
@@ -61,7 +61,7 @@
                 href="./" class="blueLink">Web電卓
                 Multum</a>
         </nav>
-        <div class="version">バージョン:0.6&alpha; 最終更新日:2022/2/28 (月)</div>
+        <div class="version">バージョン:0.7&alpha; 最終更新日:2022/3/12 (土)</div>
     </div>
     <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
@@ -96,24 +96,24 @@
         </nav>
         <div class="downCalc">
             <div class="open-nav">
-                <button class="outline-button" id="functions">
+                <button class="outline-button img-button" id="functions">
                     <!--関数(functions)-->
-                    <img src="./images/functions.svg" title="関数" id="f-b" class="md-36" alt="関数">
-                </button><br>
-                <button class="outline-button" id="history">
+                    <img src="./images/functions.svg" title="関数" id="f-b" alt="関数">
+                </button>
+                <button class="outline-button img-button" id="history">
                     <!--履歴(history)-->
-                    <img src="./images/history.svg" title="履歴" id="h-b" class="md-36" alt="履歴">
-                </button><br>
-                <button class="outline-button" id="settings">
+                    <img src="./images/history.svg" title="履歴" id="h-b" alt="履歴">
+                </button>
+                <button class="outline-button img-button" id="settings">
                     <!--設定(settings)-->
-                    <img src="./images/settings.svg" title="設定" id="s-b" class="md-36" alt="設定">
+                    <img src="./images/settings.svg" title="設定" id="s-b" alt="設定">
                 </button>
             </div>
             <div id="buttons">
                 <div>
                     <button onclick="changeCode()" class="contained-button">+/&minus;</button>
-                    <button onclick="backspace()" class="green-button contained-button">
-                        <img src="./images/backscape.svg" class="downLittle" alt="削除">
+                    <button onclick="backspace()" class="green-button contained-button img-button">
+                        <img src="./images/backscape.svg" alt="削除">
                     </button>
                     <button onclick="clearText(0)" class="green-button contained-button">C</button>
                     <button onclick="clearText(1)" class="green-button contained-button">AC</button>
@@ -121,7 +121,7 @@
                 <div>
                     <button onclick="divHundred()" class="contained-button upButton">%</button>
                     <button onclick="addFraction(true)" class="contained-button" id="fraction0">
-                        <span class="topLittle">a</span><span class="fraction"><span class="numerator">b</span><br>
+                        <span class="button-fraction-integer">a</span><span class="fraction"><span class="numerator">b</span><br>
                             <span>c</span>
                         </span>
                     </button>
@@ -136,25 +136,25 @@
                     <button onclick="clickNum(7)" class="outline-button">7</button>
                     <button onclick="clickNum(8)" class="outline-button">8</button>
                     <button onclick="clickNum(9)" class="outline-button">9</button>
-                    <button onclick="calcMode('+')" class="contained-button">&plus;</button>
+                    <button onclick="calcMode('/')" class="contained-button">&divide;</button>
                 </div>
                 <div>
                     <button onclick="clickNum(4)" class="outline-button">4</button>
                     <button onclick="clickNum(5)" class="outline-button">5</button>
                     <button onclick="clickNum(6)" class="outline-button">6</button>
-                    <button onclick="calcMode('-')" class="contained-button">&minus;</button>
+                    <button onclick="calcMode('*')" class="contained-button">&times;</button>
                 </div>
                 <div>
                     <button onclick="clickNum(1)" class="outline-button">1</button>
                     <button onclick="clickNum(2)" class="outline-button">2</button>
                     <button onclick="clickNum(3)" class="outline-button">3</button>
-                    <button onclick="calcMode('*')" class="contained-button">&times;</button>
+                    <button onclick="calcMode('-')" class="contained-button">&minus;</button>
                 </div>
                 <div>
                     <button onclick="clickNum(0)" class="outline-button">0</button>
                     <button onclick="clickNum('.')" class="outline-button">.</button>
                     <button onclick="showAnswer()" class="green-button contained-button">=</button>
-                    <button onclick="calcMode('/')" class="contained-button">&divide;</button>
+                    <button onclick="calcMode('+')" class="contained-button">&plus;</button>
                 </div>
             </div>
         </div>
@@ -186,14 +186,14 @@
     <iframe title="form"
         src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true">
     </iframe>
-    <p id="page-top">
+    <button id="page-top" class="contained-button green-button">
         <a href="#">
             <span class="page-top-text">
                 <img src="./images/arrow-up.svg" alt="トップ"><br>
                 <span id="toTop">トップへ</span>
             </span>
         </a>
-    </p>
+    </button>
     <footer id="footer">
         <p class="footer-1">
             <span class="footer-span">Web電卓 Multum</span>
@@ -208,8 +208,8 @@
                 rel="noopener noreferrer">Multumのソースコード<img src="./images/open-new.svg" class="text-image"></a>
         </nav>
         <p class="footer-p">
-            <span>Version: 0.6&alpha; (Alpha version)</span>
-            <span class="margin-left-div">最終更新日: <time datetime="2022-2-19" itemprop="modified">2022/2/19
+            <span>Version: 0.7&alpha; (Alpha version)</span>
+            <span class="margin-left-div">最終更新日: <time datetime="2022-3-12" itemprop="modified">2022/3/12
                     (土)</time></span>
             <span class="margin-left-div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
         </p>
