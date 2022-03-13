@@ -698,7 +698,7 @@ button.outline-button:hover {
 button.text-button {
     color: #74cc00;
     border: none;
-    background-color: none;
+    background: none;
     box-shadow: none;
 }
 
@@ -950,7 +950,21 @@ iframe {
     z-index: 2;
     /* はじめは非表示 */
     opacity: 0;
+    background-position: center;
+    transition: background 0.4s;
     transform: translateY(100px);
+}
+
+#page-top:hover {
+    /* 放射グラデーションイメージのサイズを拡大し要素を覆うように設定 */
+    background-size: 15000%;
+}
+
+#page-top:active {
+    /* 放射グラデーションイメージのサイズを元のサイズに戻すように設定 */
+    background-size: 100%;
+    /* ここではアニメーションを無効にするように設定 */
+    transition: background 0s;
 }
 
 #page-top a {
@@ -958,6 +972,7 @@ iframe {
     color: #fff;
     text-decoration: none;
     font-size: 0.7rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px) {

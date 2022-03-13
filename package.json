@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rio-Gunawan/calc-web.git"
+    "url": "git+https://github.com/Rio-Gunawan/calc.git"
   },
   "author": "rio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rio-Gunawan/calc-web/issues"
+    "url": "https://github.com/Rio-Gunawan/calc/issues"
   },
-  "homepage": "https://github.com/Rio-Gunawan/calc-web#readme",
+  "homepage": "https://github.com/Rio-Gunawan/calc#readme",
   "devDependencies": {
     "eslint": "^8.0.1"
   },

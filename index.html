@@ -16,8 +16,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="分数,電卓,あまり,計算,web,Multum,関数電卓,無料,高機能,シンプル">
-    <meta name="description" content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。
-    Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
+    <meta name="description"
+        content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
     <meta name="author" content="Rio Gunawan">
     <title>分数やあまりがWebで使えるシンプルな電卓 - Web電卓 Multum</title>
     <link rel="stylesheet" href="style.css">
@@ -28,8 +28,8 @@
     <meta name="og:url" content="https://www.arcody.com/tools/calc/">
     <meta name="og:type" content="website">
     <meta name="og:title" content="分数やあまりがWebで使えるシンプルな電卓!">
-    <meta name="og:description" content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。
-    Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
+    <meta name="og:description"
+        content="Web電卓 Multumは、分数やあまりなど、様々な計算に対応した、シンプルなWebで使える電卓です。Web上でインストールせずに無料で利用できます。履歴や関数類も使えます。">
     <meta property="og:site_name" content="Web電卓 Multum">
     <meta property="og:image" content="https://www.arcody.com/tools/calc/images/main.png">
     <meta name="twitter:card" content="Summary with Large Image">
@@ -61,7 +61,8 @@
                 href="./" class="blueLink">Web電卓
                 Multum</a>
         </nav>
-        <div class="version">バージョン:0.7&alpha; 最終更新日:2022/3/12 (土)</div>
+        <div class="version">バージョン:0.7&alpha;<span class="margin-left-div">最終更新日: <time datetime="2022-03-13">2022/3/13
+                (日)</time></span></div>
     </div>
     <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
         このサイト(特に電卓)を利用するにはJavascriptを有効にしてください。<br>
@@ -121,7 +122,8 @@
                 <div>
                     <button onclick="divHundred()" class="contained-button upButton">%</button>
                     <button onclick="addFraction(true)" class="contained-button" id="fraction0">
-                        <span class="button-fraction-integer">a</span><span class="fraction"><span class="numerator">b</span><br>
+                        <span class="button-fraction-integer">a</span><span class="fraction"><span
+                                class="numerator">b</span><br>
                             <span>c</span>
                         </span>
                     </button>
@@ -186,14 +188,14 @@
     <iframe title="form"
         src="https://docs.google.com/forms/d/e/1FAIpQLScJezvYKizirmeFHnASJ0DIIRz7payZHYKDvZvqZYcoUbkyJQ/viewform?embedded=true">
     </iframe>
-    <button id="page-top" class="contained-button green-button">
+    <p id="page-top" class="contained-button green-button">
         <a href="#">
             <span class="page-top-text">
                 <img src="./images/arrow-up.svg" alt="トップ"><br>
                 <span id="toTop">トップへ</span>
             </span>
         </a>
-    </button>
+    </p>
     <footer id="footer">
         <p class="footer-1">
             <span class="footer-span">Web電卓 Multum</span>
@@ -204,13 +206,14 @@
             <a href="#howUse" class="footer-a">使い方</a>
             <a href="#inquiry" class="footer-a">お問い合わせ</a>
             <a href="./terms.html" class="footer-a">利用規約</a>
-            <a href="https://github.com/Rio-Gunawan/calc-web" class="footer-a" target="_blank"
-                rel="noopener noreferrer">Multumのソースコード<img src="./images/open-new.svg" class="text-image"></a>
+            <a href="https://github.com/Rio-Gunawan/calc" class="footer-a" target="_blank"
+                rel="noopener noreferrer">Multumのソースコード<img src="./images/open-new.svg" class="text-image"
+                    alt="(新しいタブ)"></a>
         </nav>
         <p class="footer-p">
             <span>Version: 0.7&alpha; (Alpha version)</span>
-            <span class="margin-left-div">最終更新日: <time datetime="2022-3-12" itemprop="modified">2022/3/12
-                    (土)</time></span>
+            <span class="margin-left-div">最終更新日: <time datetime="2022-03-13">2022/3/13
+                    (日)</time></span>
             <span class="margin-left-div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>
         </p>
         <p class="footer-3">
