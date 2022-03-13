@@ -330,7 +330,7 @@ header.DownMove {
         color: #fff;
         background-color: #74cc00;
         padding: 2px 0.5vw;
-        margin-left: 0.7vw;
+        margin-left: 15px;
         border-radius: 5px;
         transition: background 0.4s;
     }
