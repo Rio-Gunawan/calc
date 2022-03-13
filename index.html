@@ -37,11 +37,12 @@
 
 <body>
     <header id="header" class="DownMove">
-        <img src="images/favicon.png" id="title-icon" alt="Multum アイコン">
-        <div id="title">
+        <a href="./" id="title-icon-a"><img src="images/favicon.png" id="title-icon" alt="Multum アイコン"><span>ホームへ</span></a>
+        <a id="title" href="./">
             <img src="images/title.png" id="title-image" alt="Multumタイトル画像">
             <strong class="header-strong">分数やあまりなども使える電卓</strong>
-        </div>
+            <span>ホームへ</span>
+        </a>
         <button class="openBtn contained-button green-button"><span></span><span></span><span></span></button>
         <nav id="header-nav">
             <div id="g-nav-list">
@@ -61,7 +62,7 @@
                 href="./" class="blueLink">Web電卓
                 Multum</a>
         </nav>
-        <div class="version">バージョン:0.7&alpha;<span class="margin-left-div">最終更新日: <time datetime="2022-03-13">2022/3/13
+        <div class="version">バージョン:0.7.1&alpha;<span class="margin-left-div">最終更新日: <time datetime="2022-03-13">2022/3/13
                 (日)</time></span></div>
     </div>
     <noscript class="alert">このサイトではJavaScriptを利用しております。<br>
@@ -211,7 +212,7 @@
                     alt="(新しいタブ)"></a>
         </nav>
         <p class="footer-p">
-            <span>Version: 0.7&alpha; (Alpha version)</span>
+            <span>Version: 0.7.1&alpha; (Alpha version)</span>
             <span class="margin-left-div">最終更新日: <time datetime="2022-03-13">2022/3/13
                     (日)</time></span>
             <span class="margin-left-div copy">Copyright &copy; 2021-2022 Rio Gunawan</span>

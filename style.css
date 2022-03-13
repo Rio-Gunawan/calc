@@ -81,6 +81,8 @@ header {
     /* 全面へ */
     z-index: 99;
     top: 0;
+    display: flex;
+    justify-content: flex-end;
     box-shadow: 0 2px 2px 0 #00000013,
         0 1px 5px 0 #00000013,
         0 3px 1px -2px #00000013;
@@ -122,7 +124,7 @@ header.DownMove {
     }
 }
 
-#title-icon {
+#title-icon-a {
     display: none;
     width: 30px;
 }
@@ -130,14 +132,39 @@ header.DownMove {
 #title {
     margin-left: 2vw;
     text-align: left;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     flex-wrap: nowrap;
     height: 100%;
+    text-decoration: none;
+    margin-right: auto;
 }
+
+#title:link {
+    color: #000;
+}
+
+#title:visited {
+    color: #000;
+}
+
 
 #title-image {
     height: 70%;
+}
+
+#title span {
+    display: inline-block;
+    color: #fff;
+    background-color: #74cc00;
+    padding: 2px 0.5vw;
+    margin-left: 0.7vw;
+    border-radius: 5px;
+    transition: background 0.4s;
+}
+
+#title span:hover {
+    background-color: #48b117;
 }
 
 .header-strong {
@@ -152,9 +179,7 @@ header.DownMove {
     height: 100%;
     display: flex;
     margin: 0;
-    justify-content: flex-end;
     position: relative;
-    top: -100%;
     margin-right: 1.5vw;
 }
 
@@ -201,7 +226,7 @@ header.DownMove {
 
 /* =========ナビゲーションのためのCSS=============== */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 870px) {
 
     /* 一部を上書き */
     header {
@@ -261,7 +286,6 @@ header.DownMove {
         background-color: #48b117d0;
     }
 
-
     /* ナビの調整 */
     #header-nav {
         /* position:fixed;にし、z-indexの数値を大きくして前面へ */
@@ -283,12 +307,38 @@ header.DownMove {
 
     /* アイコンのためのCSS */
 
-    #title-icon {
-        display: inline-block;
+    #title-icon-a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 80%;
         width: auto;
         margin-left: 4vw;
+        text-decoration: none;
     }
+
+    #title-icon {
+        height: 100%;
+    }
+
+    #title span {
+        display: none;
+    }
+
+    #title-icon-a span {
+        display: inline-block;
+        color: #fff;
+        background-color: #74cc00;
+        padding: 2px 0.5vw;
+        margin-left: 0.7vw;
+        border-radius: 5px;
+        transition: background 0.4s;
+    }
+
+    #title-icon-a span:hover {
+        background-color: #48b117;
+    }
+
 
     .header-strong {
         display: block;
